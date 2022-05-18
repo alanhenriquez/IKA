@@ -1,8 +1,17 @@
 <resources>
     <string name="app_name">IKA</string>
     <string name="version">Versión</string>
-    <string name="nVersion">1.7.5</string>
+    <string name="nVersion">1.7.7</string>
     <string name="contentDescription">Imagen</string>
+
+    <!--TX VERSIONES-->
+    <string name="vTopic175">v1.7.5</string>
+    <string name="vTx175">Se corrigieron algunos problemas internos del codigo y algunos fallos mostrados por discrepancias dentro del mismo.</string>
+    <string name="vTopic176">v1.7.6</string>
+    <string name="vTx176">Ahora el proyecto lo puedes encontrar en GitHub y puedes acceder a la documentacion de las versiones de la app.</string>
+    <string name="vTopic177">v1.7.7</string>
+    <string name="vTx177">Agregada la seccion de galeria de imagenes internas IKA.</string>
+
 
     <!--TX MENU OPCIONES-->
     <string name="opcion1">Información</string>
@@ -23,15 +32,23 @@
 
     <!--TX ACTIVITY FRUTAS Y VERDURAS-->
     <string name="txGuineos">Guineos</string>
+    <drawable name="imgGuineos">@drawable/guineo</drawable>
     <string name="txManzanas">Manzanas</string>
+    <drawable name="imgManzanas">@drawable/manzana</drawable>
     <string name="txSandias">Sandía</string>
+    <drawable name="imgSandias">@drawable/sandia</drawable>
     <string name="txLimones">Limones</string>
+    <drawable name="imgLimones">@drawable/limon</drawable>
     <string name="txFresas">Fresas</string>
+    <drawable name="imgFresas">@drawable/fresa</drawable>
     <string name="txPineapple">Piñas</string>
+    <drawable name="imgPineapple">@drawable/pineapple</drawable>
 
 
     <!--TX ACTIVITY INFORMACION-->
     <string name="infoTopic1">Informacion de las versiones IKA</string>
     <string name="infoTxTopic1">Las versiones de la app se encuentran registradas manualmente por nuestros desarrolladores de IKA. Documentacion breve de los cambios de version en version con el fin de que viva la mejor experiencia dentro de IKA.</string>
+    <string name="infoTopic2">Galeria de imagenes</string>
+    <string name="infoTxTopic2">Aquí encontraras las imagenes internas de la app con el fin de que aprecies del arte de IKA a tu alcance.</string>
 
 </resources>

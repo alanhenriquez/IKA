@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gris0"
-    tools:context=".FrutasVerduras">
+    tools:context=".IMGalery">
 
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:background="@drawable/gradiante2"
         android:orientation="horizontal"
         android:paddingVertical="15dp"
         android:paddingLeft="20dp"
@@ -26,9 +26,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:elegantTextHeight="true"
-                android:text="@string/txFrutasVerduras"
+                android:text="@string/infoTopic2"
                 android:textAlignment="center"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="10pt"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -57,6 +57,148 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingTop="100dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="25dp"
+                    android:paddingVertical="20dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:id="@+id/contPan"
+                            android:layout_width="170dp"
+                            android:layout_height="170dp"
+                            android:background="@drawable/esquinas_redondeadas"
+                            android:orientation="vertical"
+                            app:layout_constraintStart_toStartOf="parent"
+                            tools:ignore="MissingConstraints">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:id="@+id/imgPan"
+                                    android:layout_width="130dp"
+                                    android:layout_height="130dp"
+                                    android:contentDescription="@string/contentDescription"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:srcCompat="@drawable/imgPan"
+                                    tools:srcCompat="@drawable/imgPan" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/contLacteos"
+                            android:layout_width="170dp"
+                            android:layout_height="170dp"
+                            android:background="@drawable/esquinas_redondeadas"
+                            android:orientation="vertical"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            tools:ignore="MissingConstraints">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:id="@+id/imgLacteos"
+                                    android:layout_width="130dp"
+                                    android:layout_height="130dp"
+                                    android:contentDescription="@string/contentDescription"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:srcCompat="@drawable/imgLacteos"
+                                    tools:srcCompat="@drawable/imgLacteos" />
+
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="25dp"
+                    android:paddingVertical="20dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:id="@+id/contVerdurasyFrutas"
+                            android:layout_width="170dp"
+                            android:layout_height="170dp"
+                            android:background="@drawable/esquinas_redondeadas"
+                            android:orientation="vertical"
+                            app:layout_constraintStart_toStartOf="parent"
+                            tools:ignore="MissingConstraints">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:id="@+id/imgFrutasVerduras"
+                                    android:layout_width="130dp"
+                                    android:layout_height="130dp"
+                                    android:contentDescription="@string/contentDescription"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:srcCompat="@drawable/imgFrutasVerduras"
+                                    tools:srcCompat="@drawable/imgFrutasVerduras" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/contBebidas"
+                            android:layout_width="170dp"
+                            android:layout_height="170dp"
+                            android:background="@drawable/esquinas_redondeadas"
+                            android:orientation="vertical"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            tools:ignore="MissingConstraints">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:id="@+id/imgBebidas"
+                                    android:layout_width="130dp"
+                                    android:layout_height="130dp"
+                                    android:contentDescription="@string/contentDescription"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:srcCompat="@drawable/imgBebidas"
+                                    tools:srcCompat="@drawable/imgBebidas" />
+
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -93,21 +235,6 @@
                                     tools:srcCompat="@drawable/imgGuineos"
                                     android:contentDescription="@string/contentDescription" />
 
-                                <TextView
-                                    android:id="@+id/txGuineos"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/txGuineos"
-                                    android:textSize="9pt"
-                                    android:textStyle="bold"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toBottomOf="@+id/imgGuineos">
-
-                                </TextView>
-
-
                             </androidx.constraintlayout.widget.ConstraintLayout>
                         </LinearLayout>
 
@@ -134,20 +261,6 @@
                                     app:srcCompat="@drawable/imgManzanas"
                                     tools:srcCompat="@drawable/imgManzanas"
                                     android:contentDescription="@string/contentDescription"/>
-
-                                <TextView
-                                    android:id="@+id/txManzanas"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/txManzanas"
-                                    android:textSize="9pt"
-                                    android:textStyle="bold"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toBottomOf="@+id/imgManzanas">
-
-                                </TextView>
 
 
                             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -192,20 +305,6 @@
                                     tools:srcCompat="@drawable/imgSandias"
                                     android:contentDescription="@string/contentDescription" />
 
-                                <TextView
-                                    android:id="@+id/txSandias"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/txSandias"
-                                    android:textSize="9pt"
-                                    android:textStyle="bold"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toBottomOf="@+id/imgSandias">
-
-                                </TextView>
-
 
                             </androidx.constraintlayout.widget.ConstraintLayout>
                         </LinearLayout>
@@ -232,20 +331,6 @@
                                     app:srcCompat="@drawable/imgLimones"
                                     tools:srcCompat="@drawable/imgLimones"
                                     android:contentDescription="@string/contentDescription" />
-
-                                <TextView
-                                    android:id="@+id/txLimones"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/txLimones"
-                                    android:textSize="9pt"
-                                    android:textStyle="bold"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toBottomOf="@+id/imgLimones">
-
-                                </TextView>
 
 
                             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -290,20 +375,6 @@
                                     tools:srcCompat="@drawable/imgFresas"
                                     android:contentDescription="@string/contentDescription" />
 
-                                <TextView
-                                    android:id="@+id/txFresas"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/txFresas"
-                                    android:textSize="9pt"
-                                    android:textStyle="bold"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toBottomOf="@+id/imgFresas">
-
-                                </TextView>
-
 
                             </androidx.constraintlayout.widget.ConstraintLayout>
                         </LinearLayout>
@@ -330,20 +401,6 @@
                                     app:srcCompat="@drawable/imgPineapple"
                                     tools:srcCompat="@drawable/imgPineapple"
                                     android:contentDescription="@string/contentDescription" />
-
-                                <TextView
-                                    android:id="@+id/txPineapple"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/txPineapple"
-                                    android:textSize="9pt"
-                                    android:textStyle="bold"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toBottomOf="@+id/imgPineapple">
-
-                                </TextView>
 
 
                             </androidx.constraintlayout.widget.ConstraintLayout>
