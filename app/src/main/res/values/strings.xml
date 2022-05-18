@@ -13,9 +13,13 @@
 
     <!--TX ACTIVITY MAIN-->
     <string name="txFrutasVerduras">Frutas y Verduras</string>
+    <drawable name="imgFrutasVerduras">@drawable/verduras</drawable>
     <string name="txBebidas">Bebidas</string>
+    <drawable name="imgBebidas">@drawable/bebidas</drawable>
     <string name="txLacteos">Lacteos</string>
+    <drawable name="imgLacteos">@drawable/lacteos</drawable>
     <string name="txPan">Pan</string>
+    <drawable name="imgPan">@drawable/pan</drawable>
 
     <!--TX ACTIVITY FRUTAS Y VERDURAS-->
     <string name="txGuineos">Guineos</string>
@@ -24,5 +28,10 @@
     <string name="txLimones">Limones</string>
     <string name="txFresas">Fresas</string>
     <string name="txPineapple">Piñas</string>
+
+
+    <!--TX ACTIVITY INFORMACION-->
+    <string name="infoTopic1">Informacion de las versiones IKA</string>
+    <string name="infoTxTopic1">Las versiones de la app se encuentran registradas manualmente por nuestros desarrolladores de IKA. Documentacion breve de los cambios de version en version con el fin de que viva la mejor experiencia dentro de IKA.</string>
 
 </resources>

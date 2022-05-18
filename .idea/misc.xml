@@ -8,6 +8,8 @@
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/Extras/IKA/app/src/main/res/layout/activity_main.xml" value="0.215625" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable-v24/esquinas_redondeadas.xml" value="0.1795" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable-v24/gradiante1.xml" value="0.1795" />
+        <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable-v24/gradianteRedond1.xml" value="0.1655" />
+        <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable-v24/gradiante_redondo1.xml" value="0.1655" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable-v24/ic_launcher_background.xml" value="0.1795" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1795" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1795" />
@@ -19,6 +21,7 @@
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/activity_pan.xml" value="0.2015625" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/activity_version_app.xml" value="0.25" />
+        <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/activity_versiones_docu.xml" value="0.215625" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/corner_radius.xml" value="0.2015625" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/menu/menu_principal.xml" value="0.215625" />
       </map>
