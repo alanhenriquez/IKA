@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">IKA</string>
+    <string name="version">Versión</string>
+    <string name="nVersion">1.7.5</string>
+    <string name="contentDescription">Imagen</string>
+
+    <!--TX MENU OPCIONES-->
+    <string name="opcion1">Información</string>
+    <string name="opcion2">Version App</string>
+
+    <!--TX GENERALES-->
+    <string name="txTopic1">Bienvenido</string>
+
+    <!--TX ACTIVITY MAIN-->
+    <string name="txFrutasVerduras">Frutas y Verduras</string>
+    <string name="txBebidas">Bebidas</string>
+    <string name="txLacteos">Lacteos</string>
+    <string name="txPan">Pan</string>
+
+    <!--TX ACTIVITY FRUTAS Y VERDURAS-->
+    <string name="txGuineos">Guineos</string>
+    <string name="txManzanas">Manzanas</string>
+    <string name="txSandias">Sandía</string>
+    <string name="txLimones">Limones</string>
+    <string name="txFresas">Fresas</string>
+    <string name="txPineapple">Piñas</string>
+
+</resources>
