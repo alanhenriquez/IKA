@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+
+    <!-- Color de fondo de la vista -->
+    <solid
+        android:color="@color/black" >
+    </solid>
+
+    <!-- Color y ancho del borde del elemento -->
+    <stroke
+        android:width="0dp"
+        android:color="@color/gris0" >
+    </stroke>
+
+    <!-- Si queremos añadir algún padding -->
+    <padding
+        android:left="0dp"
+        android:top="0dp"
+        android:right="0dp"
+        android:bottom="0dp"    >
+    </padding>
+
+    <size
+        android:width="@dimen/sizeContCircleUserFooter"
+        android:height="@dimen/sizeContCircleUserFooter">
+    </size>
+
+    <!-- Aquí indicamos el radio a aplicar a las esquinas -->
+    <corners
+        android:radius="50dp"   >
+    </corners>
+
+</shape>

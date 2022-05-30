@@ -1,0 +1,48 @@
+{
+  
+  "project_info": {
+    "project_number": "50317340659",
+    "project_id": "ikaproyect",
+    "storage_bucket": "ikaproyect.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:50317340659:android:32b3dc1b7f71d80eb86c86",
+        "android_client_info": {
+          "package_name": "com.ikalogic.ika"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "50317340659-h83jnoqgco55lbuj1jo8n2g53vijj703.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ikalogic.ika",
+            "certificate_hash": "482b617c055f0564e9089dc50e03d55a56d7a176"
+          }
+        },
+        {
+          "client_id": "50317340659-usueo72ksekbbcj2qpl1mq201s4gu7k9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaFP4u81IQYdD9SpYT75gfpd4GXZFUxLk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "50317340659-usueo72ksekbbcj2qpl1mq201s4gu7k9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

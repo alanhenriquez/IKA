@@ -1,8 +1,55 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">IKA</string>
+    <string name="app_name2">Ika</string>
     <string name="version">Versión</string>
     <string name="nVersion">1.7.7</string>
     <string name="contentDescription">Imagen</string>
+    <!--Esto es el tema inicial del proyecto, eliminado para quitar la barra superior
+    que se encuentra en la parte duperior de la app por default
+        android:theme="@style/Theme.IKA"
+    -->
+
+    <!--Formularios-->
+    <string name="fontFormulario" tools:ignore="ReferenceType">@font/roboto_regular</string>
+    <drawable name="backgroundFormulario">@drawable/esquinas_redondeadas2t</drawable>
+    <color name="colorTxFormulario">@color/white</color>
+    <dimen name="sizeTxFormulario">8pt</dimen>
+    <dimen name="sizeTxBtFormulario">8pt</dimen>
+    <string name="mailTxFormulario">Correo electronico</string>
+
+
+    <!--Footer Elements-->
+    <drawable name="iconStore">@drawable/icon_store</drawable>
+    <drawable name="iconAdd">@drawable/icon_add</drawable>
+    <drawable name="iconHome">@drawable/icon_home</drawable>
+    <drawable name="specialElemFooter">@drawable/circulo1</drawable>
+    <dimen name="sizeFooter">43dp</dimen><!--TAMAÑO DEL FOOTER-->
+    <dimen name="sizeIconFooter">28dp</dimen><!--TAMAÑO DE LOS ICONOS DEL FOOTER-->
+    <dimen name="sizeContIconFooter">38dp</dimen><!--PADDING DEL CONTENEDOR-->
+    <dimen name="sizeContImageUserFooter">28dp</dimen><!--IMAGEN DE USUARIO EN FOOTER-->
+    <dimen name="sizeContCircleUserFooter">23dp</dimen><!--CIRCULO BAJO LA IMAGEN-->
+
+
+    <!--User Elements-->
+    <drawable name="imgPerfilUser">@drawable/fondo</drawable>
+    <color name="colorImgPerfilUser">@color/gris0</color><!--COLOR DE FONDO-->
+    <string name="nameUser">Nombre de usuario</string>
+    <string name="mailUser">Correo de usuario</string>
+    <dimen name="sizePerfilUser">110dp</dimen><!--TAMAÑO DE FOTO DE PERFIL-->
+    <dimen name="sizeRadiusImageUser">150dp</dimen><!--RADIO DEL ELEMENTO-->
+    <integer name="sizeRotationImageUser">0</integer><!--RADIO DEL ELEMENTO-->
+
+    <!--TX GENERALES-->
+    <string name="mail">Correo</string>
+    <string name="password">Contraseña</string>
+    <string name="signupLogin">No tienes una cuenta?</string>
+    <string name="forgotPasswordTxLogin">Olvidaste la contraseña?</string>
+    <string name="recoverPasswordTxLogin">Recuperar aquí</string>
+    <string name="signupLoginbtn">SignUp</string>
+    <string name="login">Iniciar Sesión</string>
+    <string name="txTopic1">Bienvenido</string>
+    <string name="descriptionImg">Imagen</string>
+
 
     <!--TX VERSIONES-->
     <string name="vTopic175">v1.7.5</string>
@@ -16,9 +63,6 @@
     <!--TX MENU OPCIONES-->
     <string name="opcion1">Información</string>
     <string name="opcion2">Version App</string>
-
-    <!--TX GENERALES-->
-    <string name="txTopic1">Bienvenido</string>
 
     <!--TX ACTIVITY MAIN-->
     <string name="txFrutasVerduras">Frutas y Verduras</string>

@@ -73,7 +73,7 @@
                             android:id="@+id/contPan"
                             android:layout_width="170dp"
                             android:layout_height="170dp"
-                            android:background="@drawable/esquinas_redondeadas"
+                            android:background="@drawable/esquinas_redondeadas1"
                             android:orientation="vertical"
                             app:layout_constraintStart_toStartOf="parent"
                             tools:ignore="MissingConstraints">
@@ -100,7 +100,7 @@
                             android:id="@+id/contLacteos"
                             android:layout_width="170dp"
                             android:layout_height="170dp"
-                            android:background="@drawable/esquinas_redondeadas"
+                            android:background="@drawable/esquinas_redondeadas1"
                             android:orientation="vertical"
                             app:layout_constraintEnd_toEndOf="parent"
                             tools:ignore="MissingConstraints">
@@ -144,7 +144,7 @@
                             android:id="@+id/contVerdurasyFrutas"
                             android:layout_width="170dp"
                             android:layout_height="170dp"
-                            android:background="@drawable/esquinas_redondeadas"
+                            android:background="@drawable/esquinas_redondeadas1"
                             android:orientation="vertical"
                             app:layout_constraintStart_toStartOf="parent"
                             tools:ignore="MissingConstraints">
@@ -171,7 +171,7 @@
                             android:id="@+id/contBebidas"
                             android:layout_width="170dp"
                             android:layout_height="170dp"
-                            android:background="@drawable/esquinas_redondeadas"
+                            android:background="@drawable/esquinas_redondeadas1"
                             android:orientation="vertical"
                             app:layout_constraintEnd_toEndOf="parent"
                             tools:ignore="MissingConstraints">
@@ -215,7 +215,7 @@
                             android:id="@+id/contGuineos"
                             android:layout_width="170dp"
                             android:layout_height="170dp"
-                            android:background="@drawable/esquinas_redondeadas"
+                            android:background="@drawable/esquinas_redondeadas1"
                             android:orientation="vertical"
                             app:layout_constraintStart_toStartOf="parent"
                             tools:ignore="MissingConstraints">
@@ -242,7 +242,7 @@
                             android:id="@+id/contManzanas"
                             android:layout_width="170dp"
                             android:layout_height="170dp"
-                            android:background="@drawable/esquinas_redondeadas"
+                            android:background="@drawable/esquinas_redondeadas1"
                             android:orientation="vertical"
                             app:layout_constraintEnd_toEndOf="parent"
                             tools:ignore="MissingConstraints">
@@ -286,7 +286,7 @@
                             android:id="@+id/contSandias"
                             android:layout_width="170dp"
                             android:layout_height="170dp"
-                            android:background="@drawable/esquinas_redondeadas"
+                            android:background="@drawable/esquinas_redondeadas1"
                             android:orientation="vertical"
                             app:layout_constraintStart_toStartOf="parent">
 
@@ -313,7 +313,7 @@
                             android:id="@+id/contLimones"
                             android:layout_width="170dp"
                             android:layout_height="170dp"
-                            android:background="@drawable/esquinas_redondeadas"
+                            android:background="@drawable/esquinas_redondeadas1"
                             android:orientation="vertical"
                             app:layout_constraintEnd_toEndOf="parent">
 
@@ -356,7 +356,7 @@
                             android:id="@+id/contFresas"
                             android:layout_width="170dp"
                             android:layout_height="170dp"
-                            android:background="@drawable/esquinas_redondeadas"
+                            android:background="@drawable/esquinas_redondeadas1"
                             android:orientation="vertical"
                             app:layout_constraintStart_toStartOf="parent">
 
@@ -383,7 +383,7 @@
                             android:id="@+id/contPineapple"
                             android:layout_width="170dp"
                             android:layout_height="170dp"
-                            android:background="@drawable/esquinas_redondeadas"
+                            android:background="@drawable/esquinas_redondeadas1"
                             android:orientation="vertical"
                             app:layout_constraintEnd_toEndOf="parent">
 
