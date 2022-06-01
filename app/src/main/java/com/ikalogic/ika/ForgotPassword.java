@@ -4,8 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Patterns;
-import android.widget.Button;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -13,116 +12,110 @@ import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-public class SignUp extends AppCompatActivity {
+public class ForgotPassword extends AppCompatActivity {
 
-    /*Variables para campos de texto*/
-    private EditText etSignUpName;
-    private EditText etSignUpMail;
-    private EditText etSignUpPassword;
+    /*-------------------------------------------------------------------------------*/
+    /*Variables*/
+    private String email;
+    EditText etMailRecoverPassword;
+    View btSendEmail;
 
-    /*Variables de los datos a registrar*/
-    private String name = "";
-    private String mail = "";
-    private String password = "";
-
-    /*Acceso a Firebase y AwesomeValidation*/
+    /*Acceso a AwesomeValidation*/
     AwesomeValidation awesomeValidation;
-    FirebaseAuth userAuth;
-    DatabaseReference userDataBase;
 
 
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+
+    /*-------------------------------------------------------------------------------*/
+    @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up);
+        setContentView(R.layout.activity_forgot_password);
 
 
-        /* Acceso a Instancias FireBase y a la AwesomeValidacion
+        /* Acceso para AwesomeValidacion
          * Estos accesos los encontraras en el build.gradle tanto de proyecto como app*/
-        userAuth = FirebaseAuth.getInstance();
-        userDataBase = FirebaseDatabase.getInstance().getReference();
         awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
-        /*awesomeValidation.addValidation(this,R.id.etSignUpMail, Patterns.EMAIL_ADDRESS,R.string.invalid_mail);
-        awesomeValidation.addValidation(this,R.id.etSignUpPassword,".{6,}",R.string.invalid_password);*/
+        /*awesomeValidation.addValidation(this,R.id.txtEmailForgotPassword, Patterns.EMAIL_ADDRESS,R.string.invalid_mail);*/
 
 
-        /*Simples variables antes definidas accediendo a los id*/
-        etSignUpName = findViewById(R.id.etSignUpName);
-        etSignUpMail = findViewById(R.id.etSignUpMail);
-        etSignUpPassword = findViewById(R.id.etSignUpPassword);
-        Button btSignUp = findViewById(R.id.btSignUp);
+
+
+
+        /*Simples variables definidas accediendo a los id*/
+        View btResetText = findViewById(R.id.resetText);
+        etMailRecoverPassword = findViewById(R.id.txtEmailForgotPassword);
+        btSendEmail = findViewById(R.id.recoverForgotPassword);
+
+
+
+
 
         /*Botones y acciones*/
-        btSignUp.setOnClickListener(view -> {
-            name = etSignUpName.getText().toString();
-            mail = etSignUpMail.getText().toString();
-            password = etSignUpPassword.getText().toString();
+        btSendEmail.setOnClickListener(v -> {
+            if (ValidarEmail(etMailRecoverPassword)){
+                email = etMailRecoverPassword.getText().toString();
 
-            if (!name.isEmpty() && awesomeValidation.validate()){
-                registerUser();
+                if(!email.isEmpty()){
+                    SendEmail(email);
+                }else {
+                    msgToast("Rellene los campos");
+                }
             }
-            else {
-                msgToast("Complete el registro");
-            }
+        });/*Boton para enviar el mensaje de recuperar*/
+        ResetText(btResetText, etMailRecoverPassword);/*Reiniciar texto*/
 
-        });
     }
 
-    /*Creamos al usuario y lo registramos*/
-    private void registerUser(){
-        //Autenticaremos al usuario mediante su correo y contraseña
-        userAuth.createUserWithEmailAndPassword(mail, password).addOnCompleteListener(task -> {
+    @Override public void onBackPressed() {
+        super.onBackPressed();
+        sendEmailExitoso();
+    }
+    /*-------------------------------------------------------------------------------*/
+
+
+
+
+
+    /*Enviamos el mensaje al gmail*/
+    public void SendEmail(String email){
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        auth.sendPasswordResetEmail(email).addOnCompleteListener(task -> {
             if (task.isSuccessful()){
-                msgToast("Registro realizado");
-                SetDataBase();
-                finish();
-            }else{
+                msgToast("Mensaje de recuperacion enviado");
+                sendEmailExitoso();
+            }else {
                 String errorCode = ((FirebaseAuthException) Objects.requireNonNull(task.getException())).getErrorCode();
-                dameToastdeerror(errorCode, etSignUpMail, etSignUpPassword);
+                dameToastdeerrorEmail(errorCode, etMailRecoverPassword);
             }
         });
     }
 
-
-    /*Agregamos la informacion a la base de datos*/
-    private void SetDataBase(){
-        Map<String, Object> data = new HashMap<>();
-        data.put("email", mail);
-        data.put("password", password);
-        data.put("name", name);
-
-        String id = Objects.requireNonNull(userAuth.getCurrentUser()).getUid();
-        userDataBase.child("Users").child(id).setValue(data).addOnCompleteListener(task1 -> {
-            SignUpComplete();
-            msgToast("Usuario creado con exito");
-        });
+    /*Envio de mensaje exitoso del y regreso al login*/
+    private void sendEmailExitoso (){
+        Intent intent = new Intent(getApplicationContext(), Login.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        finish();
     }
 
-
-    /*Pasamos de activity en caso de que se haya creado el usuario*/
-    private void SignUpComplete(){
-        Intent finished = new Intent(getApplicationContext(), UserHome.class);
-        startActivity(finished);
+    /*Reiniciamos el texto del campo de texto*/
+    private void ResetText (View elemTouch, EditText textToReset){
+        elemTouch.setOnClickListener(view -> textToReset.setText(""));
     }
-
 
     /*Variable para generar el mensaje Toast*/
     private void msgToast(String message) {
         Toast.makeText(getApplicationContext(),message, Toast.LENGTH_LONG).show();
     }
 
-
     /*Variable para generar el mensaje Toast del tipo de error*/
-    private void dameToastdeerror(String error, EditText mail, EditText password) {
+    private void dameToastdeerrorEmail(String error, EditText mail) {
 
         switch (error) {
 
@@ -139,17 +132,17 @@ public class SignUp extends AppCompatActivity {
                 break;
 
             case "ERROR_INVALID_EMAIL":
-                msgToast("El correo electrónico no es correcta.");
+                msgToast("El correo electrónico no es correcto.");
                 /*mail.setError("La dirección de correo electrónico está mal formateada.");*/
                 mail.requestFocus();
                 break;
 
             case "ERROR_WRONG_PASSWORD":
-                msgToast("La contraseña no es válida");
+                msgToast("La contraseña no es correcta");
                 /*msgToast("La contraseña no es válida o el usuario no tiene contraseña.");*/
                 /*password.setError("la contraseña es incorrecta ");*/
-                password.requestFocus();
-                password.setText("");
+                /*password.requestFocus();*/
+                /*password.setText("");*/
                 break;
 
             case "ERROR_USER_MISMATCH":
@@ -196,12 +189,39 @@ public class SignUp extends AppCompatActivity {
             case "ERROR_WEAK_PASSWORD":
                 msgToast("La contraseña proporcionada no es válida.");
                 /*password.setError("La contraseña no es válida, debe tener al menos 6 caracteres");*/
-                password.requestFocus();
+                /*password.requestFocus();*/
                 break;
 
         }
 
     }
 
+    /*Validar Email*/
+    private boolean ValidarEmail(EditText args) {
+        // Patrón para validar el email
+        Pattern pattern = Pattern.compile("^[_A-Za-z0-9-+]+(\\.[_A-Za-z0-9-]+)*@"
+                + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
 
+        // El email a validar
+        String email = args.getText().toString();
+        Matcher mather = pattern.matcher(email);
+
+        if (email.isEmpty()){
+            args.requestFocus();
+            msgToast("Ingrese un correo electronico");
+            return false;
+        }else {
+            if (mather.find()) {
+                /*El email ingresado es válido.*/
+                return true;
+            } else {
+                msgToast("Su email ingresado es inválido.");
+                return false;
+            }
+        }
+
+
+    }
+
+    /*-------------------------------------------------------------------------------*/
 }
