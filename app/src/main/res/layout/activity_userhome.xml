@@ -7,10 +7,79 @@
     android:background="@color/white"
     tools:context=".UserHome">
 
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/sizeHeader"
+        android:background="@color/colorHeaderMain"
+        android:elevation="1dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints,UnusedAttribute">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="20dp">
+
+                <TextView
+                    android:id="@+id/userNameHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nameUser"
+                    android:textColor="@color/colorTextMain"
+                    android:textSize="@dimen/sizeTxHeaderUserName"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/iconMenuHeader"
+                        android:layout_width="@dimen/sizeIconHeader"
+                        android:layout_height="@dimen/sizeIconHeader"
+                        android:background="@drawable/icon_menu"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
     <ScrollView
         android:id="@+id/scrollView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
         tools:ignore="MissingConstraints">
 
         <LinearLayout
@@ -22,7 +91,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:paddingVertical="20dp">
+                android:paddingVertical="20dp"
+                tools:ignore="UselessParent">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -70,8 +140,7 @@
                         android:text="@string/nameUser"
                         android:textAlignment="textStart"
                         android:textColor="@color/black"
-                        android:textSize="9pt"
-                        android:textStyle="bold" />
+                        android:textSize="9pt"/>
 
                     <TextView
                         android:id="@+id/userMail"
@@ -93,7 +162,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/sizeFooter"
-        android:background="@drawable/borde1"
+        android:background="@color/colorFooterMain"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">

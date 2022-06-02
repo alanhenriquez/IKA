@@ -7,6 +7,8 @@
     <string name="invalid_password">Minimo de 6 caracteres</string>
     <color name="colorBackgroundMain">@color/gris00</color>
     <color name="colorTextMain">@color/black</color>
+    <color name="colorFooterMain">@color/gris0</color>
+    <color name="colorHeaderMain">@color/gris0</color>
     <dimen name="sizeTextMain">15sp</dimen><!--Tamaño del texto recuperar contraseña-->
     <string name="fontMain" tools:ignore="ReferenceType">@font/roboto_regular</string><!--Tipografia Principal Ika-->
     <!--Esto es el tema inicial del proyecto, eliminado para quitar la barra superior
@@ -45,11 +47,17 @@
 
 
     <!--ForgotPassword y formulario-->
-    <drawable name="colorBtBgSendMailForgotPassword">@drawable/esquinas_redondeadas_gra2</drawable><!--BG botonn recoverPass-->
+    <drawable name="colorBtBgSendMailForgotPassword">@drawable/esquinas_redondeadas3</drawable><!--BG botonn recoverPass-->
     <string name="txBtSendMailForgotPassword">Recuperar</string>
-    <string name="txTittleForgotPassword">Recuperar</string>
     <string name="txInfoForgotPassword">Se le enviara un mensaje de recuperacion de su cuenta a la direccion de correo electronico vinculada del usuario.</string>
 
+
+    <!--SignUp y formulario-->
+    <drawable name="colorBtBgSignUp">@drawable/esquinas_redondeadas2</drawable><!--BG botonn recoverPass-->
+    <string name="txEtSignUpMail">Correo electronico</string>
+    <string name="txEtSignUpName">Nombre de usuario</string>
+    <string name="txTittleSignUp">@string/signupLoginbtn</string>
+    <string name="txBtSignUp"><b>Crear cuenta</b></string>
 
 
     <!--Footer Elements-->
@@ -60,20 +68,27 @@
     <drawable name="iconHome">@drawable/icon_home</drawable>
     <drawable name="specialElemFooter">@drawable/circulo1</drawable>
     <dimen name="sizeFooter">43dp</dimen><!--TAMAÑO DEL FOOTER-->
-    <dimen name="sizeIconFooter">28dp</dimen><!--TAMAÑO DE LOS ICONOS DEL FOOTER-->
+    <dimen name="sizeIconFooter">29dp</dimen><!--TAMAÑO DE LOS ICONOS DEL FOOTER-->
     <dimen name="sizeContIconFooter">38dp</dimen><!--PADDING DEL CONTENEDOR-->
     <dimen name="sizeContImageUserFooter">28dp</dimen><!--IMAGEN DE USUARIO EN FOOTER-->
     <dimen name="sizeContCircleUserFooter">23dp</dimen><!--CIRCULO BAJO LA IMAGEN-->
 
 
+    <!--Header Elements-->
+    <drawable name="iconMenuHeader">@drawable/icon_menu</drawable>
+    <dimen name="sizeIconHeader">40dp</dimen><!--TAMAÑO DE LOS ICONOS DEL FOOTER-->
+    <dimen name="sizeHeader">60dp</dimen><!--Tamaño del Header-->
+    <dimen name="sizeTxHeaderUserName">25sp</dimen><!--Tamaño del nombre de usuario Header-->
+
+
     <!--User Elements-->
     <drawable name="imgPerfilUser">@drawable/fondo</drawable>
-    <color name="colorImgPerfilUser">@color/gris0</color><!--COLOR DE FONDO-->
-    <string name="nameUser">Nombre de usuario</string>
-    <string name="mailUser">Correo de usuario</string>
     <dimen name="sizePerfilUser">110dp</dimen><!--TAMAÑO DE FOTO DE PERFIL-->
     <dimen name="sizeRadiusImageUser">150dp</dimen><!--RADIO DEL ELEMENTO-->
     <integer name="sizeRotationImageUser">0</integer><!--RADIO DEL ELEMENTO-->
+    <color name="colorImgPerfilUser">@color/gris0</color><!--COLOR DE FONDO-->
+    <string name="nameUser"><b>Usuario de Ika</b></string>
+    <string name="mailUser">Correo de usuario</string>
 
 
     <!--TX GENERALES-->
