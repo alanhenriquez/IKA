@@ -2,11 +2,13 @@ package com.ikalogic.ika;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,19 +25,20 @@ import java.util.Locale;
 import java.util.Objects;
 
 
-public class UserHome extends AppCompatActivity {
+public class UserHome extends AppCompatActivity
+implements
+        FragmentUserHome.OnFragmentInteractionListener,
+        FragmentFeed.OnFragmentInteractionListener{
 
     /*-------------------------------------------------------------------------------*/
     /*Variables para texto, campos de texto y contenedores*/
     TextView signUp;
-    TextView userName;
-    TextView userNameUser;
-    TextView userMail;
+
+    FragmentUserHome fragmentUserHome;
+    FragmentFeed fragmentFeed;
 
     /*Acceso a Firebase y AwesomeValidation*/
     AwesomeValidation awesomeValidation;
-    FirebaseAuth userAuth;
-    DatabaseReference userDataBase;
 
 
 
@@ -47,16 +50,19 @@ public class UserHome extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_userhome);
 
-        /* Acceso a Instancias FireBase y a la AwesomeValidacion
-         * Estos accesos los encontraras en el build.gradle tanto de proyecto como app*/
-        userAuth = FirebaseAuth.getInstance();
-        userDataBase = FirebaseDatabase.getInstance().getReference();
+
         awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
         /*awesomeValidation.addValidation(this,R.id.txtEmailLog, Patterns.EMAIL_ADDRESS,R.string.invalid_mail);
         awesomeValidation.addValidation(this,R.id.txtPasswordLog,".{6,}",R.string.invalid_password);*/
 
-        getData();
 
+
+
+
+        /*Botones y acciones*/
+        fragmentUserHome = new FragmentUserHome();
+        fragmentFeed = new FragmentFeed();
+        getSupportFragmentManager().beginTransaction().add(R.id.Fragments,fragmentUserHome).commit();//Primera fragment a mostrar
         signUp = findViewById(R.id.cerrarSesion);
         signUp.setOnClickListener(view -> {
             FirebaseAuth.getInstance().signOut();
@@ -64,47 +70,12 @@ public class UserHome extends AppCompatActivity {
         });/*Registrarse si no tienes cuenta*/
 
     }
+
     /*-------------------------------------------------------------------------------*/
 
 
 
 
-
-    /*Obtenemos la informacion del usuario (nombre, correo)*/
-    private void getData (){
-        String id = Objects.requireNonNull(userAuth.getCurrentUser()).getUid();
-        userDataBase.child("Users").child(id).addValueEventListener(new ValueEventListener() {
-            @SuppressLint("SetTextI18n")
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists()) {
-
-                    /*-----------------*/
-                    String name = Objects.requireNonNull(snapshot.child("name").getValue()).toString();
-                    userName = findViewById(R.id.userName);
-                    userNameUser = findViewById(R.id.userNameHeader);
-                    userName.setText(name);
-                    userName.setTypeface(null, Typeface.BOLD);
-                    userNameUser.setText(name.toLowerCase(Locale.ROOT).trim());
-                    userNameUser.setTypeface(null, Typeface.BOLD);
-
-                    /*-----------------*/
-                    String email = Objects.requireNonNull(snapshot.child("email").getValue()).toString();
-                    userMail = findViewById(R.id.userMail);
-                    userMail.setText(email);
-
-                }else{
-                    msgToast("Referencia nula");
-                }
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-    }
 
     /*Cerramos la sesion y volvemos al login*/
     private void CerrarSesion (){
@@ -114,10 +85,29 @@ public class UserHome extends AppCompatActivity {
         finish();
     }
 
+
     /*Variable para generar el mensaje Toast*/
     private void msgToast(String message) {
         Toast.makeText(getApplicationContext(),message, Toast.LENGTH_LONG).show();
     }
+
+
+    /*Metodo para crear la accion Onclick del los botones del footer.
+    * Esto se encuentra iniciado dentro de cada boton en el xml*/
+    @SuppressLint("NonConstantResourceId")
+    public void onClick(View view) {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        switch (view.getId()){
+            case R.id.feedButton:
+                transaction.replace(R.id.Fragments,fragmentFeed);
+                break;
+            case R.id.userHomeButton:
+                transaction.replace(R.id.Fragments,fragmentUserHome);
+                break;
+        }
+        transaction.commit();
+    }
+
 
 }
 

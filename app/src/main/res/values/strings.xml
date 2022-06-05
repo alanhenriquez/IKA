@@ -18,24 +18,34 @@
 
 
     <!--Login Elements y Formulario-->
-    <drawable name="backgroundFormularioLogin">@drawable/esquinas_redondeadas2t</drawable><!--Color de fondo de campos del formularios-->
-    <color name="colorTxFormularioLogin">@color/colorTextMain</color><!--Color de letra textos de formularios-->
-    <color name="colorBtFormularioLogin">@color/white</color><!--Color de letra botones de formularios-->
-    <drawable name="colorBtBgFormularioLogin">@drawable/esquinas_redondeadas_gra1</drawable><!--BG boton-->
-    <color name="colorTxSignUpLogin">@color/azul9</color><!--Color de letra del footer del login SignUp-->
-    <color name="colorFooterLogin">@color/blackTransparente05</color><!--Color de fondo del footer del login-->
+    <drawable name="backgroundFormularioLogin">@drawable/esquinas_redondeadas2t
+    </drawable><!--Color de fondo de campos del formularios-->
+    <color name="colorTxFormularioLogin">@color/colorTextMain
+    </color><!--Color de letra textos de formularios-->
+    <color name="colorBtFormularioLogin">@color/white
+    </color><!--Color de letra botones de formularios-->
+    <drawable name="colorBtBgFormularioLogin">@drawable/esquinas_redondeadas_gra1
+    </drawable><!--BG boton-->
+    <color name="colorTxSignUpLogin">@color/azul9
+    </color><!--Color de letra del footer del login SignUp-->
+    <color name="colorFooterLogin">@color/blackTransparente05
+    </color><!--Color de fondo del footer del login-->
     <dimen name="minHeigtFormularioLogin">48dp</dimen><!--Altura minima del formulario-->
-    <dimen name="paddingHorizontalFormularioLogin">20dp</dimen><!--Padding del campo del formulario-->
+    <dimen name="paddingHorizontalFormularioLogin">20dp
+    </dimen><!--Padding del campo del formulario-->
     <dimen name="paddingIconFormularioLogin">12dp</dimen><!--Tamaño del padding de los iconos-->
-    <dimen name="paddingVBtFormularioLogin">15dp</dimen><!--Tamaño del padding vertical de los Botones-->
+    <dimen name="paddingVBtFormularioLogin">15dp
+    </dimen><!--Tamaño del padding vertical de los Botones-->
     <dimen name="marginVFormularioLogin">20dp</dimen><!--Margen vertical del campo del formulario-->
-    <dimen name="marginVBtFormularioLogin">20dp</dimen><!--Tamaño del margen vertical de los Botones-->
+    <dimen name="marginVBtFormularioLogin">20dp
+    </dimen><!--Tamaño del margen vertical de los Botones-->
     <dimen name="sizeTxSignUpLogin">16sp</dimen><!--Tamaño del texto registrarse-->
     <dimen name="sizeTxBtSignUpLogin">16sp</dimen><!--Tamaño del texto boton ir a registrarse-->
     <dimen name="sizeTxFormularioLogin">16sp</dimen><!--Tamaño del texto de los formularios-->
     <dimen name="sizeTxBtFormularioLogin">16sp</dimen><!--Tamaño del texto boton iniciar sesion-->
     <dimen name="sizeTxRecoverPassLogin">15sp</dimen><!--Tamaño del texto recuperar contraseña-->
-    <dimen name="sizeTxBtRecoverPassLogin">15sp</dimen><!--Tamaño del texto boton recuperar contraseña-->
+    <dimen name="sizeTxBtRecoverPassLogin">15sp
+    </dimen><!--Tamaño del texto boton recuperar contraseña-->
     <string name="fontFormularioLogin" tools:ignore="ReferenceType">@font/roboto_regular</string><!--Tipografia formulario-->
     <string name="fontBtFormularioLogin" tools:ignore="ReferenceType">@font/lobster_two_regular</string><!--Tipografia Tema principal-->
     <string name="mailTxFormularioLogin">Correo electronico</string>
@@ -47,13 +57,15 @@
 
 
     <!--ForgotPassword y formulario-->
-    <drawable name="colorBtBgSendMailForgotPassword">@drawable/esquinas_redondeadas3</drawable><!--BG botonn recoverPass-->
+    <drawable name="colorBtBgSendMailForgotPassword">@drawable/esquinas_redondeadas3
+    </drawable><!--BG botonn recoverPass-->
     <string name="txBtSendMailForgotPassword">Recuperar</string>
     <string name="txInfoForgotPassword">Se le enviara un mensaje de recuperacion de su cuenta a la direccion de correo electronico vinculada del usuario.</string>
 
 
     <!--SignUp y formulario-->
-    <drawable name="colorBtBgSignUp">@drawable/esquinas_redondeadas2</drawable><!--BG botonn recoverPass-->
+    <drawable name="colorBtBgSignUp">@drawable/esquinas_redondeadas2
+    </drawable><!--BG botonn recoverPass-->
     <string name="txEtSignUpMail">Correo electronico</string>
     <string name="txEtSignUpName">Nombre de usuario</string>
     <string name="txTittleSignUp">@string/signupLoginbtn</string>
@@ -61,24 +73,32 @@
 
 
     <!--Footer Elements-->
+    <drawable name="bgFooterOpUser">@drawable/esquinas_redondeadas1</drawable>
+    <drawable name="iconTreePoint">@drawable/icon_treepoint</drawable>
+    <drawable name="iconConfiguracion">@drawable/icon_cog</drawable>
     <drawable name="iconCancel">@drawable/icon_cancelar_black</drawable>
     <drawable name="iconEye">@drawable/icon_eye_black</drawable>
     <drawable name="iconStore">@drawable/icon_store</drawable>
     <drawable name="iconAdd">@drawable/icon_add</drawable>
     <drawable name="iconHome">@drawable/icon_home</drawable>
     <drawable name="specialElemFooter">@drawable/circulo1</drawable>
+    <dimen name="sizeFooterOpUser">63dp</dimen><!--TAMAÑO DEL FooterOpUser-->
+    <dimen name="sizeIconFooterOpUser">30dp</dimen><!--TAMAÑO DEL icono del FooterOpUser-->
+    <dimen name="sizeTextFooterOpUser">17sp</dimen><!--TAMAÑO DEL texto delFooterOpUser-->
     <dimen name="sizeFooter">43dp</dimen><!--TAMAÑO DEL FOOTER-->
     <dimen name="sizeIconFooter">29dp</dimen><!--TAMAÑO DE LOS ICONOS DEL FOOTER-->
     <dimen name="sizeContIconFooter">38dp</dimen><!--PADDING DEL CONTENEDOR-->
     <dimen name="sizeContImageUserFooter">28dp</dimen><!--IMAGEN DE USUARIO EN FOOTER-->
     <dimen name="sizeContCircleUserFooter">23dp</dimen><!--CIRCULO BAJO LA IMAGEN-->
+    <string name="tx1FooterOpUser">Configuración</string>
+    <string name="tx2FooterOpUser">Editar Perfil</string>
 
 
     <!--Header Elements-->
     <drawable name="iconMenuHeader">@drawable/icon_menu</drawable>
-    <dimen name="sizeIconHeader">40dp</dimen><!--TAMAÑO DE LOS ICONOS DEL FOOTER-->
+    <dimen name="sizeIconHeader">35dp</dimen><!--TAMAÑO DE LOS ICONOS DEL Header-->
     <dimen name="sizeHeader">60dp</dimen><!--Tamaño del Header-->
-    <dimen name="sizeTxHeaderUserName">25sp</dimen><!--Tamaño del nombre de usuario Header-->
+    <dimen name="sizeTxHeaderUserName">22sp</dimen><!--Tamaño del nombre de usuario Header-->
 
 
     <!--User Elements-->
@@ -142,5 +162,7 @@
     <string name="infoTopic2">Galeria de imagenes</string>
     <string name="infoTxTopic2">Aquí encontraras las imagenes internas de la app con el fin de que aprecies del arte de IKA a tu alcance.</string>
     <string name="version">Versión</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

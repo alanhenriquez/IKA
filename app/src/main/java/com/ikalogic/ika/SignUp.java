@@ -72,6 +72,10 @@ public class SignUp extends AppCompatActivity {
         etSignUpPassword = findViewById(R.id.etSignUpPassword);
         TextView btSignUp = findViewById(R.id.btSignUp);
 
+
+
+
+
         /*Botones y acciones*/
         btSignUp.setOnClickListener(view -> {
             if (ValidarEmail(etSignUpMail)){

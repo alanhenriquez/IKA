@@ -4,162 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/colorBackgroundMain"
     tools:context=".UserHome">
 
     <LinearLayout
-        android:id="@+id/linearLayout4"
+        android:id="@+id/contFragment"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/sizeHeader"
-        android:background="@color/colorHeaderMain"
-        android:elevation="1dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints,UnusedAttribute">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingHorizontal="20dp">
-
-                <TextView
-                    android:id="@+id/userNameHeader"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/nameUser"
-                    android:textColor="@color/colorTextMain"
-                    android:textSize="@dimen/sizeTxHeaderUserName"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingHorizontal="10dp"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="end"
-                android:orientation="vertical">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/iconMenuHeader"
-                        android:layout_width="@dimen/sizeIconHeader"
-                        android:layout_height="@dimen/sizeIconHeader"
-                        android:background="@drawable/icon_menu"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </LinearLayout>
-        </LinearLayout>
-    </LinearLayout>
-
-    <ScrollView
-        android:id="@+id/scrollView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
         tools:ignore="MissingConstraints">
 
-        <LinearLayout
+        <FrameLayout
+            android:id="@+id/Fragments"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingVertical="20dp"
-                tools:ignore="UselessParent">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:paddingHorizontal="15dp">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="@dimen/sizePerfilUser"
-                            android:layout_height="@dimen/sizePerfilUser"
-                            app:cardCornerRadius="@dimen/sizeRadiusImageUser"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent">
-
-                            <ImageView
-                                android:id="@+id/ImgPhotoUser"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@color/colorImgPerfilUser"
-                                android:contentDescription="@string/descriptionImg"
-                                android:rotation="@integer/sizeRotationImageUser"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/imgPerfilUser" />
-                        </androidx.cardview.widget.CardView>
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:paddingEnd="15dp">
-
-                    <TextView
-                        android:id="@+id/userName"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/nameUser"
-                        android:textAlignment="textStart"
-                        android:textColor="@color/black"
-                        android:textSize="9pt"/>
-
-                    <TextView
-                        android:id="@+id/userMail"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/mailUser"
-                        android:textAlignment="textStart"
-                        android:textColor="@color/gris5"
-                        android:textSize="7.5pt"
-                        tools:ignore="TextContrastCheck,TextContrastCheck" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </LinearLayout>
-    </ScrollView>
+        </FrameLayout>
+    </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
         android:layout_height="@dimen/sizeFooter"
         android:background="@color/colorFooterMain"
@@ -173,9 +38,14 @@
             android:orientation="horizontal">
 
             <LinearLayout
+                android:id="@+id/feedButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:clickable="true"
+                android:onClick="onClick"
+                android:orientation="vertical"
+                android:focusable="true"
+                tools:ignore="UsingOnClickInXml">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -187,8 +57,8 @@
                         android:id="@+id/footerHomeIcon"
                         android:layout_width="@dimen/sizeIconFooter"
                         android:layout_height="@dimen/sizeIconFooter"
-                        android:orientation="vertical"
                         android:background="@drawable/iconHome"
+                        android:orientation="vertical"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -199,6 +69,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/addButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
@@ -213,8 +84,8 @@
                         android:id="@+id/footerAddIcon"
                         android:layout_width="@dimen/sizeIconFooter"
                         android:layout_height="@dimen/sizeIconFooter"
-                        android:orientation="vertical"
                         android:background="@drawable/iconAdd"
+                        android:orientation="vertical"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -225,6 +96,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/storeButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
@@ -239,8 +111,8 @@
                         android:id="@+id/footerStoreIcon"
                         android:layout_width="@dimen/sizeIconFooter"
                         android:layout_height="@dimen/sizeIconFooter"
-                        android:orientation="vertical"
                         android:background="@drawable/iconStore"
+                        android:orientation="vertical"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -252,9 +124,14 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/userHomeButton"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:clickable="true"
+                android:onClick="onClick"
+                android:orientation="vertical"
+                android:focusable="true"
+                tools:ignore="UsingOnClickInXml">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -266,8 +143,8 @@
                         android:id="@+id/footerCircleUser"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
                         android:background="@drawable/specialElemFooter"
+                        android:orientation="vertical"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -277,9 +154,9 @@
                         android:id="@+id/footerCardView"
                         android:layout_width="@dimen/sizeContImageUserFooter"
                         android:layout_height="@dimen/sizeContImageUserFooter"
-                        app:cardCornerRadius="@dimen/sizeRadiusImageUser"
                         android:outlineAmbientShadowColor="@color/whiteTransparente0"
                         android:outlineSpotShadowColor="@color/whiteTransparente0"
+                        app:cardCornerRadius="@dimen/sizeRadiusImageUser"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -310,33 +187,11 @@
         android:id="@+id/cerrarSesion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
         android:text="Cerrar sesion"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView3" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cerrarSesion" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/contFragment" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
