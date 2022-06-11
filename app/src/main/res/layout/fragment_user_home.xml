@@ -18,7 +18,7 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/linearLayout4"
+                android:id="@+id/Header"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/sizeHeader"
                 android:background="@color/colorHeaderMain"
@@ -71,7 +71,7 @@
                                 android:id="@+id/iconMenuHeader"
                                 android:layout_width="@dimen/sizeIconHeader"
                                 android:layout_height="@dimen/sizeIconHeader"
-                                android:background="@drawable/iconMenuHeader"
+                                android:background="@drawable/iconMenu"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -170,13 +170,16 @@
         <LinearLayout
             android:id="@+id/contFooterOpUser"
             android:layout_width="match_parent"
-            android:layout_height="190dp"
-            android:elevation="10dp"
+            android:layout_height="wrap_content"
+            android:elevation="100dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="@dimen/sizeFooter"
             android:background="@drawable/bgFooterOpUser"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="@+id/linearLayout6">
 
             <LinearLayout
+                android:id="@+id/configuracionOpMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -231,6 +234,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/editProfileOpMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">

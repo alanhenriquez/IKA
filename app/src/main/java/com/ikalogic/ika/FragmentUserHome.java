@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
+import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -115,20 +116,36 @@ public class FragmentUserHome extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-
-
-
-
-        /* - Acceder a los elementos por sus id mediante el metodo onCreateView*/
         // Inflate the layout for this fragment
+        /* Acceder a los elementos por sus id mediante el metodo onCreateView*/
         View view = inflater.inflate(R.layout.fragment_user_home, container, false);
-        getData(view);/*Generamos la data y la ponemos en los elementos respecto a sus id*/
+        /*Generamos la data y la ponemos en los elementos respecto a sus id*/
+
+
+
+
 
         View menuBoton = view.findViewById(R.id.iconMenuHeader);
+        View opConfiguracion = view.findViewById(R.id.configuracionOpMenu);
+        View opEditProfile = view.findViewById(R.id.editProfileOpMenu);
         View menuFooterOpUser = view.findViewById(R.id.contFooterOpUser);
+
+
+
+
+
+        opConfiguracion.setOnClickListener(v -> {
+            Intent intent = new Intent(view.getContext(), Configuracion.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        });/*Cambiamos a la activity de Configuracion*/
+        opEditProfile.setOnClickListener(v -> {
+            Intent intent = new Intent(v.getContext(), EditProfile.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        });/*Cambiamos a la activity de EditProfile*/
         menuFooterOpUser.setVisibility(View.GONE);
         menuBoton.setOnClickListener(v -> {
-
 
             if (menuFooterOpUser.getVisibility() != View.GONE){
                 menuFooterOpUser.setVisibility(View.GONE);
@@ -136,21 +153,17 @@ public class FragmentUserHome extends Fragment {
                 menuFooterOpUser.setVisibility(View.VISIBLE);
             }
 
-
         });
-
         return view;
 
     }
-
     /*-------------------------------------------------------------------------------*/
 
 
 
 
-    /* - Funcion getData que obtiene los datos desde Firebase*/
-    /*Obtenemos la informacion del usuario (nombre, correo)
-     * La id de los demas elementos se encuentran en sus respectivos fragments*/
+
+    /*Funcion getData que obtiene los datos desde Firebase*/
     private void getData (View v){
         /*la variable "v" nos sirve para poder ingresar a los elementos del fragment mediante sus id*/
 
@@ -186,15 +199,9 @@ public class FragmentUserHome extends Fragment {
         });
     }
 
-
     /*Importante para importar la interfaz del Fragment. No eliminar*/
     public interface OnFragmentInteractionListener {
     }
-
-
-
-
-
 
     /*-------------------------------------------------------------------------------*/
 }

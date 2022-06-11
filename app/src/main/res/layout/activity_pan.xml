@@ -27,7 +27,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:elegantTextHeight="true"
-                android:text="@string/txPan"
+                android:text="@string/categoria4"
                 android:textColor="@color/black"
                 android:textSize="10pt"
                 android:textStyle="bold"

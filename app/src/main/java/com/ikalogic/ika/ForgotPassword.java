@@ -87,7 +87,7 @@ public class ForgotPassword extends AppCompatActivity {
         FirebaseAuth auth = FirebaseAuth.getInstance();
         auth.sendPasswordResetEmail(email).addOnCompleteListener(task -> {
             if (task.isSuccessful()){
-                msgToast("Mensaje de recuperacion enviado");
+                msgToast("Mensaje de recuperacion enviado a: " + email);
                 sendEmailExitoso();
             }else {
                 String errorCode = ((FirebaseAuthException) Objects.requireNonNull(task.getException())).getErrorCode();

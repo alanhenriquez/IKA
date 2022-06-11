@@ -39,7 +39,6 @@ public class Login extends AppCompatActivity {
     TextView logoIka;
 
     /*Acceso a Firebase y AwesomeValidation*/
-    AwesomeValidation awesomeValidation;
     FirebaseAuth userAuth;
     FirebaseUser user;
     DatabaseReference userDataBase;
@@ -54,7 +53,10 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
 
-        /* Acceso a Instancias FireBase y a la AwesomeValidacion
+
+
+
+        /* Acceso a Instancias FireBase
          * Estos accesos los encontraras en el build.gradle tanto de proyecto como app*/
         userAuth = FirebaseAuth.getInstance();
         userDataBase = FirebaseDatabase.getInstance().getReference();
@@ -62,9 +64,6 @@ public class Login extends AppCompatActivity {
         if (user != null){
             loginExitoso();
         }/*Conficional en caso de que el usuario este logeado*/
-        awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
-        /*awesomeValidation.addValidation(this,R.id.txtEmailLog, Patterns.EMAIL_ADDRESS,R.string.invalid_mail);
-        awesomeValidation.addValidation(this,R.id.txtPasswordLog,".{6,}",R.string.invalid_password);*/
 
 
 
@@ -114,8 +113,6 @@ public class Login extends AppCompatActivity {
         });/*Recuperar contraseña*/
         ShowPassword(btShowPass, etLoginPassword);/*Mostrar contraseña*/
         ResetText(btResetText, etLoginMail);/*Reiniciar texto*/
-
-
     }
     /*-------------------------------------------------------------------------------*/
 

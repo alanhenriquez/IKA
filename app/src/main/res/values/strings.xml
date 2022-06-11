@@ -11,6 +11,11 @@
     <color name="colorHeaderMain">@color/gris0</color>
     <dimen name="sizeTextMain">15sp</dimen><!--Tamaño del texto recuperar contraseña-->
     <string name="fontMain" tools:ignore="ReferenceType">@font/roboto_regular</string><!--Tipografia Principal Ika-->
+    <bool name="booleanoTrue">true</bool>
+    <bool name="booleanoFalse">false</bool>
+    <integer name="alignmentStart">1</integer>
+    <integer name="alignmentEnd">3</integer>
+    <integer name="alignmentCenter">4</integer>
     <!--Esto es el tema inicial del proyecto, eliminado para quitar la barra superior
     que se encuentra en la parte duperior de la app por default
         android:theme="@style/Theme.IKA"
@@ -18,34 +23,24 @@
 
 
     <!--Login Elements y Formulario-->
-    <drawable name="backgroundFormularioLogin">@drawable/esquinas_redondeadas2t
-    </drawable><!--Color de fondo de campos del formularios-->
-    <color name="colorTxFormularioLogin">@color/colorTextMain
-    </color><!--Color de letra textos de formularios-->
-    <color name="colorBtFormularioLogin">@color/white
-    </color><!--Color de letra botones de formularios-->
-    <drawable name="colorBtBgFormularioLogin">@drawable/esquinas_redondeadas_gra1
-    </drawable><!--BG boton-->
-    <color name="colorTxSignUpLogin">@color/azul9
-    </color><!--Color de letra del footer del login SignUp-->
-    <color name="colorFooterLogin">@color/blackTransparente05
-    </color><!--Color de fondo del footer del login-->
+    <drawable name="backgroundFormularioLogin">@drawable/esquinas_redondeadas2t</drawable><!--Color de fondo de campos del formularios-->
+    <color name="colorTxFormularioLogin">@color/colorTextMain</color><!--Color de letra textos de formularios-->
+    <color name="colorBtFormularioLogin">@color/white</color><!--Color de letra botones de formularios-->
+    <drawable name="colorBtBgFormularioLogin">@drawable/esquinas_redondeadas_gra1</drawable><!--BG boton-->
+    <color name="colorTxSignUpLogin">@color/azul9</color><!--Color de letra del footer del login SignUp-->
+    <color name="colorFooterLogin">@color/blackTransparente05</color><!--Color de fondo del footer del login-->
     <dimen name="minHeigtFormularioLogin">48dp</dimen><!--Altura minima del formulario-->
-    <dimen name="paddingHorizontalFormularioLogin">20dp
-    </dimen><!--Padding del campo del formulario-->
+    <dimen name="paddingHorizontalFormularioLogin">20dp</dimen><!--Padding del campo del formulario-->
     <dimen name="paddingIconFormularioLogin">12dp</dimen><!--Tamaño del padding de los iconos-->
-    <dimen name="paddingVBtFormularioLogin">15dp
-    </dimen><!--Tamaño del padding vertical de los Botones-->
-    <dimen name="marginVFormularioLogin">20dp</dimen><!--Margen vertical del campo del formulario-->
-    <dimen name="marginVBtFormularioLogin">20dp
-    </dimen><!--Tamaño del margen vertical de los Botones-->
+    <dimen name="paddingVBtFormularioLogin">15dp</dimen><!--Tamaño del padding vertical de los Botones-->
+    <dimen name="marginVFormularioLogin">15dp</dimen><!--Margen vertical del campo del formulario-->
+    <dimen name="marginVBtFormularioLogin">20dp</dimen><!--Tamaño del margen vertical de los Botones-->
     <dimen name="sizeTxSignUpLogin">16sp</dimen><!--Tamaño del texto registrarse-->
     <dimen name="sizeTxBtSignUpLogin">16sp</dimen><!--Tamaño del texto boton ir a registrarse-->
     <dimen name="sizeTxFormularioLogin">16sp</dimen><!--Tamaño del texto de los formularios-->
     <dimen name="sizeTxBtFormularioLogin">16sp</dimen><!--Tamaño del texto boton iniciar sesion-->
     <dimen name="sizeTxRecoverPassLogin">15sp</dimen><!--Tamaño del texto recuperar contraseña-->
-    <dimen name="sizeTxBtRecoverPassLogin">15sp
-    </dimen><!--Tamaño del texto boton recuperar contraseña-->
+    <dimen name="sizeTxBtRecoverPassLogin">15sp</dimen><!--Tamaño del texto boton recuperar contraseña-->
     <string name="fontFormularioLogin" tools:ignore="ReferenceType">@font/roboto_regular</string><!--Tipografia formulario-->
     <string name="fontBtFormularioLogin" tools:ignore="ReferenceType">@font/lobster_two_regular</string><!--Tipografia Tema principal-->
     <string name="mailTxFormularioLogin">Correo electronico</string>
@@ -57,15 +52,13 @@
 
 
     <!--ForgotPassword y formulario-->
-    <drawable name="colorBtBgSendMailForgotPassword">@drawable/esquinas_redondeadas3
-    </drawable><!--BG botonn recoverPass-->
+    <drawable name="colorBtBgSendMailForgotPassword">@drawable/esquinas_redondeadas3</drawable><!--BG botonn recoverPass-->
     <string name="txBtSendMailForgotPassword">Recuperar</string>
     <string name="txInfoForgotPassword">Se le enviara un mensaje de recuperacion de su cuenta a la direccion de correo electronico vinculada del usuario.</string>
 
 
     <!--SignUp y formulario-->
-    <drawable name="colorBtBgSignUp">@drawable/esquinas_redondeadas2
-    </drawable><!--BG botonn recoverPass-->
+    <drawable name="colorBtBgSignUp">@drawable/esquinas_redondeadas2</drawable><!--BG botonn recoverPass-->
     <string name="txEtSignUpMail">Correo electronico</string>
     <string name="txEtSignUpName">Nombre de usuario</string>
     <string name="txTittleSignUp">@string/signupLoginbtn</string>
@@ -81,13 +74,14 @@
     <drawable name="iconStore">@drawable/icon_store</drawable>
     <drawable name="iconAdd">@drawable/icon_add</drawable>
     <drawable name="iconHome">@drawable/icon_home</drawable>
+    <drawable name="iconMenu">@drawable/icon_menu</drawable>
     <drawable name="specialElemFooter">@drawable/circulo1</drawable>
     <dimen name="sizeFooterOpUser">63dp</dimen><!--TAMAÑO DEL FooterOpUser-->
-    <dimen name="sizeIconFooterOpUser">30dp</dimen><!--TAMAÑO DEL icono del FooterOpUser-->
+    <dimen name="sizeIconFooterOpUser">25dp</dimen><!--TAMAÑO DEL icono del FooterOpUser-->
     <dimen name="sizeTextFooterOpUser">17sp</dimen><!--TAMAÑO DEL texto delFooterOpUser-->
     <dimen name="sizeFooter">43dp</dimen><!--TAMAÑO DEL FOOTER-->
     <dimen name="sizeIconFooter">29dp</dimen><!--TAMAÑO DE LOS ICONOS DEL FOOTER-->
-    <dimen name="sizeContIconFooter">38dp</dimen><!--PADDING DEL CONTENEDOR-->
+    <dimen name="sizeContIconFooter">27dp</dimen><!--PADDING DEL CONTENEDOR-->
     <dimen name="sizeContImageUserFooter">28dp</dimen><!--IMAGEN DE USUARIO EN FOOTER-->
     <dimen name="sizeContCircleUserFooter">23dp</dimen><!--CIRCULO BAJO LA IMAGEN-->
     <string name="tx1FooterOpUser">Configuración</string>
@@ -95,10 +89,11 @@
 
 
     <!--Header Elements-->
-    <drawable name="iconMenuHeader">@drawable/icon_menu</drawable>
     <dimen name="sizeIconHeader">35dp</dimen><!--TAMAÑO DE LOS ICONOS DEL Header-->
     <dimen name="sizeHeader">60dp</dimen><!--Tamaño del Header-->
     <dimen name="sizeTxHeaderUserName">22sp</dimen><!--Tamaño del nombre de usuario Header-->
+    <string name="txTopicShopHeaderShop"><b>Tienda</b></string>
+    <string name="txTopicConfigHeaderShop"><b>Configuración</b></string>
 
 
     <!--User Elements-->
@@ -109,6 +104,59 @@
     <color name="colorImgPerfilUser">@color/gris0</color><!--COLOR DE FONDO-->
     <string name="nameUser"><b>Usuario de Ika</b></string>
     <string name="mailUser">Correo de usuario</string>
+
+
+    <!--EditProfile-->
+    <drawable name="bgBotonGuardarPasswordEditProfile">@drawable/esquinas_redondeadas4</drawable>
+    <drawable name="bgBotonGuardarDatosEditProfile">@drawable/esquinas_redondeadas2</drawable>
+    <integer name="textAlignmentEditProfile">@integer/alignmentStart</integer>
+    <integer name="textAlignmentBotonEditProfile">@integer/alignmentCenter</integer>
+    <integer name="linesBiografiaEditProfile">20</integer>
+    <integer name="minLinesBiografiaEditProfile">5</integer>
+    <color name="textColorHintEditProfile">@color/gris5</color>
+    <color name="textColorInfoEditProfile">@color/gris5</color>
+    <color name="textColorBotonUpdatePasswordEditProfile">@color/gris5</color>
+    <color name="textColorBotonUpdateDataEditProfile">@color/white</color>
+    <bool name="elegantTextHeightEditProfile">@bool/booleanoTrue</bool>
+    <bool name="scrollHorizontallyEditProfile">@bool/booleanoFalse</bool>
+    <dimen name="paddingVerticalBiografiaEditProfile">10dp</dimen>
+    <dimen name="paddingVerticalBotonEditProfile">10dp</dimen>
+    <dimen name="paddingHorizontalBotonEditProfile">15dp</dimen>
+    <dimen name="sizeTextBotonEditProfile">17sp</dimen>
+    <dimen name="sizeTextInfoEditProfile">16sp</dimen>
+    <string name="textUserNameEditProfile">Nombre de usuario</string>
+    <string name="hintUserNameEditProfile">Nombre de usuario</string>
+    <string name="textNameEditProfile">Nombre</string>
+    <string name="hintNameEditProfile">Nombre</string>
+    <string name="textBiografiaEditProfile">Biografia del Perfil</string>
+    <string name="hintBiografiaEditProfile">Biografia</string>
+    <string name="textPasswordEditProfile">Contraseña de tu cuenta</string>
+    <string name="hintPasswordEditProfile">Contraseña</string>
+    <string name="textoBotonEditProfile">Guardar</string>
+
+
+    <!--Feed-->
+    <drawable name="bgTargetaCategoriaFeed">@drawable/borde1</drawable>
+    <integer name="textAlignmentCategoriaFeed">@integer/alignmentCenter</integer>
+    <integer name="textAlignmentTopicMainFeed">@integer/alignmentCenter</integer>
+    <color name="textColorTargetaCategoriaFeed">@color/colorTextMain</color>
+    <color name="textColorTopicMainFeed">@color/colorTextMain</color>
+    <dimen name="paddingVerticalTargetaCategoriaFeed">30dp</dimen>
+    <dimen name="marginVerticalTargetaCategoriaFeed">30dp</dimen>
+    <dimen name="sizeTextCategoriaFeed">20sp</dimen>
+    <dimen name="sizeTextTopicMainFeed">35sp</dimen>
+    <string name="fontTargetaCategoriaFeed" tools:ignore="ReferenceType">@font/roboto_bold</string>
+    <string name="fontTopicMainFeed" tools:ignore="ReferenceType">@font/roboto_bold</string>
+    <string name="TopicMainFeed">Categorias</string>
+    <string name="categoria1">Frutas o Verduras</string>
+    <string name="categoria2">Bebidas</string>
+    <string name="categoria3">Lacteos</string>
+    <string name="categoria4">Pan</string>
+
+
+
+
+
 
 
     <!--TX GENERALES-->
@@ -131,15 +179,6 @@
     <string name="opcion1">Información</string>
     <string name="opcion2">Version App</string>
 
-    <!--TX ACTIVITY MAIN-->
-    <string name="txFrutasVerduras">Frutas y Verduras</string>
-    <drawable name="imgFrutasVerduras">@drawable/verduras</drawable>
-    <string name="txBebidas">Bebidas</string>
-    <drawable name="imgBebidas">@drawable/bebidas</drawable>
-    <string name="txLacteos">Lacteos</string>
-    <drawable name="imgLacteos">@drawable/lacteos</drawable>
-    <string name="txPan">Pan</string>
-    <drawable name="imgPan">@drawable/pan</drawable>
 
     <!--TX ACTIVITY FRUTAS Y VERDURAS-->
     <string name="txGuineos">Guineos</string>

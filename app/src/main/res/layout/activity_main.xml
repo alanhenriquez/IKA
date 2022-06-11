@@ -121,7 +121,6 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:gravity="center_horizontal"
-                                    android:text="@string/txFrutasVerduras"
                                     android:textSize="10pt"
                                     android:textStyle="bold"
                                     app:layout_constraintBottom_toBottomOf="parent"
@@ -153,9 +152,7 @@
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
-                                    app:srcCompat="@drawable/imgFrutasVerduras"
-                                    tools:ignore="ImageContrastCheck"
-                                    tools:srcCompat="@drawable/imgFrutasVerduras" />
+                                    tools:ignore="ImageContrastCheck" />
                             </androidx.constraintlayout.widget.ConstraintLayout>
 
                         </LinearLayout>
@@ -177,11 +174,9 @@
                         android:layout_height="match_parent">
 
                         <LinearLayout
-                            android:id="@+id/linearLayout"
                             android:layout_width="150dp"
                             android:layout_height="match_parent"
                             android:orientation="vertical"
-                            app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
                             app:layout_constraintStart_toStartOf="parent">
 
                             <androidx.constraintlayout.widget.ConstraintLayout
@@ -193,7 +188,6 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:gravity="center_horizontal"
-                                    android:text="@string/txBebidas"
                                     android:textSize="10pt"
                                     android:textStyle="bold"
                                     app:layout_constraintBottom_toBottomOf="parent"
@@ -206,7 +200,6 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/linearLayout2"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:orientation="vertical"
@@ -225,9 +218,7 @@
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
-                                    app:srcCompat="@drawable/imgBebidas"
-                                    tools:ignore="ImageContrastCheck"
-                                    tools:srcCompat="@drawable/imgBebidas" />
+                                    tools:ignore="ImageContrastCheck"/>
                             </androidx.constraintlayout.widget.ConstraintLayout>
 
                         </LinearLayout>
@@ -249,11 +240,9 @@
                         android:layout_height="match_parent">
 
                         <LinearLayout
-                            android:id="@+id/linearLayout"
                             android:layout_width="150dp"
                             android:layout_height="match_parent"
                             android:orientation="vertical"
-                            app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
                             app:layout_constraintStart_toStartOf="parent">
 
                             <androidx.constraintlayout.widget.ConstraintLayout
@@ -265,7 +254,6 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:gravity="center_horizontal"
-                                    android:text="@string/txLacteos"
                                     android:textSize="10pt"
                                     android:textStyle="bold"
                                     app:layout_constraintBottom_toBottomOf="parent"
@@ -278,7 +266,6 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/linearLayout2"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:orientation="vertical"
@@ -297,9 +284,7 @@
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
-                                    app:srcCompat="@drawable/imgLacteos"
-                                    tools:ignore="ImageContrastCheck"
-                                    tools:srcCompat="@drawable/imgLacteos" />
+                                    tools:ignore="ImageContrastCheck"/>
                             </androidx.constraintlayout.widget.ConstraintLayout>
 
                         </LinearLayout>
@@ -321,11 +306,9 @@
                         android:layout_height="match_parent">
 
                         <LinearLayout
-                            android:id="@+id/linearLayout"
                             android:layout_width="150dp"
                             android:layout_height="match_parent"
                             android:orientation="vertical"
-                            app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
                             app:layout_constraintStart_toStartOf="parent">
 
                             <androidx.constraintlayout.widget.ConstraintLayout
@@ -337,7 +320,6 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:gravity="center_horizontal"
-                                    android:text="@string/txPan"
                                     android:textSize="10pt"
                                     android:textStyle="bold"
                                     app:layout_constraintBottom_toBottomOf="parent"
@@ -350,7 +332,6 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/linearLayout2"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:orientation="vertical"
@@ -369,9 +350,7 @@
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
-                                    app:srcCompat="@drawable/imgPan"
-                                    tools:ignore="ImageContrastCheck"
-                                    tools:srcCompat="@drawable/imgPan" />
+                                    tools:ignore="ImageContrastCheck"/>
                             </androidx.constraintlayout.widget.ConstraintLayout>
 
                         </LinearLayout>

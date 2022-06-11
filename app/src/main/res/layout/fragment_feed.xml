@@ -11,379 +11,214 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
-            android:id="@+id/decoration"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:elevation="-10dp"
-            android:orientation="vertical"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:targetApi="lollipop">
+            android:layout_height="match_parent">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <LinearLayout
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:background="@color/azul9"
-                    android:orientation="horizontal"
-                    android:rotation="45"
-                    android:rotationX="-75"
-                    android:scaleX="2"
-                    android:scaleY="2"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    tools:ignore="MissingConstraints">
-
-                </LinearLayout>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/TextoBienvenido"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            tools:ignore="MissingConstraints">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp">
-
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:text="@string/txTopic1"
-                    android:textColor="@color/white"
-                    android:textSize="16pt"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="TextContrastCheck" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/contenido"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:elevation="-30dp"
-            android:orientation="vertical"
-            app:layout_constraintTop_toTopOf="@+id/decoration"
-            tools:targetApi="lollipop">
-
-            <ScrollView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:ignore="UselessParent">
+                android:orientation="vertical" >
 
                 <LinearLayout
+                    android:id="@+id/Header"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/sizeHeader"
+                    android:background="@color/colorHeaderMain"
+                    android:elevation="1dp"
+                    android:orientation="horizontal"
+                    tools:ignore="MissingConstraints,UnusedAttribute,UselessParent">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingHorizontal="20dp">
+
+                            <TextView
+                                android:id="@+id/configuracionTextHeader"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/app_name2"
+                                android:textColor="@color/colorTextMain"
+                                android:textSize="@dimen/sizeTxHeaderUserName"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/TextoBienvenido"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:paddingTop="140dp">
+                    android:orientation="horizontal"
+                    tools:ignore="MissingConstraints">
 
-                    <LinearLayout
-                        android:id="@+id/contVerdurasyFrutas"
+                    <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="50dp"
-                        android:layout_marginVertical="30dp"
-                        android:background="@drawable/esquinas_redondeadas1"
-                        android:clickable="true"
-                        android:elevation="15dp"
-                        android:orientation="horizontal"
-                        tools:ignore="KeyboardInaccessibleWidget"
-                        tools:targetApi="lollipop">
+                        android:paddingVertical="50dp">
+
+                        <TextView
+                            android:id="@+id/categoriasOnFragmentFeed"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@string/fontTopicMainFeed"
+                            android:text="@string/TopicMainFeed"
+                            android:textAlignment="@integer/textAlignmentTopicMainFeed"
+                            android:textColor="@color/textColorTopicMainFeed"
+                            android:textSize="@dimen/sizeTextTopicMainFeed"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="TextContrastCheck" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/contenido"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="50dp"
+                    android:paddingBottom="100dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/targetaCategoria1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/marginVerticalTargetaCategoriaFeed"
+                        android:background="@drawable/bgTargetaCategoriaFeed"
+                        android:orientation="vertical"
+                        android:paddingVertical="@dimen/paddingVerticalTargetaCategoriaFeed">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
-                            <LinearLayout
-                                android:id="@+id/linearLayout"
-                                android:layout_width="150dp"
+                            <TextView
+                                android:id="@+id/categoria1Feed"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:orientation="vertical"
-                                app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
-                                app:layout_constraintStart_toStartOf="parent">
+                                android:fontFamily="@string/fontTargetaCategoriaFeed"
+                                android:text="@string/categoria1"
+                                android:textAlignment="@integer/textAlignmentCategoriaFeed"
+                                android:textColor="@color/textColorTargetaCategoriaFeed"
+                                android:textSize="@dimen/sizeTextCategoriaFeed"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
 
-                                <androidx.constraintlayout.widget.ConstraintLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-
-                                    <TextView
-                                        android:id="@+id/txFrutasVerduras"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:gravity="center_horizontal"
-                                        android:text="@string/txFrutasVerduras"
-                                        android:textSize="10pt"
-                                        android:textStyle="bold"
-                                        app:layout_constraintBottom_toBottomOf="parent"
-                                        app:layout_constraintEnd_toEndOf="parent"
-                                        app:layout_constraintStart_toStartOf="parent"
-                                        app:layout_constraintTop_toTopOf="parent"
-                                        tools:ignore="MissingConstraints" />
-                                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:id="@+id/linearLayout2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical"
-                                app:layout_constraintEnd_toEndOf="parent">
-
-                                <androidx.constraintlayout.widget.ConstraintLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-
-                                    <ImageView
-                                        android:id="@+id/imgFrutasVerduras"
-                                        android:layout_width="142dp"
-                                        android:layout_height="147dp"
-                                        android:contentDescription="@string/contentDescription"
-                                        app:layout_constraintBottom_toBottomOf="parent"
-                                        app:layout_constraintEnd_toEndOf="parent"
-                                        app:layout_constraintStart_toStartOf="parent"
-                                        app:layout_constraintTop_toTopOf="parent"
-                                        app:srcCompat="@drawable/imgFrutasVerduras"
-                                        tools:ignore="ImageContrastCheck"
-                                        tools:srcCompat="@drawable/imgFrutasVerduras" />
-                                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                            </LinearLayout>
                         </androidx.constraintlayout.widget.ConstraintLayout>
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/contBebidas"
+                        android:id="@+id/targetaCategoria2"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="50dp"
-                        android:layout_marginVertical="30dp"
-                        android:background="@drawable/esquinas_redondeadas1"
-                        android:elevation="15dp"
-                        android:orientation="horizontal">
+                        android:layout_height="match_parent"
+                        android:layout_marginVertical="@dimen/marginVerticalTargetaCategoriaFeed"
+                        android:background="@drawable/bgTargetaCategoriaFeed"
+                        android:orientation="vertical"
+                        android:paddingVertical="@dimen/paddingVerticalTargetaCategoriaFeed">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
-                            <LinearLayout
-                                android:id="@+id/linearLayout"
-                                android:layout_width="150dp"
+                            <TextView
+                                android:id="@+id/categoria2Feed"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:orientation="vertical"
-                                app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
-                                app:layout_constraintStart_toStartOf="parent">
+                                android:fontFamily="@string/fontTargetaCategoriaFeed"
+                                android:text="@string/categoria2"
+                                android:textAlignment="@integer/textAlignmentCategoriaFeed"
+                                android:textColor="@color/textColorTargetaCategoriaFeed"
+                                android:textSize="@dimen/sizeTextCategoriaFeed"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
 
-                                <androidx.constraintlayout.widget.ConstraintLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-
-                                    <TextView
-                                        android:id="@+id/txBebidas"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:gravity="center_horizontal"
-                                        android:text="@string/txBebidas"
-                                        android:textSize="10pt"
-                                        android:textStyle="bold"
-                                        app:layout_constraintBottom_toBottomOf="parent"
-                                        app:layout_constraintEnd_toEndOf="parent"
-                                        app:layout_constraintStart_toStartOf="parent"
-                                        app:layout_constraintTop_toTopOf="parent"
-                                        tools:ignore="MissingConstraints" />
-                                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:id="@+id/linearLayout2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical"
-                                app:layout_constraintEnd_toEndOf="parent">
-
-                                <androidx.constraintlayout.widget.ConstraintLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-
-                                    <ImageView
-                                        android:id="@+id/imgBebidas"
-                                        android:layout_width="142dp"
-                                        android:layout_height="147dp"
-                                        android:contentDescription="@string/contentDescription"
-                                        app:layout_constraintBottom_toBottomOf="parent"
-                                        app:layout_constraintEnd_toEndOf="parent"
-                                        app:layout_constraintStart_toStartOf="parent"
-                                        app:layout_constraintTop_toTopOf="parent"
-                                        app:srcCompat="@drawable/imgBebidas"
-                                        tools:ignore="ImageContrastCheck"
-                                        tools:srcCompat="@drawable/imgBebidas" />
-                                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                            </LinearLayout>
                         </androidx.constraintlayout.widget.ConstraintLayout>
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/contLacteos"
+                        android:id="@+id/targetaCategoria3"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="50dp"
-                        android:layout_marginVertical="30dp"
-                        android:background="@drawable/esquinas_redondeadas1"
-                        android:elevation="15dp"
-                        android:orientation="horizontal">
+                        android:layout_height="match_parent"
+                        android:layout_marginVertical="@dimen/marginVerticalTargetaCategoriaFeed"
+                        android:background="@drawable/bgTargetaCategoriaFeed"
+                        android:orientation="vertical"
+                        android:paddingVertical="@dimen/paddingVerticalTargetaCategoriaFeed">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
-                            <LinearLayout
-                                android:id="@+id/linearLayout"
-                                android:layout_width="150dp"
+                            <TextView
+                                android:id="@+id/categoria4Feed"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:orientation="vertical"
-                                app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
-                                app:layout_constraintStart_toStartOf="parent">
+                                android:fontFamily="@string/fontTargetaCategoriaFeed"
+                                android:text="@string/categoria4"
+                                android:textAlignment="@integer/textAlignmentCategoriaFeed"
+                                android:textColor="@color/textColorTargetaCategoriaFeed"
+                                android:textSize="@dimen/sizeTextCategoriaFeed"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
 
-                                <androidx.constraintlayout.widget.ConstraintLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-
-                                    <TextView
-                                        android:id="@+id/txLacteos"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:gravity="center_horizontal"
-                                        android:text="@string/txLacteos"
-                                        android:textSize="10pt"
-                                        android:textStyle="bold"
-                                        app:layout_constraintBottom_toBottomOf="parent"
-                                        app:layout_constraintEnd_toEndOf="parent"
-                                        app:layout_constraintStart_toStartOf="parent"
-                                        app:layout_constraintTop_toTopOf="parent"
-                                        tools:ignore="MissingConstraints" />
-                                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:id="@+id/linearLayout2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical"
-                                app:layout_constraintEnd_toEndOf="parent">
-
-                                <androidx.constraintlayout.widget.ConstraintLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-
-                                    <ImageView
-                                        android:id="@+id/imgLacteos"
-                                        android:layout_width="142dp"
-                                        android:layout_height="147dp"
-                                        android:contentDescription="@string/contentDescription"
-                                        app:layout_constraintBottom_toBottomOf="parent"
-                                        app:layout_constraintEnd_toEndOf="parent"
-                                        app:layout_constraintStart_toStartOf="parent"
-                                        app:layout_constraintTop_toTopOf="parent"
-                                        app:srcCompat="@drawable/imgLacteos"
-                                        tools:ignore="ImageContrastCheck"
-                                        tools:srcCompat="@drawable/imgLacteos" />
-                                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                            </LinearLayout>
                         </androidx.constraintlayout.widget.ConstraintLayout>
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/contPan"
+                        android:id="@+id/targetaCategoria4"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="50dp"
-                        android:layout_marginVertical="30dp"
-                        android:background="@drawable/esquinas_redondeadas1"
-                        android:elevation="15dp"
-                        android:orientation="horizontal">
+                        android:layout_height="match_parent"
+                        android:layout_marginVertical="@dimen/marginVerticalTargetaCategoriaFeed"
+                        android:background="@drawable/bgTargetaCategoriaFeed"
+                        android:orientation="vertical"
+                        android:paddingVertical="@dimen/paddingVerticalTargetaCategoriaFeed">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
-                            <LinearLayout
-                                android:id="@+id/linearLayout"
-                                android:layout_width="150dp"
+                            <TextView
+                                android:id="@+id/categoria3Feed"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:orientation="vertical"
-                                app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
-                                app:layout_constraintStart_toStartOf="parent">
+                                android:fontFamily="@string/fontTargetaCategoriaFeed"
+                                android:text="@string/categoria3"
+                                android:textAlignment="@integer/textAlignmentCategoriaFeed"
+                                android:textColor="@color/textColorTargetaCategoriaFeed"
+                                android:textSize="@dimen/sizeTextCategoriaFeed"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
 
-                                <androidx.constraintlayout.widget.ConstraintLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-
-                                    <TextView
-                                        android:id="@+id/txPan"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:gravity="center_horizontal"
-                                        android:text="@string/txPan"
-                                        android:textSize="10pt"
-                                        android:textStyle="bold"
-                                        app:layout_constraintBottom_toBottomOf="parent"
-                                        app:layout_constraintEnd_toEndOf="parent"
-                                        app:layout_constraintStart_toStartOf="parent"
-                                        app:layout_constraintTop_toTopOf="parent"
-                                        tools:ignore="MissingConstraints" />
-                                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:id="@+id/linearLayout2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:orientation="vertical"
-                                app:layout_constraintEnd_toEndOf="parent">
-
-                                <androidx.constraintlayout.widget.ConstraintLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-
-                                    <ImageView
-                                        android:id="@+id/imgPan"
-                                        android:layout_width="142dp"
-                                        android:layout_height="147dp"
-                                        android:contentDescription="@string/contentDescription"
-                                        app:layout_constraintBottom_toBottomOf="parent"
-                                        app:layout_constraintEnd_toEndOf="parent"
-                                        app:layout_constraintStart_toStartOf="parent"
-                                        app:layout_constraintTop_toTopOf="parent"
-                                        app:srcCompat="@drawable/imgPan"
-                                        tools:ignore="ImageContrastCheck"
-                                        tools:srcCompat="@drawable/imgPan" />
-                                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                            </LinearLayout>
                         </androidx.constraintlayout.widget.ConstraintLayout>
                     </LinearLayout>
 
                 </LinearLayout>
-            </ScrollView>
 
-        </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

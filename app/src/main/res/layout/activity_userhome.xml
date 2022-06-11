@@ -42,9 +42,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:clickable="true"
+                android:focusable="true"
                 android:onClick="onClick"
                 android:orientation="vertical"
-                android:focusable="true"
                 tools:ignore="UsingOnClickInXml">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -64,6 +64,38 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         tools:ignore="TextContrastCheck" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/storeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="onClick"
+                android:orientation="vertical"
+                tools:ignore="UsingOnClickInXml">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingHorizontal="@dimen/sizeContIconFooter"
+                    tools:ignore="InefficientWeight">
+
+                    <LinearLayout
+                        android:id="@+id/footerStoreIcon"
+                        android:layout_width="@dimen/sizeIconFooter"
+                        android:layout_height="@dimen/sizeIconFooter"
+                        android:background="@drawable/iconStore"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="TextContrastCheck" />
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </LinearLayout>
@@ -96,7 +128,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/storeButton"
+                android:id="@+id/menuButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
@@ -108,17 +140,16 @@
                     tools:ignore="InefficientWeight">
 
                     <LinearLayout
-                        android:id="@+id/footerStoreIcon"
+                        android:id="@+id/footerMenuIcon"
                         android:layout_width="@dimen/sizeIconFooter"
                         android:layout_height="@dimen/sizeIconFooter"
-                        android:background="@drawable/iconStore"
+                        android:background="@drawable/iconMenu"
                         android:orientation="vertical"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         tools:ignore="TextContrastCheck" />
-
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </LinearLayout>
@@ -182,16 +213,5 @@
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <Button
-        android:id="@+id/cerrarSesion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cerrar sesion"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contFragment" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

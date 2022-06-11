@@ -28,7 +28,8 @@ import java.util.Objects;
 public class UserHome extends AppCompatActivity
 implements
         FragmentUserHome.OnFragmentInteractionListener,
-        FragmentFeed.OnFragmentInteractionListener{
+        FragmentFeed.OnFragmentInteractionListener,
+        FragmentShop.OnFragmentInteractionListener{
 
     /*-------------------------------------------------------------------------------*/
     /*Variables para texto, campos de texto y contenedores*/
@@ -36,6 +37,7 @@ implements
 
     FragmentUserHome fragmentUserHome;
     FragmentFeed fragmentFeed;
+    FragmentShop fragmentShop;
 
     /*Acceso a Firebase y AwesomeValidation*/
     AwesomeValidation awesomeValidation;
@@ -62,12 +64,9 @@ implements
         /*Botones y acciones*/
         fragmentUserHome = new FragmentUserHome();
         fragmentFeed = new FragmentFeed();
+        fragmentShop = new FragmentShop();
         getSupportFragmentManager().beginTransaction().add(R.id.Fragments,fragmentUserHome).commit();//Primera fragment a mostrar
-        signUp = findViewById(R.id.cerrarSesion);
-        signUp.setOnClickListener(view -> {
-            FirebaseAuth.getInstance().signOut();
-            CerrarSesion();
-        });/*Registrarse si no tienes cuenta*/
+
 
     }
 
@@ -76,14 +75,6 @@ implements
 
 
 
-
-    /*Cerramos la sesion y volvemos al login*/
-    private void CerrarSesion (){
-        Intent loged = new Intent(getApplicationContext(), Login.class);
-        loged.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(loged);
-        finish();
-    }
 
 
     /*Variable para generar el mensaje Toast*/
@@ -103,6 +94,9 @@ implements
                 break;
             case R.id.userHomeButton:
                 transaction.replace(R.id.Fragments,fragmentUserHome);
+                break;
+            case R.id.storeButton:
+                transaction.replace(R.id.Fragments,fragmentShop);
                 break;
         }
         transaction.commit();

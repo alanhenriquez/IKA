@@ -36,8 +36,7 @@ public class SignUp extends AppCompatActivity {
     private String mail = "";
     private String password = "";
 
-    /*Acceso a Firebase y AwesomeValidation*/
-    AwesomeValidation awesomeValidation;
+    /*Acceso a Firebase*/
     FirebaseAuth userAuth;
     DatabaseReference userDataBase;
 
@@ -54,13 +53,11 @@ public class SignUp extends AppCompatActivity {
 
 
 
-        /* Acceso a Instancias FireBase y a la AwesomeValidacion
+
+        /* Acceso a Instancias FireBase
          * Estos accesos los encontraras en el build.gradle tanto de proyecto como app*/
         userAuth = FirebaseAuth.getInstance();
         userDataBase = FirebaseDatabase.getInstance().getReference();
-        awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
-        /*awesomeValidation.addValidation(this,R.id.txtEmailLog, Patterns.EMAIL_ADDRESS,R.string.invalid_mail);
-        awesomeValidation.addValidation(this,R.id.txtPasswordLog,".{6,}",R.string.invalid_password);*/
 
 
 
@@ -71,6 +68,9 @@ public class SignUp extends AppCompatActivity {
         etSignUpMail = findViewById(R.id.etSignUpMail);
         etSignUpPassword = findViewById(R.id.etSignUpPassword);
         TextView btSignUp = findViewById(R.id.btSignUp);
+        View btResetTextName = findViewById(R.id.resetText);
+        View btResetTextMail = findViewById(R.id.resetText1);
+        View btResetTextPassword = findViewById(R.id.resetText2);
 
 
 
@@ -95,7 +95,18 @@ public class SignUp extends AppCompatActivity {
                     }
                 }
             }
-        });
+        });/*Creamos el registro del usuario y logueamos*/
+        ResetText(btResetTextName,etSignUpName);/*Reiniciamos el texto del campo Nombre*/
+        ResetText(btResetTextMail,etSignUpMail);/*Reiniciamos el texto del campo Mail*/
+        ResetText(btResetTextPassword,etSignUpPassword);/*Reiniciamos el texto del campo Password*/
+    }
+
+    @Override public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(getApplicationContext(), Login.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        finish();
     }
     /*-------------------------------------------------------------------------------*/
 
@@ -125,17 +136,14 @@ public class SignUp extends AppCompatActivity {
 
         String id = Objects.requireNonNull(userAuth.getCurrentUser()).getUid();
         userDataBase.child("Users").child(id).setValue(data).addOnCompleteListener(task1 -> {
-            SignUpComplete();
-            msgToast("Usuario creado con exito");
-        });
-    }
 
-    /*Pasamos de activity en caso de que se haya creado el usuario*/
-    private void SignUpComplete(){
-        Intent intent = new Intent(getApplicationContext(), UserHome.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-        finish();
+            Intent intent = new Intent(getApplicationContext(), UserHome.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            finish();
+            msgToast("Usuario creado con exito");
+
+        });
     }
 
     /*Reiniciamos el texto del campo de texto*/
@@ -258,4 +266,5 @@ public class SignUp extends AppCompatActivity {
     }
 
     /*-------------------------------------------------------------------------------*/
+
 }
