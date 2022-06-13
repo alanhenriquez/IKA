@@ -201,8 +201,7 @@
                             android:background="@color/colorImgPerfilUser"
                             android:contentDescription="@string/descriptionImg"
                             android:rotation="@integer/sizeRotationImageUser"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/imgPerfilUser" />
+                            android:scaleType="centerCrop"/>
 
                     </androidx.cardview.widget.CardView>
                 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,6 +3,7 @@ package com.ikalogic.ika;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,11 +12,14 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
+import com.bumptech.glide.Glide;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -23,8 +27,12 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -44,10 +52,11 @@ public class FragmentUserHome extends Fragment {
     /*-------------------------------------------------------------------------------*/
     /* - Variables*/
     /*Variables para texto, campos de texto y contenedores*/
-    TextView signUp;
-    TextView userName;
-    TextView userNameUser;
-    TextView userMail;
+    private TextView user;
+    private TextView userName;
+    private TextView userBiografia;
+    private TextView userMail;
+    private ImageView userImageProfile;
 
     /*Acceso a Firebase y AwesomeValidation*/
     FirebaseAuth userAuth;
@@ -133,6 +142,7 @@ public class FragmentUserHome extends Fragment {
 
 
 
+        getData(view);
 
         opConfiguracion.setOnClickListener(v -> {
             Intent intent = new Intent(view.getContext(), Configuracion.class);
@@ -163,44 +173,69 @@ public class FragmentUserHome extends Fragment {
 
 
 
-    /*Funcion getData que obtiene los datos desde Firebase*/
+    /*Funcion getData que obtiene los datos desde Firebase base de datos*/
     private void getData (View v){
-        /*la variable "v" nos sirve para poder ingresar a los elementos del fragment mediante sus id*/
-
         String id = Objects.requireNonNull(userAuth.getCurrentUser()).getUid();
         userDataBase.child("Users").child(id).addValueEventListener(new ValueEventListener() {
             @SuppressLint("SetTextI18n")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
+                    String val;
+
+                    val = Objects.requireNonNull(snapshot.child("PerfilData").child("user").getValue()).toString();
+                    user = v.findViewById(R.id.userUserHome);
+                    user.setText(val);
 
                     /*-----------------*/
-                    String name = Objects.requireNonNull(snapshot.child("name").getValue()).toString();
-                    userName = v.findViewById(R.id.userName);
-                    userNameUser = v.findViewById(R.id.userNameHeader);
-                    userName.setText(name);
-                    userName.setTypeface(null, Typeface.BOLD);
-                    userNameUser.setText(name.toLowerCase(Locale.ROOT).trim());
-                    userNameUser.setTypeface(null, Typeface.BOLD);
+                    val = Objects.requireNonNull(snapshot.child("PerfilData").child("userName").getValue()).toString();
+                    userName = v.findViewById(R.id.userNameUserHome);
+                    userName.setText(val);
 
                     /*-----------------*/
-                    String email = Objects.requireNonNull(snapshot.child("email").getValue()).toString();
-                    userMail = v.findViewById(R.id.userMail);
-                    userMail.setText(email);
+                    val = Objects.requireNonNull(snapshot.child("PerfilData").child("userBiografia").getValue()).toString();
+                    userBiografia = v.findViewById(R.id.userBiografiaUserHome);
+                    userBiografia.setText(val);
 
+                    /*-----------------*/
+                    val = Objects.requireNonNull(snapshot.child("CountData").child("userMail").getValue()).toString();
+                    userMail = v.findViewById(R.id.userMailUserHome);
+                    userMail.setText(val);
+
+                    /*-----------------*/
+                    val = Objects.requireNonNull(snapshot.child("ImageData").child("imgPerfil").child("ImageMain").getValue()).toString();
+                    userImageProfile = v.findViewById(R.id.imgPhotoUser);
+                    StorageReference storageReference = FirebaseStorage.getInstance().getReference().getStorage().getReferenceFromUrl(val);
+                    userImageProfile.setImageURI(Uri.parse(String.valueOf(storageReference)));
+
+
+
+
+                }else {
+                    msgToast("Error",v);
                 }
 
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                msgToast("Error de carga",v);
             }
         });
     }
 
+
+
     /*Importante para importar la interfaz del Fragment. No eliminar*/
     public interface OnFragmentInteractionListener {
+
+    }
+
+
+
+    /*Variable para generar el mensaje Toast*/
+    private void msgToast(String message, View v) {
+        Toast.makeText(v.getContext(),message, Toast.LENGTH_LONG).show();
     }
 
     /*-------------------------------------------------------------------------------*/

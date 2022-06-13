@@ -4,12 +4,15 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +22,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -38,6 +43,17 @@ public class EditProfile extends AppCompatActivity {
     private String userPasswordString = " ";
     View showPassword;
 
+    //ImageView para la imagen de usuario
+    Uri imageUri;
+    View changeImageUser;//Boton para selecionar imagen
+    ImageView contImageUser;//Contenedor con la imagen del usuario
+    int SELECT_PICTURE = 200;// constant to compare the activity result code
+
+
+
+
+
+
 
     /*Acceso a Firebase y AwesomeValidation*/
     FirebaseAuth userAuth;
@@ -46,10 +62,8 @@ public class EditProfile extends AppCompatActivity {
 
 
 
-
     /*-------------------------------------------------------------------------------*/
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
 
@@ -65,7 +79,6 @@ public class EditProfile extends AppCompatActivity {
 
 
 
-
         /*Simples variables antes definidas accediendo a los id*/
         user = findViewById(R.id.userEditProfile);
         userName = findViewById(R.id.userNameEditProfile);
@@ -73,7 +86,11 @@ public class EditProfile extends AppCompatActivity {
         userPassword = findViewById(R.id.userPasswordEditProfile);
         TextView saveDatosButton = findViewById(R.id.botonGuardarDatosEditProfile);
         TextView savePasswordButton = findViewById(R.id.botonGuardarPasswordEditProfile);
+
         showPassword = findViewById(R.id.showPassword);
+
+        changeImageUser = findViewById(R.id.selectImageEditProfile);
+        contImageUser = findViewById(R.id.imgPhotoUserEditProfile);
 
 
 
@@ -102,6 +119,13 @@ public class EditProfile extends AppCompatActivity {
             finish();
 
         });/*Actualizamos la contraseña*/
+        changeImageUser.setOnClickListener(v ->{
+            msgToast("Selecciona tu imagen");
+
+            openGallery();
+
+
+        });/*Elegimos la nueva imagen de usuario*/
     }
 
     @Override public void onBackPressed() {
@@ -117,6 +141,53 @@ public class EditProfile extends AppCompatActivity {
 
 
 
+    /*--------------------*/
+    /*Codigo de la seleccion de imagen y envio a la base de datos*/
+    private void openGallery(){
+        Intent i = new Intent();
+        i.setType("image/*");
+        i.setAction(Intent.ACTION_GET_CONTENT);
+        // pass the constant to compare it with the returned requestCode
+        startActivityForResult(Intent.createChooser(i, "Select Picture"), SELECT_PICTURE);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, final Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == Activity.RESULT_OK && requestCode == SELECT_PICTURE) {
+            imageUri = data.getData();
+            contImageUser.setImageURI(imageUri);
+
+            String id = Objects.requireNonNull(userAuth.getCurrentUser()).getUid();
+            StorageReference folder = FirebaseStorage.getInstance().getReference().child("Users").child(id);
+            final StorageReference file_name = folder.child(imageUri.getLastPathSegment());
+            file_name.putFile(imageUri).addOnSuccessListener(taskSnapshot ->
+                    file_name.getDownloadUrl().addOnSuccessListener(uri -> {
+
+                        //Enviamos a la base de datos la url de la imagen
+                        setDataImageBase(String.valueOf(uri));
+                        msgToast("Se subio correctamente");
+
+
+
+            }));
+
+
+        }
+    }
+
+    /*Agregamos la Url de la imagen a la base de datos*/
+    private void setDataImageBase(String link){
+        Map<String, Object> data = new HashMap<>();
+        data.put("ImageMain", link);
+        String id = Objects.requireNonNull(userAuth.getCurrentUser()).getUid();
+        userDataBase.child("Users").child(id).child("ImageData").child("imgPerfil").setValue(data).addOnCompleteListener(task1 -> msgToast("Datos actualizados"));
+
+    }
+    /*Termina codigo de la seleccion de imagen y envio a la base de datos*/
+    /*--------------------*/
+
+
     /*Convertimos a string el contenido de los campos de texto*/
     private void getString(){
         userString = user.getText().toString();
@@ -125,26 +196,30 @@ public class EditProfile extends AppCompatActivity {
         userPasswordString = userPassword.getText().toString();
     }
 
+
+
     /*Agregamos la informacion a la base de datos*/
     private void setDataBase(){
         Map<String, Object> data = new HashMap<>();
         data.put("user", userString);
         data.put("userName", userNameString);
-        data.put("userMail", Objects.requireNonNull(userAuth.getCurrentUser()).getEmail());
-        data.put("userPassword", userPasswordString);
-        data.put("userBiografiaPerfil", userBiografiaString);
+        data.put("userBiografia", userBiografiaString);
 
         String id = Objects.requireNonNull(userAuth.getCurrentUser()).getUid();
-        userDataBase.child("Users").child(id).setValue(data).addOnCompleteListener(task1 -> msgToast("Datos actualizados"));
+        userDataBase.child("Users").child(id).child("PerfilData").setValue(data).addOnCompleteListener(task1 -> msgToast("Datos actualizados"));
     }
+
+
 
     /*Modificamos la nueva contraseña y agregamos registro a base de datos*/
     private void setNewPassword(){
         Objects.requireNonNull(userAuth.getCurrentUser()).updatePassword(userPasswordString);
 
         String id = Objects.requireNonNull(userAuth.getCurrentUser()).getUid();
-        userDataBase.child("Users").child(id).child("userPassword").setValue(userPasswordString).addOnCompleteListener(task1 -> msgToast("Tu contraseña ha sido actualizada"));
+        userDataBase.child("Users").child(id).child("CountData").child("userPassword").setValue(userPasswordString).addOnCompleteListener(task1 -> msgToast("Tu contraseña ha sido actualizada"));
     }
+
+
 
     /*Funcion getData que obtiene los datos desde Firebase base de datos*/
     private void getData (){
@@ -157,22 +232,22 @@ public class EditProfile extends AppCompatActivity {
                     String val;
 
                     /*-----------------*/
-                    val = Objects.requireNonNull(snapshot.child("user").getValue()).toString();
+                    val = Objects.requireNonNull(snapshot.child("PerfilData").child("user").getValue()).toString();
                     user = findViewById(R.id.userEditProfile);
                     user.setText(val);
 
                     /*-----------------*/
-                    val = Objects.requireNonNull(snapshot.child("userName").getValue()).toString();
+                    val = Objects.requireNonNull(snapshot.child("PerfilData").child("userName").getValue()).toString();
                     userName = findViewById(R.id.userNameEditProfile);
                     userName.setText(val);
 
                     /*-----------------*/
-                    val = Objects.requireNonNull(snapshot.child("userBiografiaPerfil").getValue()).toString();
+                    val = Objects.requireNonNull(snapshot.child("PerfilData").child("userBiografia").getValue()).toString();
                     userBiografia = findViewById(R.id.userBiografiaEditProfile);
                     userBiografia.setText(val);
 
                     /*-----------------*/
-                    val = Objects.requireNonNull(snapshot.child("userPassword").getValue()).toString();
+                    val = Objects.requireNonNull(snapshot.child("CountData").child("userPassword").getValue()).toString();
                     userPassword = findViewById(R.id.userPasswordEditProfile);
                     userPassword.setText(val);
 
@@ -190,6 +265,8 @@ public class EditProfile extends AppCompatActivity {
         });
     }
 
+
+
     /*Mostramos la contraseña del campo de texto*/
     @SuppressLint("ClickableViewAccessibility")
     private void ShowPassword (View elemTouch, EditText passwordToShow){
@@ -205,6 +282,8 @@ public class EditProfile extends AppCompatActivity {
             return true;
         });
     }
+
+
 
     /*Variable para generar el mensaje Toast*/
     private void msgToast(String message) {

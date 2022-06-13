@@ -37,7 +37,7 @@
                         android:paddingHorizontal="20dp">
 
                         <TextView
-                            android:id="@+id/userNameHeader"
+                            android:id="@+id/userNameUserHome"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/nameUser"
@@ -120,14 +120,13 @@
                                     app:layout_constraintTop_toTopOf="parent">
 
                                     <ImageView
-                                        android:id="@+id/ImgPhotoUser"
+                                        android:id="@+id/imgPhotoUser"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:background="@color/colorImgPerfilUser"
                                         android:contentDescription="@string/descriptionImg"
                                         android:rotation="@integer/sizeRotationImageUser"
-                                        android:scaleType="centerCrop"
-                                        android:src="@drawable/imgPerfilUser" />
+                                        android:scaleType="centerCrop" />
                                 </androidx.cardview.widget.CardView>
                             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -140,7 +139,7 @@
                             android:paddingEnd="15dp">
 
                             <TextView
-                                android:id="@+id/userName"
+                                android:id="@+id/userUserHome"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/nameUser"
@@ -149,7 +148,7 @@
                                 android:textSize="9pt" />
 
                             <TextView
-                                android:id="@+id/userMail"
+                                android:id="@+id/userMailUserHome"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/mailUser"
@@ -160,6 +159,23 @@
 
                         </LinearLayout>
 
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/userBiografiaUserHome"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="30dp"
+                            android:fontFamily="@string/fontBiografiaUserHome"
+                            android:text="Biografia"
+                            android:textAlignment="@integer/textAlignmentBiografiaUserHome"
+                            android:textColor="@color/textColorBiografiaUserHome"
+                            android:textSize="@dimen/sizeTextBiografiaUserHome"/>
                     </LinearLayout>
 
                 </LinearLayout>

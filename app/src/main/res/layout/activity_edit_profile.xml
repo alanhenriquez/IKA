@@ -45,15 +45,57 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent">
 
-                            <ImageView
-                                android:id="@+id/ImgPhotoUser"
+                            <androidx.constraintlayout.widget.ConstraintLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@color/colorImgPerfilUser"
-                                android:contentDescription="@string/descriptionImg"
-                                android:rotation="@integer/sizeRotationImageUser"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/imgPerfilUser" />
+                                android:layout_height="match_parent">
+
+                                <LinearLayout
+                                    android:id="@+id/selectImageEditProfile"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:elevation="@dimen/elevationSelectImageEditProfile"
+                                    android:orientation="vertical"
+                                    android:background="@color/backgroundColorSelectImageEditProfile"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    tools:ignore="UnusedAttribute">
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <TextView
+                                            android:id="@+id/textView6"
+                                            android:layout_width="30sp"
+                                            android:layout_height="30sp"
+                                            android:background="@drawable/icon_camera"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintStart_toStartOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                </LinearLayout>
+
+                                <ImageView
+                                    android:id="@+id/imgPhotoUserEditProfile"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/colorImgPerfilUser"
+                                    android:contentDescription="@string/descriptionImg"
+                                    android:rotation="@integer/sizeRotationImageUser"
+                                    android:scaleType="centerCrop"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
                         </androidx.cardview.widget.CardView>
                     </androidx.constraintlayout.widget.ConstraintLayout>
 

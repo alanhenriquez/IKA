@@ -29,12 +29,10 @@ public class SignUp extends AppCompatActivity {
 
     /*-------------------------------------------------------------------------------*/
     /*Variables para texto, campos de texto y contenedores*/
-    private EditText etSignUpName;
-    private EditText etSignUpMail;
-    private EditText etSignUpPassword;
-    private String name = "";
-    private String mail = "";
-    private String password = "";
+    private EditText userEmail;
+    private EditText userPassword;
+    private String userEmailString = " ";
+    private String userPasswordString = " ";
 
     /*Acceso a Firebase*/
     FirebaseAuth userAuth;
@@ -64,13 +62,11 @@ public class SignUp extends AppCompatActivity {
 
 
         /*Simples variables antes definidas accediendo a los id*/
-        etSignUpName = findViewById(R.id.etSignUpName);
-        etSignUpMail = findViewById(R.id.etSignUpMail);
-        etSignUpPassword = findViewById(R.id.etSignUpPassword);
-        TextView btSignUp = findViewById(R.id.btSignUp);
-        View btResetTextName = findViewById(R.id.resetText);
+        userEmail = findViewById(R.id.userMailSignUp);
+        userPassword = findViewById(R.id.userPasswordSignUp);
         View btResetTextMail = findViewById(R.id.resetText1);
         View btResetTextPassword = findViewById(R.id.resetText2);
+        TextView btSignUp = findViewById(R.id.btSignUp);
 
 
 
@@ -78,27 +74,25 @@ public class SignUp extends AppCompatActivity {
 
         /*Botones y acciones*/
         btSignUp.setOnClickListener(view -> {
-            if (ValidarEmail(etSignUpMail)){
-                name = etSignUpName.getText().toString();
-                mail = etSignUpMail.getText().toString();
-                password = etSignUpPassword.getText().toString();
+            if (ValidarEmail(userEmail)){
+                userEmailString = userEmail.getText().toString();
+                userPasswordString = userPassword.getText().toString();
 
-                if(!mail.isEmpty() && !password.isEmpty() && !name.isEmpty()){
+                if(!userEmailString.isEmpty() && !userPasswordString.isEmpty()){
                     registerUser();
                 }else{
-                    if (mail.isEmpty()){
+                    if (userEmailString.isEmpty()){
                         msgToast("Ingrese su correo electronico");
-                    }else if (password.isEmpty()){
+                        userEmail.requestFocus();
+                    }else{
                         msgToast("Ingrese una contraseña");
-                    }else {
-                        msgToast("Ingrese su nombre");
+                        userPassword.requestFocus();
                     }
                 }
             }
         });/*Creamos el registro del usuario y logueamos*/
-        ResetText(btResetTextName,etSignUpName);/*Reiniciamos el texto del campo Nombre*/
-        ResetText(btResetTextMail,etSignUpMail);/*Reiniciamos el texto del campo Mail*/
-        ResetText(btResetTextPassword,etSignUpPassword);/*Reiniciamos el texto del campo Password*/
+        ResetText(btResetTextMail,userEmail);/*Reiniciamos el texto del campo Mail*/
+        ResetText(btResetTextPassword,userPassword);/*Reiniciamos el texto del campo Password*/
     }
 
     @Override public void onBackPressed() {
@@ -117,44 +111,50 @@ public class SignUp extends AppCompatActivity {
     /*Creamos al usuario y lo registramos*/
     private void registerUser(){
         //Autenticaremos al usuario mediante su correo y contraseña
-        userAuth.createUserWithEmailAndPassword(mail, password).addOnCompleteListener(task -> {
+        userAuth.createUserWithEmailAndPassword(userEmailString, userPasswordString).addOnCompleteListener(task -> {
             if (task.isSuccessful()){
                 SetDataBase();
             }else{
                 String errorCode = ((FirebaseAuthException) Objects.requireNonNull(task.getException())).getErrorCode();
-                dameToastdeerror(errorCode, etSignUpMail, etSignUpPassword);
+                dameToastdeerror(errorCode, userEmail, userPassword);
             }
         });
     }
 
+
+
     /*Agregamos la informacion a la base de datos*/
     private void SetDataBase(){
         Map<String, Object> data = new HashMap<>();
-        data.put("email", mail);
-        data.put("password", password);
-        data.put("name", name);
+        data.put("userMail", userEmailString);
+        data.put("userPassword", userPasswordString);
 
         String id = Objects.requireNonNull(userAuth.getCurrentUser()).getUid();
-        userDataBase.child("Users").child(id).setValue(data).addOnCompleteListener(task1 -> {
+        userDataBase.child("Users").child(id).child("CountData").setValue(data).addOnCompleteListener(task1 -> {
 
-            Intent intent = new Intent(getApplicationContext(), UserHome.class);
+            Intent intent = new Intent(getApplicationContext(), SignUpFinish.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
             finish();
-            msgToast("Usuario creado con exito");
 
         });
     }
+
+
 
     /*Reiniciamos el texto del campo de texto*/
     private void ResetText (View elemTouch, EditText textToReset){
         elemTouch.setOnClickListener(view -> textToReset.setText(""));
     }
 
+
+
     /*Variable para generar el mensaje Toast*/
     private void msgToast(String message) {
         Toast.makeText(getApplicationContext(),message, Toast.LENGTH_LONG).show();
     }
+
+
 
     /*Variable para generar el mensaje Toast del tipo de error*/
     private void dameToastdeerror(String error, EditText mail, EditText password) {
@@ -184,7 +184,6 @@ public class SignUp extends AppCompatActivity {
                 /*msgToast("La contraseña no es válida o el usuario no tiene contraseña.");*/
                 /*password.setError("la contraseña es incorrecta ");*/
                 password.requestFocus();
-                password.setText("");
                 break;
 
             case "ERROR_USER_MISMATCH":
@@ -237,6 +236,8 @@ public class SignUp extends AppCompatActivity {
         }
 
     }
+
+
 
     /*Validar Email*/
     private boolean ValidarEmail(EditText args) {

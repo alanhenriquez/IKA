@@ -23,24 +23,34 @@
 
 
     <!--Login Elements y Formulario-->
-    <drawable name="backgroundFormularioLogin">@drawable/esquinas_redondeadas2t</drawable><!--Color de fondo de campos del formularios-->
-    <color name="colorTxFormularioLogin">@color/colorTextMain</color><!--Color de letra textos de formularios-->
-    <color name="colorBtFormularioLogin">@color/white</color><!--Color de letra botones de formularios-->
-    <drawable name="colorBtBgFormularioLogin">@drawable/esquinas_redondeadas_gra1</drawable><!--BG boton-->
-    <color name="colorTxSignUpLogin">@color/azul9</color><!--Color de letra del footer del login SignUp-->
-    <color name="colorFooterLogin">@color/blackTransparente05</color><!--Color de fondo del footer del login-->
+    <drawable name="backgroundFormularioLogin">@drawable/esquinas_redondeadas2t
+    </drawable><!--Color de fondo de campos del formularios-->
+    <color name="colorTxFormularioLogin">@color/colorTextMain
+    </color><!--Color de letra textos de formularios-->
+    <color name="colorBtFormularioLogin">@color/white
+    </color><!--Color de letra botones de formularios-->
+    <drawable name="colorBtBgFormularioLogin">@drawable/esquinas_redondeadas_gra1
+    </drawable><!--BG boton-->
+    <color name="colorTxSignUpLogin">@color/azul9
+    </color><!--Color de letra del footer del login SignUp-->
+    <color name="colorFooterLogin">@color/blackTransparente05
+    </color><!--Color de fondo del footer del login-->
     <dimen name="minHeigtFormularioLogin">48dp</dimen><!--Altura minima del formulario-->
-    <dimen name="paddingHorizontalFormularioLogin">20dp</dimen><!--Padding del campo del formulario-->
+    <dimen name="paddingHorizontalFormularioLogin">20dp
+    </dimen><!--Padding del campo del formulario-->
     <dimen name="paddingIconFormularioLogin">12dp</dimen><!--Tamaño del padding de los iconos-->
-    <dimen name="paddingVBtFormularioLogin">15dp</dimen><!--Tamaño del padding vertical de los Botones-->
+    <dimen name="paddingVBtFormularioLogin">15dp
+    </dimen><!--Tamaño del padding vertical de los Botones-->
     <dimen name="marginVFormularioLogin">15dp</dimen><!--Margen vertical del campo del formulario-->
-    <dimen name="marginVBtFormularioLogin">20dp</dimen><!--Tamaño del margen vertical de los Botones-->
+    <dimen name="marginVBtFormularioLogin">20dp
+    </dimen><!--Tamaño del margen vertical de los Botones-->
     <dimen name="sizeTxSignUpLogin">16sp</dimen><!--Tamaño del texto registrarse-->
     <dimen name="sizeTxBtSignUpLogin">16sp</dimen><!--Tamaño del texto boton ir a registrarse-->
     <dimen name="sizeTxFormularioLogin">16sp</dimen><!--Tamaño del texto de los formularios-->
     <dimen name="sizeTxBtFormularioLogin">16sp</dimen><!--Tamaño del texto boton iniciar sesion-->
     <dimen name="sizeTxRecoverPassLogin">15sp</dimen><!--Tamaño del texto recuperar contraseña-->
-    <dimen name="sizeTxBtRecoverPassLogin">15sp</dimen><!--Tamaño del texto boton recuperar contraseña-->
+    <dimen name="sizeTxBtRecoverPassLogin">15sp
+    </dimen><!--Tamaño del texto boton recuperar contraseña-->
     <string name="fontFormularioLogin" tools:ignore="ReferenceType">@font/roboto_regular</string><!--Tipografia formulario-->
     <string name="fontBtFormularioLogin" tools:ignore="ReferenceType">@font/lobster_two_regular</string><!--Tipografia Tema principal-->
     <string name="mailTxFormularioLogin">Correo electronico</string>
@@ -52,21 +62,13 @@
 
 
     <!--ForgotPassword y formulario-->
-    <drawable name="colorBtBgSendMailForgotPassword">@drawable/esquinas_redondeadas3</drawable><!--BG botonn recoverPass-->
+    <drawable name="colorBtBgSendMailForgotPassword">@drawable/esquinas_redondeadas3
+    </drawable><!--BG botonn recoverPass-->
     <string name="txBtSendMailForgotPassword">Recuperar</string>
     <string name="txInfoForgotPassword">Se le enviara un mensaje de recuperacion de su cuenta a la direccion de correo electronico vinculada del usuario.</string>
 
 
-    <!--SignUp y formulario-->
-    <drawable name="colorBtBgSignUp">@drawable/esquinas_redondeadas2</drawable><!--BG botonn recoverPass-->
-    <string name="txEtSignUpMail">Correo electronico</string>
-    <string name="txEtSignUpName">Nombre de usuario</string>
-    <string name="txTittleSignUp">@string/signupLoginbtn</string>
-    <string name="txBtSignUp"><b>Crear cuenta</b></string>
-
-
-    <!--Footer Elements-->
-    <drawable name="bgFooterOpUser">@drawable/esquinas_redondeadas1</drawable>
+    <!--Iconos-->
     <drawable name="iconTreePoint">@drawable/icon_treepoint</drawable>
     <drawable name="iconConfiguracion">@drawable/icon_cog</drawable>
     <drawable name="iconCancel">@drawable/icon_cancelar_black</drawable>
@@ -75,6 +77,12 @@
     <drawable name="iconAdd">@drawable/icon_add</drawable>
     <drawable name="iconHome">@drawable/icon_home</drawable>
     <drawable name="iconMenu">@drawable/icon_menu</drawable>
+    <drawable name="iconCamera">@drawable/icon_camera</drawable>
+
+
+
+    <!--Footer Elements-->
+    <drawable name="bgFooterOpUser">@drawable/esquinas_redondeadas1</drawable>
     <drawable name="specialElemFooter">@drawable/circulo1</drawable>
     <dimen name="sizeFooterOpUser">63dp</dimen><!--TAMAÑO DEL FooterOpUser-->
     <dimen name="sizeIconFooterOpUser">25dp</dimen><!--TAMAÑO DEL icono del FooterOpUser-->
@@ -101,7 +109,7 @@
     <dimen name="sizePerfilUser">110dp</dimen><!--TAMAÑO DE FOTO DE PERFIL-->
     <dimen name="sizeRadiusImageUser">150dp</dimen><!--RADIO DEL ELEMENTO-->
     <integer name="sizeRotationImageUser">0</integer><!--RADIO DEL ELEMENTO-->
-    <color name="colorImgPerfilUser">@color/gris0</color><!--COLOR DE FONDO-->
+    <color name="colorImgPerfilUser">@color/gris3</color><!--COLOR DE FONDO-->
     <string name="nameUser"><b>Usuario de Ika</b></string>
     <string name="mailUser">Correo de usuario</string>
 
@@ -113,6 +121,7 @@
     <integer name="textAlignmentBotonEditProfile">@integer/alignmentCenter</integer>
     <integer name="linesBiografiaEditProfile">20</integer>
     <integer name="minLinesBiografiaEditProfile">5</integer>
+    <color name="backgroundColorSelectImageEditProfile">@color/whiteTransparente55</color>
     <color name="textColorHintEditProfile">@color/gris5</color>
     <color name="textColorInfoEditProfile">@color/gris5</color>
     <color name="textColorBotonUpdatePasswordEditProfile">@color/gris5</color>
@@ -124,6 +133,7 @@
     <dimen name="paddingHorizontalBotonEditProfile">15dp</dimen>
     <dimen name="sizeTextBotonEditProfile">17sp</dimen>
     <dimen name="sizeTextInfoEditProfile">16sp</dimen>
+    <dimen name="elevationSelectImageEditProfile">1dp</dimen>
     <string name="textUserNameEditProfile">Nombre de usuario</string>
     <string name="hintUserNameEditProfile">Nombre de usuario</string>
     <string name="textNameEditProfile">Nombre</string>
@@ -133,6 +143,67 @@
     <string name="textPasswordEditProfile">Contraseña de tu cuenta</string>
     <string name="hintPasswordEditProfile">Contraseña</string>
     <string name="textoBotonEditProfile">Guardar</string>
+
+
+    <!--SignUp-->
+    <drawable name="colorBtBgSignUp">@drawable/esquinas_redondeadas2</drawable><!--BG botonn recoverPass-->
+    <integer name="textAlignmentTitleSignUp">@integer/alignmentCenter</integer>
+    <integer name="textAlignmentInfoSignUp">@integer/alignmentStart</integer>
+    <integer name="textAlignmentHintSignUp">@integer/alignmentStart</integer>
+    <color name="textColorTitleSignUp">@color/colorTextMain</color>
+    <color name="textColorHintTextSignUp">@color/colorTextMain</color>
+    <color name="textColorHintSignUp">@color/textColorHintEditProfile</color>
+    <color name="textColorInfoSignUp">@color/textColorHintEditProfile</color>
+    <bool name="elegantTextHeightHintSignUp">@bool/booleanoTrue</bool>
+    <dimen name="sizeTextTitleSignUp">40sp</dimen>
+    <dimen name="sizeTextInfoSignUp">15sp</dimen>
+    <dimen name="sizeTextHintSignUp">16sp</dimen>
+    <string name="fontTopicSignUp" tools:ignore="ReferenceType">@font/roboto_bold</string>
+    <string name="fontHintSignUp" tools:ignore="ReferenceType">@font/roboto_regular</string>
+    <string name="fontInfoSignUp" tools:ignore="ReferenceType">@font/roboto_bold</string>
+    <string name="textMailSignUp">Ingresa un correo electronico</string>
+    <string name="hintMailSignUp">Correo electronico</string>
+    <string name="textPasswordSignUp">Ingresa una contraseña</string>
+    <string name="hintPasswordSignUp">contraseña</string>
+    <string name="textoTittleSignUp">Crea tu cuenta</string>
+    <string name="textoBotonSignUp"><b>Siguiente</b></string>
+
+
+    <!--SignUpFinish-->
+    <drawable name="backgroundBotonSignUpFinish">@drawable/esquinas_redondeadas5</drawable>
+    <drawable name="colorBtBgSignUpFinish">@drawable/esquinas_redondeadas2</drawable><!--BG botonn recoverPass-->
+    <integer name="textAlignmentTitleSignUpFinish">@integer/alignmentCenter</integer>
+    <integer name="textAlignmentInfoSignUpFinish">@integer/alignmentStart</integer>
+    <integer name="textAlignmentHintSignUpFinish">@integer/alignmentStart</integer>
+    <integer name="linesBiografiaSignUpFinish">20</integer>
+    <integer name="minLinesBiografiaSignUpFinish">5</integer>
+    <color name="backgroundColorSelectImageSignUpFinish">@color/whiteTransparente55</color>
+    <color name="textColorTitleSignUpFinish">@color/colorTextMain</color>
+    <color name="textColorHintTextSignUpFinish">@color/colorTextMain</color>
+    <color name="textColorHintSignUpFinish">@color/textColorHintEditProfile</color>
+    <color name="textColorInfoSignUpFinish">@color/textColorHintEditProfile</color>
+    <bool name="elegantTextHeightHintSignUpFinish">@bool/booleanoTrue</bool>
+    <bool name="scrollHorizontallySignUpFinish">@bool/booleanoFalse</bool>
+    <dimen name="tamanoIconSelectImageSignUpFinish">30sp</dimen>
+    <dimen name="elevationSelectImageSignUpFinish">1dp</dimen>
+    <dimen name="sizeTextTitleSignUpFinish">37sp</dimen>
+    <dimen name="sizeTextInfoSignUpFinish">15sp</dimen>
+    <dimen name="sizeTextHintSignUpFinish">16sp</dimen>
+    <dimen name="paddingVerticalBiografiaSignUpFinish">10dp</dimen>
+    <string name="fontTopicSignUpFinish" tools:ignore="ReferenceType">@font/roboto_bold</string>
+    <string name="fontHintSignUpFinish" tools:ignore="ReferenceType">@font/roboto_regular</string>
+    <string name="fontInfoSignUpFinish" tools:ignore="ReferenceType">@font/roboto_bold</string>
+    <string name="textoTittleSignUpFinish">Datos de Usuario</string>
+    <string name="textUserSignUpFinish">Cual es tu nombre</string>
+    <string name="hintUserSignUpFinish">Nombre</string>
+    <string name="textUserNameSignUpFinish">Como te gustaria llamarte?</string>
+    <string name="hintUserNameSignUpFinish">Nombre de usuario</string>
+    <string name="textUserBiografiaSignUpFinish">Biografia del perfil</string>
+    <string name="hintUserBiografiaSignUpFinish">Biografía</string>
+    <string name="textoBotonSignUpFinish"><b>Finalizar</b></string>
+
+
+
 
 
     <!--Feed-->
@@ -154,9 +225,11 @@
     <string name="categoria4">Pan</string>
 
 
-
-
-
+    <!--UserHome-->
+    <integer name="textAlignmentBiografiaUserHome">@integer/alignmentStart</integer>
+    <dimen name="sizeTextBiografiaUserHome">15sp</dimen>
+    <color name="textColorBiografiaUserHome">@color/colorTextMain</color>
+    <string name="fontBiografiaUserHome" tools:ignore="ReferenceType">@font/roboto_regular</string>
 
 
     <!--TX GENERALES-->
