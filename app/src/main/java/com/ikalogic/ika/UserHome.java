@@ -61,9 +61,12 @@ implements
         setContentView(R.layout.activity_userhome);
 
 
+        userAuth = FirebaseAuth.getInstance();
+        userDataBase = FirebaseDatabase.getInstance().getReference();
         awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
         /*awesomeValidation.addValidation(this,R.id.txtEmailLog, Patterns.EMAIL_ADDRESS,R.string.invalid_mail);
         awesomeValidation.addValidation(this,R.id.txtPasswordLog,".{6,}",R.string.invalid_password);*/
+
 
 
 
@@ -74,6 +77,7 @@ implements
         fragmentFeed = new FragmentFeed();
         fragmentShop = new FragmentShop();
         getSupportFragmentManager().beginTransaction().add(R.id.Fragments,fragmentUserHome).commit();//Primera fragment a mostrar
+        getData();
 
 
     }
@@ -83,7 +87,36 @@ implements
 
 
 
+    private void getData (){
+        String id = Objects.requireNonNull(userAuth.getCurrentUser()).getUid();
+        userDataBase.child("Users").child(id).addValueEventListener(new ValueEventListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    String val;
 
+
+                    /*-----------------*/
+                    val = Objects.requireNonNull(snapshot.child("ImageData").child("imgPerfil").child("ImageMain").getValue()).toString();
+                    ImageView userImageProfile = findViewById(R.id.footerImgPhotoUser);
+                    Glide.with(getApplicationContext()).load(val).into(userImageProfile);
+
+
+
+
+                }else {
+                    msgToast("Error");
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                msgToast("Error de carga");
+            }
+        });
+    }
 
 
 

@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -250,6 +251,11 @@ public class EditProfile extends AppCompatActivity {
                     val = Objects.requireNonNull(snapshot.child("CountData").child("userPassword").getValue()).toString();
                     userPassword = findViewById(R.id.userPasswordEditProfile);
                     userPassword.setText(val);
+
+                    /*-----------------*/
+                    val = Objects.requireNonNull(snapshot.child("ImageData").child("imgPerfil").child("ImageMain").getValue()).toString();
+                    ImageView userImageProfile = findViewById(R.id.imgPhotoUserEditProfile);
+                    Glide.with(getApplicationContext()).load(val).into(userImageProfile);
 
 
                 }else {

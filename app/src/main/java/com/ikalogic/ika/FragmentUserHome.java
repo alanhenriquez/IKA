@@ -205,8 +205,7 @@ public class FragmentUserHome extends Fragment {
                     /*-----------------*/
                     val = Objects.requireNonNull(snapshot.child("ImageData").child("imgPerfil").child("ImageMain").getValue()).toString();
                     userImageProfile = v.findViewById(R.id.imgPhotoUser);
-                    StorageReference storageReference = FirebaseStorage.getInstance().getReference().getStorage().getReferenceFromUrl(val);
-                    userImageProfile.setImageURI(Uri.parse(String.valueOf(storageReference)));
+                    Glide.with(v).load(val).into(userImageProfile);
 
 
 
