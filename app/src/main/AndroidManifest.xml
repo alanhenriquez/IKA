@@ -30,8 +30,7 @@
             android:name=".ForgotPassword"
             android:exported="false" />
         <activity
-            android:name=".UserHome"
-            android:exported="false" />
+            android:name=".UserHome"/>
         <activity
             android:name=".SignUp"
             android:exported="false" />
@@ -70,7 +69,11 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
+            android:parentActivityName=".UserHome">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".UserHome"/>
+        </activity>
     </application>
 
 </manifest>

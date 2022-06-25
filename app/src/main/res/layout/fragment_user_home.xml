@@ -61,7 +61,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_gravity="end"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        tools:ignore="UselessParent">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
@@ -98,13 +99,14 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:paddingVertical="20dp"
+                        android:paddingHorizontal="15dp"
                         tools:ignore="UselessParent">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:paddingHorizontal="15dp">
+                            android:paddingHorizontal="0dp">
 
                             <androidx.constraintlayout.widget.ConstraintLayout
                                 android:layout_width="match_parent"
@@ -126,7 +128,8 @@
                                         android:background="@color/colorImgPerfilUser"
                                         android:contentDescription="@string/descriptionImg"
                                         android:rotation="@integer/sizeRotationImageUser"
-                                        android:scaleType="centerCrop" />
+                                        android:scaleType="centerCrop"
+                                        tools:ignore="TooDeepLayout" />
                                 </androidx.cardview.widget.CardView>
                             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -136,7 +139,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:orientation="vertical"
-                            android:paddingEnd="15dp">
+                            android:paddingStart="15dp"
+                            tools:ignore="RtlSymmetry">
 
                             <TextView
                                 android:id="@+id/userUserHome"
@@ -164,18 +168,19 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:paddingHorizontal="20dp"
                         android:orientation="vertical">
 
                         <TextView
                             android:id="@+id/userBiografiaUserHome"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingHorizontal="30dp"
                             android:fontFamily="@string/fontBiografiaUserHome"
                             android:text="Biografia"
                             android:textAlignment="@integer/textAlignmentBiografiaUserHome"
                             android:textColor="@color/textColorBiografiaUserHome"
-                            android:textSize="@dimen/sizeTextBiografiaUserHome"/>
+                            android:textSize="@dimen/sizeTextBiografiaUserHome"
+                            tools:ignore="HardcodedText" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -192,7 +197,8 @@
             android:paddingBottom="@dimen/sizeFooter"
             android:background="@drawable/bgFooterOpUser"
             android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="@+id/linearLayout6">
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayout6"
+            tools:targetApi="lollipop">
 
             <LinearLayout
                 android:id="@+id/configuracionOpMenu"
@@ -289,7 +295,7 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/text1FooterOpUser"
+                            android:id="@+id/text2FooterOpUser"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/tx2FooterOpUser"

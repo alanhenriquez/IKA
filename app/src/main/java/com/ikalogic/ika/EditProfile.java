@@ -4,10 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
+import android.app.Dialog;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.text.InputType;
 import android.view.MotionEvent;
 import android.view.View;
@@ -26,6 +30,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -149,31 +154,63 @@ public class EditProfile extends AppCompatActivity {
         i.setType("image/*");
         i.setAction(Intent.ACTION_GET_CONTENT);
         // pass the constant to compare it with the returned requestCode
+        // noinspection deprecation
         startActivityForResult(Intent.createChooser(i, "Select Picture"), SELECT_PICTURE);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, final Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == Activity.RESULT_OK && requestCode == SELECT_PICTURE) {
+        if (resultCode == RESULT_OK && requestCode == SELECT_PICTURE
+                && data != null && data.getData() != null) {
+
+            /*Obtenemos la informacion de la imagen seleccionada*/
             imageUri = data.getData();
-            contImageUser.setImageURI(imageUri);
 
-            String id = Objects.requireNonNull(userAuth.getCurrentUser()).getUid();
-            StorageReference folder = FirebaseStorage.getInstance().getReference().child("Users").child(id);
-            final StorageReference file_name = folder.child(imageUri.getLastPathSegment());
-            file_name.putFile(imageUri).addOnSuccessListener(taskSnapshot ->
-                    file_name.getDownloadUrl().addOnSuccessListener(uri -> {
-
-                        //Enviamos a la base de datos la url de la imagen
-                        setDataImageBase(String.valueOf(uri));
-                        msgToast("Se subio correctamente");
+            try {
+                // Setting image on image view using Bitmap
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
+                contImageUser.setImageBitmap(bitmap);
+            } catch (IOException e) {
+                // Log the exception
+                e.printStackTrace();
+            }
 
 
+            if (imageUri != null) {
 
-            }));
+                // Code for showing progressDialog while uploading
+                ProgressDialog progressDialog = new ProgressDialog(this);
+                progressDialog.setTitle("Subiendo...");
+                progressDialog.show();
+                progressDialog.setCancelable(false);
+                progressDialog.setCanceledOnTouchOutside(false); 
+                progressDialog.setOnCancelListener(new Dialog.OnCancelListener() {
+                    @Override public void onCancel(DialogInterface dialog) {
+                        // DO SOME STUFF HERE
+                    }
+                });
 
+                // Defining the child of storageReference
+                String id = Objects.requireNonNull(userAuth.getCurrentUser()).getUid();
+                StorageReference folder = FirebaseStorage.getInstance().getReference().child("Users").child(id);
+                final StorageReference file_name = folder.child(imageUri.getLastPathSegment());
+                file_name.putFile(imageUri).addOnProgressListener(taskSnapshot -> {
+                    double progress = (100.0 * taskSnapshot.getBytesTransferred()
+                            / taskSnapshot.getTotalByteCount());
+                    progressDialog.setMessage("Cargando al " + (int)progress + "%");
+                }).addOnSuccessListener(taskSnapshot -> file_name.getDownloadUrl().addOnSuccessListener(uri -> {
+                    //Enviamos a la base de datos la url de la imagen
+                    setDataImageBase(String.valueOf(uri));
+                    progressDialog.dismiss();
+                    msgToast("Se subio correctamente");
+                })).addOnFailureListener(e -> {
+                    // Error, Image not uploaded
+                    progressDialog.dismiss();
+                    msgToast("Error en la carga " + e.getMessage());
+                });
 
+            }
         }
     }
 

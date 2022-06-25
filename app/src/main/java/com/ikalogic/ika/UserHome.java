@@ -1,19 +1,26 @@
 package com.ikalogic.ika;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.annotation.SuppressLint;
-import android.content.Context;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
-import android.graphics.Typeface;
-import android.net.Uri;
+import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
+import androidx.core.app.TaskStackBuilder;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
@@ -24,10 +31,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 
-import java.util.Locale;
 import java.util.Objects;
 
 
@@ -49,6 +53,10 @@ implements
     AwesomeValidation awesomeValidation;
     FirebaseAuth userAuth;
     DatabaseReference userDataBase;
+
+    private final static String CHANNEL_ID = "NOTIFICATION";
+    private final static int NOTIFICATION_ID = 0;
+    private PendingIntent pendingIntent;
 
 
 
@@ -128,6 +136,7 @@ implements
 
     /*Metodo para crear la accion Onclick del los botones del footer.
     * Esto se encuentra iniciado dentro de cada boton en el xml*/
+    @RequiresApi(api = Build.VERSION_CODES.S)
     @SuppressLint("NonConstantResourceId")
     public void onClick(View view) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -137,6 +146,9 @@ implements
                 break;
             case R.id.userHomeButton:
                 transaction.replace(R.id.Fragments,fragmentUserHome);
+                SetPendingIntent();
+                CreateNotificationChannel();
+                CreateNotification();
                 break;
             case R.id.storeButton:
                 transaction.replace(R.id.Fragments,fragmentShop);
@@ -144,6 +156,43 @@ implements
         }
         transaction.commit();
     }
+
+
+    private void SetPendingIntent(){
+        Intent intent = new Intent(this,UserHome.class);
+        TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
+        stackBuilder.addParentStack(UserHome.class);
+        stackBuilder.addNextIntent(intent);
+        pendingIntent = stackBuilder.getPendingIntent(1,PendingIntent.FLAG_UPDATE_CURRENT);
+
+    }
+
+    private void CreateNotificationChannel(){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            CharSequence name = "Notification";
+            NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ID, name, NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+            notificationManager.createNotificationChannel(notificationChannel);
+        }
+    }
+
+    private void CreateNotification(){
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(), CHANNEL_ID);
+        builder.setSmallIcon(R.drawable.icon_menu);
+        builder.setColor(Color.parseColor("#31A0FF"));
+        builder.setContentTitle("Notificacion");
+        builder.setContentText("ESTO ES UNA NOTIFICACION DE PRUEBA");
+        builder.setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
+        builder.setContentIntent(pendingIntent);
+
+        NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(getApplicationContext());
+        notificationManagerCompat.notify(NOTIFICATION_ID, builder.build());
+    }
+
+
+
 
 
 }

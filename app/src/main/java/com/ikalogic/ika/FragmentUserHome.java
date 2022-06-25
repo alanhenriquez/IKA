@@ -2,8 +2,6 @@ package com.ikalogic.ika;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.Typeface;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,27 +10,19 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
+import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.basgeekball.awesomevalidation.AwesomeValidation;
-import com.basgeekball.awesomevalidation.ValidationStyle;
 import com.bumptech.glide.Glide;
-import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -141,7 +131,6 @@ public class FragmentUserHome extends Fragment {
 
 
 
-
         getData(view);
 
         opConfiguracion.setOnClickListener(v -> {
@@ -157,10 +146,18 @@ public class FragmentUserHome extends Fragment {
         menuFooterOpUser.setVisibility(View.GONE);
         menuBoton.setOnClickListener(v -> {
 
+            TranslateAnimation animationShowUp1 = new TranslateAnimation(0.0f,0.0f,1000.0f,0.0f);
+            animationShowUp1.setDuration(350);
+
+            TranslateAnimation animationHideDown1 = new TranslateAnimation(0.0f,0.0f,0.0f,1000.0f);
+            animationHideDown1.setDuration(500);
+
             if (menuFooterOpUser.getVisibility() != View.GONE){
                 menuFooterOpUser.setVisibility(View.GONE);
+                menuFooterOpUser.startAnimation(animationHideDown1);
             }else {
                 menuFooterOpUser.setVisibility(View.VISIBLE);
+                menuFooterOpUser.startAnimation(animationShowUp1);
             }
 
         });
@@ -170,7 +167,9 @@ public class FragmentUserHome extends Fragment {
     /*-------------------------------------------------------------------------------*/
 
 
+    private void funAnimation(){
 
+    }
 
 
     /*Funcion getData que obtiene los datos desde Firebase base de datos*/
@@ -206,6 +205,8 @@ public class FragmentUserHome extends Fragment {
                     val = Objects.requireNonNull(snapshot.child("ImageData").child("imgPerfil").child("ImageMain").getValue()).toString();
                     userImageProfile = v.findViewById(R.id.imgPhotoUser);
                     Glide.with(v).load(val).into(userImageProfile);
+
+
 
 
 
