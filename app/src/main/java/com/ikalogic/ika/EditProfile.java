@@ -29,6 +29,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.ikalogic.ika.helpers.GetDataUser;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -52,7 +53,7 @@ public class EditProfile extends AppCompatActivity {
     //ImageView para la imagen de usuario
     Uri imageUri;
     View changeImageUser;//Boton para selecionar imagen
-    ImageView contImageUser;//Contenedor con la imagen del usuario
+    ImageView contImageUser, userImageProfile;//Contenedor con la imagen del usuario
     int SELECT_PICTURE = 200;// constant to compare the activity result code
 
 
@@ -232,6 +233,7 @@ public class EditProfile extends AppCompatActivity {
         userNameString = userName.getText().toString();
         userBiografiaString = userBiografia.getText().toString();
         userPasswordString = userPassword.getText().toString();
+
     }
 
 
@@ -261,51 +263,19 @@ public class EditProfile extends AppCompatActivity {
 
     /*Funcion getData que obtiene los datos desde Firebase base de datos*/
     private void getData (){
-        String id = Objects.requireNonNull(userAuth.getCurrentUser()).getUid();
-        userDataBase.child("Users").child(id).addValueEventListener(new ValueEventListener() {
-            @SuppressLint("SetTextI18n")
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists()) {
-                    String val;
+        user = findViewById(R.id.userEditProfile);
+        userName = findViewById(R.id.userNameEditProfile);
+        userBiografia = findViewById(R.id.userBiografiaEditProfile);
+        userPassword = findViewById(R.id.userPasswordEditProfile);
+        userImageProfile = findViewById(R.id.imgPhotoUserEditProfile);
 
-                    /*-----------------*/
-                    val = Objects.requireNonNull(snapshot.child("PerfilData").child("user").getValue()).toString();
-                    user = findViewById(R.id.userEditProfile);
-                    user.setText(val);
-
-                    /*-----------------*/
-                    val = Objects.requireNonNull(snapshot.child("PerfilData").child("userName").getValue()).toString();
-                    userName = findViewById(R.id.userNameEditProfile);
-                    userName.setText(val);
-
-                    /*-----------------*/
-                    val = Objects.requireNonNull(snapshot.child("PerfilData").child("userBiografia").getValue()).toString();
-                    userBiografia = findViewById(R.id.userBiografiaEditProfile);
-                    userBiografia.setText(val);
-
-                    /*-----------------*/
-                    val = Objects.requireNonNull(snapshot.child("CountData").child("userPassword").getValue()).toString();
-                    userPassword = findViewById(R.id.userPasswordEditProfile);
-                    userPassword.setText(val);
-
-                    /*-----------------*/
-                    val = Objects.requireNonNull(snapshot.child("ImageData").child("imgPerfil").child("ImageMain").getValue()).toString();
-                    ImageView userImageProfile = findViewById(R.id.imgPhotoUserEditProfile);
-                    Glide.with(getApplicationContext()).load(val).into(userImageProfile);
+        GetDataUser.loadOn(1,user);
+        GetDataUser.loadOn(2,userName);
+        GetDataUser.loadOn(3,userBiografia);
+        GetDataUser.loadOn(4,userPassword);
+        Glide.with(getApplicationContext()).load(GetDataUser.loadOnImageString()).into(userImageProfile);
 
 
-                }else {
-                    msgToast("Error");
-                }
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                msgToast("Error de carga");
-            }
-        });
     }
 
 

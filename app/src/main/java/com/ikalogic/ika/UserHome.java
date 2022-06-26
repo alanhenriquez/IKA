@@ -31,6 +31,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.ikalogic.ika.helpers.GetDataUser;
 
 import java.util.Objects;
 
@@ -67,6 +68,9 @@ implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_userhome);
+
+
+
 
 
         userAuth = FirebaseAuth.getInstance();
@@ -159,11 +163,7 @@ implements
 
 
     private void SetPendingIntent(){
-        Intent intent = new Intent(this,UserHome.class);
-        TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
-        stackBuilder.addParentStack(UserHome.class);
-        stackBuilder.addNextIntent(intent);
-        pendingIntent = stackBuilder.getPendingIntent(1,PendingIntent.FLAG_UPDATE_CURRENT);
+
 
     }
 
@@ -178,17 +178,25 @@ implements
 
     private void CreateNotification(){
 
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(), CHANNEL_ID);
-        builder.setSmallIcon(R.drawable.icon_menu);
-        builder.setColor(Color.parseColor("#31A0FF"));
-        builder.setContentTitle("Notificacion");
-        builder.setContentText("ESTO ES UNA NOTIFICACION DE PRUEBA");
-        builder.setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
-        builder.setContentIntent(pendingIntent);
+        Intent intent = new Intent(this,UserHome.class);
+        TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
+        stackBuilder.addParentStack(UserHome.class);
+        stackBuilder.addNextIntent(intent);
+        pendingIntent = stackBuilder.getPendingIntent(1,PendingIntent.FLAG_UPDATE_CURRENT);
 
-        NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(getApplicationContext());
-        notificationManagerCompat.notify(NOTIFICATION_ID, builder.build());
+
+        // Example
+        Notify.build(getApplicationContext())
+                .setTitle("Jill Zhao")
+                .setContent("Hi! So I meet you today?")
+                .setSmallIcon(R.drawable.iconConfiguracion)
+                .setLargeIcon(GetDataUser.loadOnImageString())
+                .largeCircularIcon()
+                .setPicture("https://p2.piqsels.com/preview/752/273/265/bay-birds-blue-bridge.jpg")
+                .setColor(R.color.azul9).setAction(intent)
+                .show();
+
     }
 
 
