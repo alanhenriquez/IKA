@@ -50,6 +50,7 @@
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/activity_pan.xml" value="0.2015625" />
+        <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/activity_select_image.xml" value="0.215625" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/activity_sign_up.xml" value="0.215625" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/activity_sign_up_finish.xml" value="0.215625" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/activity_userhome.xml" value="0.25" />
@@ -59,6 +60,8 @@
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/fragment_feed.xml" value="0.2015625" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/fragment_shop.xml" value="0.215625" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/fragment_user_home.xml" value="0.25" />
+        <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/img_shows.xml" value="0.2015625" />
+        <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/recycler_view_item.xml" value="0.215625" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/menu/menu_principal.xml" value="0.215625" />
       </map>
     </option>

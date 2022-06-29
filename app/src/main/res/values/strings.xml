@@ -78,7 +78,8 @@
     <drawable name="iconHome">@drawable/icon_home</drawable>
     <drawable name="iconMenu">@drawable/icon_menu</drawable>
     <drawable name="iconCamera">@drawable/icon_camera</drawable>
-
+    <drawable name="iconCheck">@drawable/icon_check</drawable>
+    <drawable name="iconArrowBack">@drawable/icon_arrow_back</drawable>
 
 
     <!--Footer Elements-->
@@ -146,7 +147,8 @@
 
 
     <!--SignUp-->
-    <drawable name="colorBtBgSignUp">@drawable/esquinas_redondeadas2</drawable><!--BG botonn recoverPass-->
+    <drawable name="colorBtBgSignUp">@drawable/esquinas_redondeadas2
+    </drawable><!--BG botonn recoverPass-->
     <integer name="textAlignmentTitleSignUp">@integer/alignmentCenter</integer>
     <integer name="textAlignmentInfoSignUp">@integer/alignmentStart</integer>
     <integer name="textAlignmentHintSignUp">@integer/alignmentStart</integer>
@@ -171,7 +173,8 @@
 
     <!--SignUpFinish-->
     <drawable name="backgroundBotonSignUpFinish">@drawable/esquinas_redondeadas5</drawable>
-    <drawable name="colorBtBgSignUpFinish">@drawable/esquinas_redondeadas2</drawable><!--BG botonn recoverPass-->
+    <drawable name="colorBtBgSignUpFinish">@drawable/esquinas_redondeadas2
+    </drawable><!--BG botonn recoverPass-->
     <integer name="textAlignmentTitleSignUpFinish">@integer/alignmentCenter</integer>
     <integer name="textAlignmentInfoSignUpFinish">@integer/alignmentStart</integer>
     <integer name="textAlignmentHintSignUpFinish">@integer/alignmentStart</integer>
@@ -201,9 +204,6 @@
     <string name="textUserBiografiaSignUpFinish">Biografia del perfil</string>
     <string name="hintUserBiografiaSignUpFinish">Biografía</string>
     <string name="textoBotonSignUpFinish"><b>Finalizar</b></string>
-
-
-
 
 
     <!--Feed-->

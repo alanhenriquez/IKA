@@ -1,4 +1,4 @@
-package com.ikalogic.ika;
+package com.ikalogic.ika.specials;
 
 import static android.app.PendingIntent.FLAG_CANCEL_CURRENT;
 import static android.app.PendingIntent.FLAG_IMMUTABLE;

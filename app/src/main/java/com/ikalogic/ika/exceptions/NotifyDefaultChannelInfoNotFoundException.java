@@ -2,7 +2,7 @@ package com.ikalogic.ika.exceptions;
 
 import android.content.res.Resources;
 
-import com.ikalogic.ika.Notify;
+import com.ikalogic.ika.specials.Notify;
 
 public class NotifyDefaultChannelInfoNotFoundException extends Resources.NotFoundException {
     public NotifyDefaultChannelInfoNotFoundException(){}

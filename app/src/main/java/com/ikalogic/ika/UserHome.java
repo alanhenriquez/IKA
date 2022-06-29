@@ -5,8 +5,6 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -17,8 +15,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
 import androidx.core.app.TaskStackBuilder;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -32,6 +28,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.ikalogic.ika.helpers.GetDataUser;
+import com.ikalogic.ika.specials.Notify;
 
 import java.util.Objects;
 
@@ -194,7 +191,7 @@ implements
                 .setLargeIcon(GetDataUser.loadOnImageString())
                 .largeCircularIcon()
                 .setPicture("https://p2.piqsels.com/preview/752/273/265/bay-birds-blue-bridge.jpg")
-                .setColor(R.color.azul9).setAction(intent)
+                .setColor(R.color.azul9).setAction(intent).setAutoCancel(true)
                 .show();
 
     }
