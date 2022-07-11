@@ -29,6 +29,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.ikalogic.ika.exceptions.InitActivityScreenOrientPortrait;
 import com.ikalogic.ika.helpers.GetDataUser;
 
 import java.io.IOException;
@@ -73,9 +74,7 @@ public class EditProfile extends AppCompatActivity {
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
-
-
-
+        InitActivityScreenOrientPortrait.build(this);
 
 
         /* Acceso a Instancias FireBase y a la AwesomeValidacion
@@ -127,11 +126,10 @@ public class EditProfile extends AppCompatActivity {
 
         });/*Actualizamos la contraseña*/
         changeImageUser.setOnClickListener(v ->{
-            msgToast("Selecciona tu imagen");
-
-            openGallery();
-
-
+            Intent intent = new Intent(getApplicationContext(), SelectImage.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            finish();
         });/*Elegimos la nueva imagen de usuario*/
     }
 

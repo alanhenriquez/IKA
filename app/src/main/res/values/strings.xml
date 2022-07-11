@@ -78,6 +78,7 @@
     <drawable name="iconHome">@drawable/icon_home</drawable>
     <drawable name="iconMenu">@drawable/icon_menu</drawable>
     <drawable name="iconCamera">@drawable/icon_camera</drawable>
+    <drawable name="iconCameraAdd">@drawable/icon_camera_add</drawable>
     <drawable name="iconCheck">@drawable/icon_check</drawable>
     <drawable name="iconArrowBack">@drawable/icon_arrow_back</drawable>
 

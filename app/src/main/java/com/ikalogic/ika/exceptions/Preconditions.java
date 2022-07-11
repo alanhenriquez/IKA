@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.util.Collection;
+import java.util.Objects;
 
 public class Preconditions {
 
@@ -37,7 +38,7 @@ public class Preconditions {
         if (TextUtils.isEmpty(string)) {
             throw new IllegalArgumentException("Must not be null or empty");
         }
-        return string;
+        return Objects.requireNonNull(string);
     }
 
     @NonNull

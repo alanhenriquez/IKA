@@ -28,6 +28,7 @@
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable-v24/gradiante_redondo_rtb1.xml" value="0.1655" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable-v24/ic_launcher_background.xml" value="0.1795" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1795" />
+        <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable-v24/line_view1.xml" value="0.1655" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable/footer_store_icon.xml" value="0.1655" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable/gradiante_redondo2.xml" value="0.1655" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1795" />
@@ -60,7 +61,9 @@
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/fragment_feed.xml" value="0.2015625" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/fragment_shop.xml" value="0.215625" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/fragment_user_home.xml" value="0.25" />
+        <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/gallery_layout.xml" value="0.215625" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/img_shows.xml" value="0.2015625" />
+        <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/item.xml" value="0.215625" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/recycler_view_item.xml" value="0.215625" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/menu/menu_principal.xml" value="0.215625" />
       </map>

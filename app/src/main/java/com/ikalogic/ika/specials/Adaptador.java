@@ -2,10 +2,13 @@ package com.ikalogic.ika.specials;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.UriPermission;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,8 +29,9 @@ public class Adaptador{
     View btEliminar, btAgregar;
     String nombre, telefono;
     EditText et1, et2;
+    ImageView imageView;
     Adaptador.AdaptadorPersona ap;
-    int layoutFile, elem1, elem2;
+    int layoutFile, elem1, elem2, imageViewInt;
     private final Context context;
 
 
@@ -43,7 +47,7 @@ public class Adaptador{
      * Este se obtiene mas abajo en el codigo mediante:
      * public static Adaptador build(@NonNull Context context)
      * */
-    private Adaptador(Context _context){
+    public Adaptador(Context _context){
         this.context = _context;
     }
 
@@ -159,6 +163,7 @@ public class Adaptador{
                 super(itemView);
                 tv1=itemView.findViewById(elem1);
                 tv2=itemView.findViewById(elem2);
+
                 itemView.setOnClickListener(this);
             }
 
@@ -226,6 +231,29 @@ public class Adaptador{
         this.elem1 = view1;
         this.elem2 = view2;
         return this;
+    }
+
+    public Adaptador layoutViews(int imageView){
+        this.imageViewInt = imageView;
+        return this;
+    }
+
+    public Adaptador layoutViews(ImageView imageView){
+        this.imageView = imageView;
+        return this;
+    }
+
+
+    public Uri load(Uri uri){
+        return uri;
+    }
+
+    public Uri load(String uriString){
+        if (uriString.isEmpty()){
+            return null;
+        }else{
+            return Uri.parse(uriString);
+        }
     }
 
 
