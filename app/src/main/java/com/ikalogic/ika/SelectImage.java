@@ -15,6 +15,11 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -23,6 +28,7 @@ import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
@@ -41,6 +47,7 @@ import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
@@ -54,6 +61,7 @@ import com.ikalogic.ika.helpers.SpliterText;
 import com.ikalogic.ika.helpers.URLValidator;
 import com.ikalogic.ika.specials.Adaptador;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -65,6 +73,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 import java.util.concurrent.RunnableFuture;
@@ -76,9 +85,13 @@ public class SelectImage extends AppCompatActivity {
     StorageReference root;
     ProgressBar progressBar;
     ImageAdapter adapter;
-    FirebaseAuth userAuth;
+
     TextView mostrar;
+    View regresar, confirmar;
     WifiManager wifiManager;
+
+    FirebaseAuth userAuth;
+    DatabaseReference userDataBase;
 
     /*-------------------------------------------------------------------------------*/
     @SuppressLint("WifiManagerLeak")
@@ -87,15 +100,18 @@ public class SelectImage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_image);
         userAuth = FirebaseAuth.getInstance();
+        userDataBase = FirebaseDatabase.getInstance().getReference();
         InitActivityScreenOrientPortrait.build(this);
 
+
+        //Imagenes y RecyclerView + Adapter
         imageView = findViewById(R.id.imgPhotoUser);
         Glide.with(getApplicationContext()).load(GetDataUser.loadOnImageString()).into(imageView);
-
         imagelist=new ArrayList<>();
         recyclerView=findViewById(R.id.recyclerview);
-        adapter=new ImageAdapter(imagelist,this);
-        View regresar = findViewById(R.id.regresar);
+        adapter=new ImageAdapter(imagelist,this,imageView);
+        regresar = findViewById(R.id.regresar);
+        confirmar = findViewById(R.id.confirmar);
         mostrar = findViewById(R.id.m);
 
 
@@ -106,11 +122,15 @@ public class SelectImage extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
+                    for (int i = 0;i<snapshot.getChildrenCount(); i++){
+                        charge(i);
+                    }
                     for (DataSnapshot child: snapshot.getChildren()) {
 
                         Map<String, Object> values = new HashMap<>();
                         values.put(child.getKey(),child.getValue());
                         Log.d("firebase", String.valueOf(values));
+
                     }
                 }
 
@@ -128,42 +148,28 @@ public class SelectImage extends AppCompatActivity {
             for(StorageReference file:listResult.getItems()){
                 file.getDownloadUrl().addOnSuccessListener(uri -> {
                     imagelist.add(uri.toString());
+                    String h = "https://firebasestorage.googleapis.com/v0/b/ikaproyect.appspot.com/o/Users%2Fj7sIGgfkvMWLtk3NS6Ngkf89X1u2%2FD40D-1E13%3ADCIM%2FCamera-11%2F20211218_091915.jpg?alt=media&token=f6ee00bf-803e-43ca-bfc6-fbcafbab3a53";
                     Log.e("Itemvalue",uri.toString());
+                    Log.e("ItemValueCompare", imagelist.get(0));
                 }).addOnSuccessListener(uri -> {
                     LinearLayoutManager l= new GridLayoutManager(getApplicationContext(),3);
                     recyclerView.setAdapter(adapter);
                     recyclerView.setLayoutManager(l);
-                }).addOnFailureListener(e -> {
-                    // Error, Image not uploaded
-                    msgToast("Error en la carga " + e.getMessage());
-                });
+                }).addOnFailureListener(e -> msgToast(String.valueOf(e)));
             }
         });
 
 
-
-
-        
-
-
-
-
-
-
-
-        isOnline(getApplicationContext());
-
-
-
-
-
+        //Botones del Header para regresar y confirmar
         regresar.setOnClickListener(view -> {
             Intent intent = new Intent(getApplicationContext(), EditProfile.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
             finish();
         });
+        confirmar.setOnClickListener(view ->{
 
+        });
 
 
 
@@ -181,21 +187,51 @@ public class SelectImage extends AppCompatActivity {
 
 
 
+    public void charge(int num){
+        Log.d("firebaseNum", String.valueOf(num));
+    }
+
+    public static Bitmap drawableToBitmap (Drawable drawable) {
+        Bitmap bitmap = null;
+
+        if (drawable instanceof BitmapDrawable) {
+            BitmapDrawable bitmapDrawable = (BitmapDrawable) drawable;
+            if(bitmapDrawable.getBitmap() != null) {
+                return bitmapDrawable.getBitmap();
+            }
+        }
+
+        if(drawable.getIntrinsicWidth() <= 0 || drawable.getIntrinsicHeight() <= 0) {
+            bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888); // Single color bitmap will be created of 1x1 pixel
+        } else {
+            bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+        }
+
+        Canvas canvas = new Canvas(bitmap);
+        drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+        drawable.draw(canvas);
+        return bitmap;
+    }
+
+    public Uri getImageUri(Context inContext, Bitmap inImage) {
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+        String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "Title", null);
+        return Uri.parse(path);
+    }
 
 
 
 
 
+    private void setDataImageBase(Drawable link){
 
+        Map<String, Object> data = new HashMap<>();
+        data.put("ImageMain", String.valueOf(getImageUri(getApplicationContext(),drawableToBitmap(link))));
+        String id = Objects.requireNonNull(userAuth.getCurrentUser()).getUid();
+        userDataBase.child("Users").child(id).child("ImageData").child("imgPerfil").setValue(data).addOnCompleteListener(task1 -> msgToast("Datos actualizados"));
 
-
-    
-    
-    
-    
-    
-    
-    
+    }
 
 
     public static boolean isOnline(Context context) {
@@ -239,17 +275,12 @@ public class SelectImage extends AppCompatActivity {
 
     }
 
-
     public void SpliterText(String texto, String toSplit){
         String[] separated = texto.split(toSplit);
         for (String s : separated) {
             Log.e("SpliterText", "Users/j7sIGgfkvMWLtk3NS6Ngkf89X1u2/D40D-1E13:DCIM/Camera-11/");
         }
     }
-
-
-
-
 
     /*Variable para generar el mensaje Toast*/
     private void msgToast(String message) {

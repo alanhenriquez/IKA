@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,10 +18,12 @@ import java.util.ArrayList;
 public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> {
     private final Context context;
     private final ArrayList<String> imageList;
+    ImageView img;
 
-    public ImageAdapter(ArrayList<String> imageList, Context context) {
+    public ImageAdapter(ArrayList<String> imageList, Context context, ImageView imageView) {
         this.imageList = imageList;
         this.context = context;
+        this.img = imageView;
     }
 
 
@@ -35,6 +38,9 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
     public void onBindViewHolder(@NonNull ImageAdapter.ViewHolder holder, int position) {
         // loading the images from the position
         Glide.with(holder.itemView.getContext()).load(imageList.get(position)).into(holder.imageView);
+        holder.imageView.setOnClickListener(view -> {
+            Glide.with(holder.itemView.getContext()).load(holder.imageView.getDrawable()).into(img);
+        });
     }
 
     @Override
@@ -44,6 +50,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView=itemView.findViewById(R.id.item);

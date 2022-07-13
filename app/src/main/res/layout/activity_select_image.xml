@@ -111,15 +111,25 @@
                                 app:layout_constraintTop_toTopOf="parent"
                                 tools:ignore="TooDeepLayout">
 
-                                <ImageView
-                                    android:id="@+id/imgPhotoUser"
+                                <androidx.percentlayout.widget.PercentRelativeLayout
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="@color/colorImgPerfilUser"
-                                    android:contentDescription="@string/descriptionImg"
-                                    android:rotation="@integer/sizeRotationImageUser"
-                                    android:scaleType="centerCrop"
-                                    tools:ignore="TooDeepLayout" />
+                                    android:layout_height="match_parent">
+
+                                    <ImageView
+                                        android:id="@+id/imgPhotoUser"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        app:layout_widthPercent="100%"
+                                        app:layout_heightPercent="100%"
+                                        android:background="@color/colorImgPerfilUser"
+                                        android:contentDescription="@string/descriptionImg"
+                                        android:rotation="@integer/sizeRotationImageUser"
+                                        android:scaleType="centerCrop"
+                                        tools:ignore="TooDeepLayout" />
+
+                                </androidx.percentlayout.widget.PercentRelativeLayout>
+
+
                             </androidx.cardview.widget.CardView>
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
