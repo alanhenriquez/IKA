@@ -6,6 +6,7 @@
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/Extras/IKA/app/src/main/res/layout/activity_frutas_verduras.xml" value="0.215625" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/Extras/IKA/app/src/main/res/layout/activity_informacion.xml" value="0.215625" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/Extras/IKA/app/src/main/res/layout/activity_main.xml" value="0.215625" />
+        <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable-v24/bg_view1.xml" value="0.1655" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable-v24/borde1.xml" value="0.1655" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable-v24/circulo1.xml" value="0.1655" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable-v24/esquinas_redondeadas.xml" value="0.1795" />
@@ -17,6 +18,7 @@
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable-v24/esquinas_redondeadas3t.xml" value="0.1655" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable-v24/esquinas_redondeadas4.xml" value="0.1655" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable-v24/esquinas_redondeadas5.xml" value="0.1655" />
+        <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable-v24/esquinas_redondeadas6.xml" value="0.1655" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable-v24/esquinas_redondeadas_gra1.xml" value="0.1655" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable-v24/esquinas_redondeadas_gra2.xml" value="0.1655" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable-v24/gradiante1.xml" value="0.1795" />
@@ -29,6 +31,7 @@
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable-v24/ic_launcher_background.xml" value="0.1795" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1795" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable-v24/line_view1.xml" value="0.1655" />
+        <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable-v24/line_view2.xml" value="0.1655" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable/footer_store_icon.xml" value="0.1655" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable/gradiante_redondo2.xml" value="0.1655" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1795" />
@@ -51,7 +54,7 @@
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/activity_pan.xml" value="0.2015625" />
-        <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/activity_select_image.xml" value="0.215625" />
+        <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/activity_select_image.xml" value="0.25" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/activity_sign_up.xml" value="0.215625" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/activity_sign_up_finish.xml" value="0.215625" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/activity_userhome.xml" value="0.25" />
@@ -64,6 +67,7 @@
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/gallery_layout.xml" value="0.215625" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/img_shows.xml" value="0.2015625" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/item.xml" value="0.215625" />
+        <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/permision_nodetected.xml" value="0.21458333333333332" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/recycler_view_item.xml" value="0.215625" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/menu/menu_principal.xml" value="0.215625" />
       </map>

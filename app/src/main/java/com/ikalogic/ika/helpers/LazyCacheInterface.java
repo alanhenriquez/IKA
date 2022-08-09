@@ -8,7 +8,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Supplier;
 
-public class Ideone {
+public class LazyCacheInterface {
+    //No tocar almenos que sea para modificar. Se implementa de forma
+    //automatica
 
 
     @RequiresApi(api = Build.VERSION_CODES.N)

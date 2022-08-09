@@ -10,16 +10,35 @@
     <color name="colorFooterMain">@color/gris0</color>
     <color name="colorHeaderMain">@color/gris0</color>
     <dimen name="sizeTextMain">15sp</dimen><!--Tamaño del texto recuperar contraseña-->
+    <dimen name="sizeImgPermisosSolicitud">170dp</dimen><!--Tamaño del texto recuperar contraseña-->
     <string name="fontMain" tools:ignore="ReferenceType">@font/roboto_regular</string><!--Tipografia Principal Ika-->
     <bool name="booleanoTrue">true</bool>
     <bool name="booleanoFalse">false</bool>
     <integer name="alignmentStart">1</integer>
     <integer name="alignmentEnd">3</integer>
     <integer name="alignmentCenter">4</integer>
+    <drawable name="imgPermisosSolicitud">@drawable/permisos</drawable>
     <!--Esto es el tema inicial del proyecto, eliminado para quitar la barra superior
     que se encuentra en la parte duperior de la app por default
         android:theme="@style/Theme.IKA"
     -->
+
+
+
+    <!--Explicacion de los permisos-->
+
+    <color name="PERMISO_COLOR_TEXTO">@color/colorTextMain</color>
+    <color name="PERMISO_COLOR_TEXTO_BOTONES">@color/colorTextMain</color>
+    <dimen name="PERMISO_paddingHorizontal">25dp</dimen>
+    <dimen name="PERMISO_paddingVertical">15dp</dimen>
+    <dimen name="PERMISO_marginVertical">20dp</dimen>
+    <dimen name="PERMISO_marginHorizontal">30dp</dimen>
+    <dimen name="PERMISO_SIZE_TEXT">16sp</dimen>
+    <dimen name="PERMISO_boton_elevation">3dp</dimen>
+    <string name="PERMISO_FONT" tools:ignore="ReferenceType">@font/roboto_regular</string>
+    <string name="PERMISO_BTON_DENIED">Cancelar</string>
+    <string name="PERMISO_BTON_GRANTED">Permitir</string>
+    <string name="PERMISO_WRITE_EXTERNAL_STORAGE">Requerimos del permiso al almacenamiento interno para poder acceder al contenido multimedia del dispositivo tales como imagenes o videos</string>
 
 
     <!--Login Elements y Formulario-->
