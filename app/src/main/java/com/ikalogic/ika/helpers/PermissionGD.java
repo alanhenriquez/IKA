@@ -67,6 +67,20 @@ public class PermissionGD{
 
     */
 
+    //Public static boolean--------------------------------
+
+    public static boolean isGranted(Context context, String permission){
+        return ContextCompat.checkSelfPermission(context, permission) == PackageManager.PERMISSION_GRANTED;
+    }
+
+    public static boolean isShouldShowRequest(Context context, Activity activity, String permission){
+        if (ContextCompat.checkSelfPermission(context, permission) != PackageManager.PERMISSION_GRANTED) {
+            return ActivityCompat.shouldShowRequestPermissionRationale(activity, permission);
+        }
+        return false;
+    }
+
+
 
     //Public static class----------------------------------
 
@@ -101,26 +115,9 @@ public class PermissionGD{
         public void check(String permission, int code){
             if (!(PermissionGD.isGranted(context,permission))) {
                 if (PermissionGD.isShouldShowRequest(context,activity,permission)){
-                    activity.setContentView(R.layout.permision_nodetected);
-                    Toast.makeText(context, "isShouldShowRecuest", Toast.LENGTH_SHORT).show();
-                    View denied = findViewById(R.id.permisoDenied);
-                    View granted = findViewById(R.id.permisoGranted);
-
-                    granted.setOnClickListener(view -> {
-                        PermissionGD.RecuestPermission.build(context,activity).recuest(permission,code);
-                        Toast.makeText(context, "Reload", Toast.LENGTH_SHORT).show();
-                    });
-                    denied.setOnClickListener(view -> {
-                        if (cls != null){
-                            ChangeActivity.build(context,cls).start();
-                        } else{
-                            Log.e("PermissionGD","Falta implementar: returnTo(Class<?> returnTo)");
-                        }
-                    });
-                } else {
-                    activity.setContentView(R.layout.permision_nodetected);
                     PermissionGD.RecuestPermission.build(context,activity).recuest(permission,code);
-                    Toast.makeText(context, "Reload 1", Toast.LENGTH_SHORT).show();
+                } else {
+                    PermissionGD.RecuestPermission.build(context,activity).recuest(permission,code);
                 }
 
             }
@@ -184,20 +181,6 @@ public class PermissionGD{
 
     }
 
-
-
-    //Public static boolean--------------------------------
-
-    public static boolean isGranted(Context context, String permission){
-        return ContextCompat.checkSelfPermission(context, permission) == PackageManager.PERMISSION_GRANTED;
-    }
-
-    public static boolean isShouldShowRequest(Context context, Activity activity, String permission){
-        if (ContextCompat.checkSelfPermission(context, permission) != PackageManager.PERMISSION_GRANTED) {
-            return ActivityCompat.shouldShowRequestPermissionRationale(activity, permission);
-        }
-        return false;
-    }
 
 
 

@@ -12,13 +12,13 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/linearLayout6"
+            android:id="@+id/main"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/Header"
+                android:id="@+id/header"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/sizeHeader"
                 android:background="@color/colorHeaderMain"
@@ -197,7 +197,8 @@
             android:paddingBottom="@dimen/sizeFooter"
             android:background="@drawable/bgFooterOpUser"
             android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="@+id/linearLayout6"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/main"
             tools:targetApi="lollipop">
 
             <LinearLayout

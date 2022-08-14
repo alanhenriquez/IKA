@@ -21,7 +21,7 @@ public class InitActivityScreenOrientPortrait {
     public static void build(Activity context) {
         contexto = context;
         // Establecer ventana a pantalla completa
-        contexto.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //contexto.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         DisplayMetrics metrics = new DisplayMetrics();
         contexto.getWindowManager().getDefaultDisplay().getMetrics(metrics);

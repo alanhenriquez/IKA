@@ -42,8 +42,6 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.ikalogic.ika.adapters.ImageAdapter;
 import com.ikalogic.ika.exceptions.InitActivityScreenOrientPortrait;
-import com.ikalogic.ika.helpers.ChangeActivity;
-import com.ikalogic.ika.helpers.DetectConection;
 import com.ikalogic.ika.helpers.GetDataUser;
 import com.ikalogic.ika.helpers.PermissionGD;
 
@@ -218,7 +216,7 @@ public class SelectImage extends AppCompatActivity {
             }*/
             });
 
-            DetectConection.build(getApplicationContext()).networkStateReceiver();
+
 
         }
 

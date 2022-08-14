@@ -5,17 +5,25 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.TaskStackBuilder;
+import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
@@ -28,7 +36,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.ikalogic.ika.exceptions.InitActivityScreenOrientPortrait;
+import com.ikalogic.ika.helpers.DayNightMode;
+import com.ikalogic.ika.helpers.DetectConection;
 import com.ikalogic.ika.helpers.GetDataUser;
+import com.ikalogic.ika.helpers.PermissionGD;
 import com.ikalogic.ika.specials.Notify;
 
 import java.util.Objects;
@@ -82,6 +93,19 @@ implements
 
 
 
+        DetectConection.build(getApplicationContext()).networkStateReceiver();
+        if (Build.VERSION.SDK_INT >= 21){
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            getWindow().setNavigationBarColor(getResources().getColor(R.color.colorFooterMain));
+            getWindow().setStatusBarColor(getResources().getColor(R.color.colorHeaderMain));
+
+        }
+
+
+        PermissionGD.InicialPrecess
+                .build(getApplicationContext(),this)
+                .check(PermissionGD.Permissions.WRITE_EXTERNAL_STORAGE,PermissionGD.Permissions.WRITE_EXTERNAL_STORAGE_CODE);
         /*Botones y acciones*/
         fragmentUserHome = new FragmentUserHome();
         fragmentFeed = new FragmentFeed();
@@ -89,11 +113,90 @@ implements
         getSupportFragmentManager().beginTransaction().add(R.id.Fragments,fragmentUserHome).commit();//Primera fragment a mostrar
         getData();
 
-
     }
 
     /*-------------------------------------------------------------------------------*/
 
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    @Override
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+        View footer = findViewById(R.id.footer);
+        View icon1 = findViewById(R.id.footerHomeIcon);
+        View icon2 = findViewById(R.id.footerStoreIcon);
+        View icon3 = findViewById(R.id.footerAddIcon);
+        View icon4 = findViewById(R.id.footerMenuIcon);
+        View icon5 = findViewById(R.id.footerImgPhotoUser);
+
+        Drawable icon1Tint = icon1.getBackground();
+        icon1Tint = DrawableCompat.wrap(icon1Tint);
+
+        Drawable icon2Tint = icon2.getBackground();
+        icon2Tint = DrawableCompat.wrap(icon2Tint);
+
+        Drawable icon3Tint = icon3.getBackground();
+        icon3Tint = DrawableCompat.wrap(icon3Tint);
+
+        Drawable icon4Tint = icon4.getBackground();
+        icon4Tint = DrawableCompat.wrap(icon4Tint);
+
+        Drawable icon5Tint = icon5.getBackground();
+        icon5Tint = DrawableCompat.wrap(icon5Tint);
+
+
+
+
+        switch (String.valueOf((DayNightMode.build(getApplicationContext()).isDayMode()))){
+            case "true":
+                //DIA
+                if (Build.VERSION.SDK_INT >= 21){
+                    getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                    getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+                    getWindow().setNavigationBarColor(getResources().getColor(R.color.colorFooterMain));
+                    getWindow().setStatusBarColor(getResources().getColor(R.color.colorHeaderMain));
+                    getWindow().setColorMode(getResources().getColor(R.color.black));
+                }
+                DrawableCompat.setTint(icon1Tint,getResources().getColor(R.color.colorTextMain));
+                DrawableCompat.setTint(icon2Tint,getResources().getColor(R.color.colorTextMain));
+                DrawableCompat.setTint(icon3Tint,getResources().getColor(R.color.colorTextMain));
+                DrawableCompat.setTint(icon4Tint,getResources().getColor(R.color.colorTextMain));
+                DrawableCompat.setTint(icon5Tint,getResources().getColor(R.color.colorTextMain));
+                footer.setBackgroundColor(getResources().getColor(R.color.colorFooterMain));
+                icon1.setBackground(icon1Tint);
+                icon2.setBackground(icon2Tint);
+                icon3.setBackground(icon3Tint);
+                icon4.setBackground(icon4Tint);
+                icon5.setBackground(icon5Tint);
+                msgToast("dia");
+                break;
+            case "false":
+                //NOCHE
+                if (Build.VERSION.SDK_INT >= 21){
+                    getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                    getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+                    getWindow().setNavigationBarColor(getResources().getColor(R.color.nightColorBacground4));
+                    getWindow().setStatusBarColor(getResources().getColor(R.color.nightColorBacground4));
+                }
+                DrawableCompat.setTint(icon1Tint,getResources().getColor(R.color.nightColorText1));
+                DrawableCompat.setTint(icon2Tint,getResources().getColor(R.color.nightColorText1));
+                DrawableCompat.setTint(icon3Tint,getResources().getColor(R.color.nightColorText1));
+                DrawableCompat.setTint(icon4Tint,getResources().getColor(R.color.nightColorText1));
+                DrawableCompat.setTint(icon5Tint,getResources().getColor(R.color.nightColorText1));
+                footer.setBackgroundColor(getResources().getColor(R.color.nightColorBacground4));
+                icon1.setBackground(icon1Tint);
+                icon2.setBackground(icon2Tint);
+                icon3.setBackground(icon3Tint);
+                icon4.setBackground(icon4Tint);
+                icon5.setBackground(icon5Tint);
+                msgToast("noche");
+                break;
+        }
+
+
+
+    }
 
 
 
@@ -148,7 +251,6 @@ implements
                 break;
             case R.id.userHomeButton:
                 transaction.replace(R.id.Fragments,fragmentUserHome);
-                SetPendingIntent();
                 CreateNotificationChannel();
                 CreateNotification();
                 break;
@@ -157,12 +259,6 @@ implements
                 break;
         }
         transaction.commit();
-    }
-
-
-    private void SetPendingIntent(){
-
-
     }
 
     private void CreateNotificationChannel(){

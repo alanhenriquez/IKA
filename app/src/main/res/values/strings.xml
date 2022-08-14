@@ -1,23 +1,21 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">IKA</string>
     <string name="app_name2">Ika</string>
-    <string name="nVersion">1.7.7</string>
     <string name="contentDescription">Imagen</string>
     <string name="invalid_mail">Ingrese mail valido</string>
     <string name="invalid_password">Minimo de 6 caracteres</string>
     <color name="colorBackgroundMain">@color/gris00</color>
     <color name="colorTextMain">@color/black</color>
     <color name="colorFooterMain">@color/gris0</color>
-    <color name="colorHeaderMain">@color/gris0</color>
-    <dimen name="sizeTextMain">15sp</dimen><!--Tamaño del texto recuperar contraseña-->
-    <dimen name="sizeImgPermisosSolicitud">170dp</dimen><!--Tamaño del texto recuperar contraseña-->
-    <string name="fontMain" tools:ignore="ReferenceType">@font/roboto_regular</string><!--Tipografia Principal Ika-->
+    <color name="colorHeaderMain">@color/colorFooterMain</color>
+    <dimen name="sizeTextMain">15sp</dimen>
+    <dimen name="sizeImgPermisosSolicitud">170dp</dimen>
+    <string name="fontMain" tools:ignore="ReferenceType">@font/roboto_regular</string>
     <bool name="booleanoTrue">true</bool>
     <bool name="booleanoFalse">false</bool>
     <integer name="alignmentStart">1</integer>
     <integer name="alignmentEnd">3</integer>
     <integer name="alignmentCenter">4</integer>
-    <drawable name="imgPermisosSolicitud">@drawable/permisos</drawable>
     <!--Esto es el tema inicial del proyecto, eliminado para quitar la barra superior
     que se encuentra en la parte duperior de la app por default
         android:theme="@style/Theme.IKA"
@@ -100,6 +98,8 @@
     <drawable name="iconCameraAdd">@drawable/icon_camera_add</drawable>
     <drawable name="iconCheck">@drawable/icon_check</drawable>
     <drawable name="iconArrowBack">@drawable/icon_arrow_back</drawable>
+    <drawable name="iconPerson">@drawable/person_outline</drawable>
+    <drawable name="iconLogout">@drawable/logout</drawable>
 
 
     <!--Footer Elements-->
@@ -120,9 +120,9 @@
     <!--Header Elements-->
     <dimen name="sizeIconHeader">35dp</dimen><!--TAMAÑO DE LOS ICONOS DEL Header-->
     <dimen name="sizeHeader">60dp</dimen><!--Tamaño del Header-->
-    <dimen name="sizeTxHeaderUserName">22sp</dimen><!--Tamaño del nombre de usuario Header-->
+    <dimen name="sizeTxHeaderUserName">19sp</dimen><!--Tamaño del nombre de usuario Header-->
     <string name="txTopicShopHeaderShop"><b>Tienda</b></string>
-    <string name="txTopicConfigHeaderShop"><b>Configuración</b></string>
+    <string name="txTopicConfigHeaderShop"><b>Ajustes y privacidad</b></string>
 
 
     <!--User Elements-->
@@ -273,21 +273,6 @@
     <string name="opcion2">Version App</string>
 
 
-    <!--TX ACTIVITY FRUTAS Y VERDURAS-->
-    <string name="txGuineos">Guineos</string>
-    <drawable name="imgGuineos">@drawable/guineo</drawable>
-    <string name="txManzanas">Manzanas</string>
-    <drawable name="imgManzanas">@drawable/manzana</drawable>
-    <string name="txSandias">Sandía</string>
-    <drawable name="imgSandias">@drawable/sandia</drawable>
-    <string name="txLimones">Limones</string>
-    <drawable name="imgLimones">@drawable/limon</drawable>
-    <string name="txFresas">Fresas</string>
-    <drawable name="imgFresas">@drawable/fresa</drawable>
-    <string name="txPineapple">Piñas</string>
-    <drawable name="imgPineapple">@drawable/pineapple</drawable>
-
-
     <!--TX ACTIVITY INFORMACION-->
     <string name="infoTopic1">Informacion de las versiones IKA</string>
     <string name="infoTxTopic1">Las versiones de la app se encuentran registradas manualmente por nuestros desarrolladores de IKA. Documentacion breve de los cambios de version en version con el fin de que viva la mejor experiencia dentro de IKA.</string>
@@ -296,5 +281,39 @@
     <string name="version">Versión</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+
+
+
+
+
+
+    <!--COLORES MODO NOCHE-->
+    <color name="nightColorText1">@color/white</color>
+    <color name="nightColorText2">@color/gris4</color>
+    <color name="nightColorText3">@color/amarillo5</color>
+    <color name="nightColorText4">@color/azul10</color>
+    <color name="nightColorText5">@color/rojo10</color>
+
+    <color name="nightColorBacground1">@color/gris8</color>
+    <color name="nightColorBacground2">@color/violeta14gris1</color>
+    <color name="nightColorBacground3">@color/violeta14gris2</color>
+    <color name="nightColorBacground4">@color/gris12</color>
+    <color name="nightColorBacground5">@color/gris11</color>
+    <color name="nightColorBacground6">@color/gris6</color>
+
+
+
+    <!--MEDIDAS PARA LISTAS-->
+    <dimen name="dimenListContentWidth">50dp</dimen><!--Global-->
+    <dimen name="dimenListContentHeight">50dp</dimen><!--Global-->
+    <dimen name="dimenListContentIconWidth">50dp</dimen>
+    <dimen name="dimenListContentIconHeight">@dimen/dimenListContentHeight</dimen>
+    <dimen name="dimenListContentTxtWidth">300dp</dimen>
+    <dimen name="dimenListContentTxtHeight">@dimen/dimenListContentHeight</dimen>
+    <dimen name="dimenListHorizontal">20dp</dimen>
+    <dimen name="dimenListVertical">20dp</dimen>
+
 
 </resources>

@@ -12,13 +12,13 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/linearLayout6"
+            android:id="@+id/main"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/Header"
+                android:id="@+id/header"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/sizeHeader"
                 android:background="@color/colorHeaderMain"
@@ -93,8 +93,8 @@
             android:text="Próximamente"
             android:textSize="30sp"
             android:textColor="@color/colorTextMain"
-            app:layout_constraintBottom_toBottomOf="@+id/linearLayout6"
-            app:layout_constraintTop_toTopOf="@+id/linearLayout6" />
+            app:layout_constraintBottom_toBottomOf="@+id/main"
+            app:layout_constraintTop_toTopOf="@+id/main" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

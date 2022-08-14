@@ -20,7 +20,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.NoActionBar"
+        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
         android:configChanges="keyboardHidden|orientation|screenSize"
         tools:targetApi="31">
         <activity
@@ -38,7 +38,9 @@
         <activity
             android:name=".ForgotPassword"
             android:exported="false" />
-        <activity android:name=".UserHome" />
+        <activity
+            android:name=".UserHome"
+            android:configChanges = "uiMode"/>
         <activity
             android:name=".SignUp"
             android:exported="false" />
@@ -50,37 +52,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".IMGalery"
-            android:exported="false" />
-        <activity
-            android:name=".versionesDocu"
-            android:exported="false" />
-        <activity
-            android:name=".Pan"
-            android:exported="false" />
-        <activity
-            android:name=".Lacteos"
-            android:exported="false" />
-        <activity
-            android:name=".Bebidas"
-            android:exported="false" />
-        <activity
-            android:name=".FrutasVerduras"
-            android:exported="false" />
-        <activity
-            android:name=".VersionApp"
-            android:exported="false" />
-        <activity
-            android:name=".Informacion"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:parentActivityName=".UserHome">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".UserHome" />
         </activity>
     </application>
 

@@ -1,4 +1,4 @@
-package com.ikalogic.ika.helpers;
+package com.ikalogic.ika.notify;
 
 import android.content.Context;
 

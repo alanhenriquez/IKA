@@ -5,7 +5,7 @@ import static android.app.PendingIntent.FLAG_IMMUTABLE;
 import static android.os.Build.VERSION.SDK_INT;
 import static android.os.Build.VERSION_CODES.M;
 
-import static com.ikalogic.ika.helpers.ResourcesHelper.getStringResourceByKey;
+import static com.ikalogic.ika.notify.ResourcesHelper.getStringResourceByKey;
 
 import android.annotation.SuppressLint;
 import android.app.Notification;
@@ -25,7 +25,7 @@ import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
 
-import com.ikalogic.ika.helpers.BitmapHelper;
+import com.ikalogic.ika.notify.BitmapHelper;
 
 public class Notify {
     public NotificationCompat.Builder getNotificationBuilder() {

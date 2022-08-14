@@ -34,8 +34,10 @@ public class DetectConection {
             //Conectado
             if (wifi.isWifiEnabled()){
                 Toast.makeText(context, "Conectado", Toast.LENGTH_SHORT).show();
+                return true;
             }else {
                 Toast.makeText(context, "Desconectado", Toast.LENGTH_SHORT).show();
+                return false;
             }
         } catch (Exception e) {
             e.printStackTrace();

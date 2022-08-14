@@ -4,10 +4,6 @@ import android.content.Context;
 import android.graphics.Color;
 import android.view.View;
 import android.view.animation.TranslateAnimation;
-import android.widget.Toast;
-
-import com.ikalogic.ika.R;
-import com.ikalogic.ika.helpers.DetectConection;
 
 public class LoaderOffLine {
     Context context;

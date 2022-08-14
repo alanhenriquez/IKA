@@ -1,4 +1,4 @@
-package com.ikalogic.ika.helpers;
+package com.ikalogic.ika.review;
 
 import android.content.Context;
 import android.util.Log;

@@ -186,6 +186,8 @@
     <color name="violeta12">#BD00DA</color>
     <color name="violeta13">#9600AE</color>
     <color name="violeta14">#7A008E</color>
+    <color name="violeta14gris1">#7A738E</color>
+    <color name="violeta14gris2">#7A698E</color>
     <color name="violeta15">#610071</color>
 
 </resources>
