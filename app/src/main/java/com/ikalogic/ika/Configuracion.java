@@ -4,14 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.ikalogic.ika.helpers.ChangeActivity;
+import com.ikalogic.ika.helpers.CloseSesion;
+import com.ikalogic.ika.helpers.msgToast;
 
 public class Configuracion extends AppCompatActivity {
     /*-------------------------------------------------------------------------------*/
     /*Variables para texto, campos de texto y contenedores*/
-    TextView signUp;
+    View goBack,logOut,adminCount;
 
 
 
@@ -23,24 +28,28 @@ public class Configuracion extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configuracion);
 
-        /*Simples variables definidas accediendo a los id*/
-        signUp = findViewById(R.id.cerrarSesion);
-
-
+        goBack = findViewById(R.id.goBack);
+        logOut = findViewById(R.id.sesionContent1);
+        adminCount = findViewById(R.id.cuentaContent1);
 
 
 
         /*Botones y acciones*/
-        signUp.setOnClickListener(view -> {
-            FirebaseAuth.getInstance().signOut();
-            CerrarSesion();
+        goBack.setOnClickListener(view -> {
+            ChangeActivity.build(getApplicationContext(),UserHome.class).start();
+        });
+        logOut.setOnClickListener(view -> {
+            CloseSesion.build(getApplicationContext()).firebaseClose(Login.class);
         });/*Registrarse si no tienes cuenta*/
+        adminCount.setOnClickListener(view -> {
+            ChangeActivity.build(getApplicationContext(),ConfigAdministrarCuenta.class).start();
+        });
 
     }
 
     @Override public void onBackPressed() {
         super.onBackPressed();
-        returnActivity();
+        ChangeActivity.build(getApplicationContext(),UserHome.class).start();
     }
     /*-------------------------------------------------------------------------------*/
 
@@ -48,21 +57,10 @@ public class Configuracion extends AppCompatActivity {
 
 
 
-    /*Cerramos la sesion y volvemos al login*/
-    private void CerrarSesion (){
-        Intent loged = new Intent(getApplicationContext(), Login.class);
-        loged.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(loged);
-        finish();
-    }
 
-    /*Regresar a UserHome*/
-    private void returnActivity (){
-        Intent intent = new Intent(getApplicationContext(), UserHome.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-        finish();
-    }
+
+
+
 
     /*-------------------------------------------------------------------------------*/
 

@@ -32,6 +32,7 @@
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1795" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable-v24/line_view1.xml" value="0.1655" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable-v24/line_view2.xml" value="0.1655" />
+        <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable/borde2.xml" value="0.2035" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable/footer_store_icon.xml" value="0.1655" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable/gradiante_redondo2.xml" value="0.1655" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1795" />
@@ -40,9 +41,11 @@
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable/icon_eye_black.xml" value="0.1655" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable/icon_eye_white.xml" value="0.1655" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable/icon_home.xml" value="0.1655" />
+        <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/drawable/person_outline.xml" value="0.2035" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout-v21/activity_main.xml" value="0.215625" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout-v28/activity_userhome.xml" value="0.21458333333333332" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/activity_bebidas.xml" value="0.25" />
+        <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/activity_config_administrar_cuenta.xml" value="0.23020833333333332" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/activity_configuracion.xml" value="0.215625" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/activity_edit_profile.xml" value="0.215625" />
         <entry key="..\:/Users/Alan Derek/AndroidStudioProjects/IKA/app/src/main/res/layout/activity_forgot_password.xml" value="0.25" />

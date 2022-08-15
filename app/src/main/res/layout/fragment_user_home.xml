@@ -197,7 +197,6 @@
             android:paddingBottom="@dimen/sizeFooter"
             android:background="@drawable/bgFooterOpUser"
             android:orientation="vertical"
-            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@+id/main"
             tools:targetApi="lollipop">
 

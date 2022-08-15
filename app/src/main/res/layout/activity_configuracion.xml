@@ -96,9 +96,9 @@
                 android:id="@+id/cuenta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingVertical="20dp"
+                android:orientation="vertical"
                 android:paddingHorizontal="20dp"
-                android:orientation="vertical">
+                android:paddingVertical="20dp">
 
                 <LinearLayout
                     android:id="@+id/cuentaTitle"
@@ -114,11 +114,11 @@
                             android:id="@+id/cuentaTitleTxt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Cuenta"
-                            android:textSize="16sp"
-                            android:textColor="@color/gris10"
-                            android:textAlignment="textStart"
-                            android:fontFamily="@font/roboto_medium"
+                            android:fontFamily="@string/fontList3"
+                            android:text="CUENTA"
+                            android:textAlignment="@integer/alignmentStart"
+                            android:textColor="@color/colorText3"
+                            android:textSize="@dimen/dimenListSize1"
                             tools:ignore="HardcodedText,MissingConstraints" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </LinearLayout>
@@ -130,20 +130,225 @@
                     android:orientation="vertical">
 
                     <LinearLayout
-                        android:id="@+id/cuentaOpcion1"
+                        android:id="@+id/cuentaContent1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingVertical="@dimen/dimenListVertical"
+                        tools:ignore="UselessParent">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/iconPerson"
+                            android:backgroundTint="@color/colorText5"
+                            android:orientation="vertical"
+                            tools:ignore="UnusedAttribute" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingHorizontal="@dimen/dimenListHorizontal">
+
+                            <TextView
+                                android:id="@+id/cuentaContent1Txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@string/fontList1"
+                                android:text="Administrar cuenta"
+                                android:textAlignment="@integer/alignmentStart"
+                                android:textColor="@color/colorText5"
+                                android:textSize="@dimen/dimenListSize3"
+                                tools:ignore="HardcodedText" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/cuentaContent2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:paddingVertical="@dimen/dimenListVertical"
+                        tools:ignore="UselessParent">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/iconPerson"
+                            android:backgroundTint="@color/colorText5"
+                            android:orientation="vertical"
+                            tools:ignore="UnusedAttribute" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingHorizontal="@dimen/dimenListHorizontal">
+
+                            <TextView
+                                android:id="@+id/cuentaContent2Txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@string/fontList1"
+                                android:text="Editar Perfil"
+                                android:textAlignment="@integer/alignmentStart"
+                                android:textColor="@color/colorText5"
+                                android:textSize="@dimen/dimenListSize3"
+                                tools:ignore="HardcodedText" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/interfaz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="20dp">
+
+                <LinearLayout
+                    android:id="@+id/interfazTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/interfazTitleTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@string/fontList3"
+                            android:text="INTERFAZ"
+                            android:textAlignment="@integer/alignmentStart"
+                            android:textColor="@color/colorText3"
+                            android:textSize="@dimen/dimenListSize1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="HardcodedText,MissingConstraints" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/interfazContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/interfazContent1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingVertical="@dimen/dimenListVertical"
+                        tools:ignore="UselessParent">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:orientation="vertical"></LinearLayout>
+                            android:background="@drawable/iconDayNight"
+                            android:backgroundTint="@color/colorText5"
+                            android:orientation="vertical"
+                            tools:ignore="UnusedAttribute" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingHorizontal="@dimen/dimenListHorizontal">
+
+                            <TextView
+                                android:id="@+id/interfazContent1Txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@string/fontList1"
+                                android:text="Tema día/noche"
+                                android:textAlignment="@integer/alignmentStart"
+                                android:textColor="@color/colorText5"
+                                android:textSize="@dimen/dimenListSize3"
+                                tools:ignore="HardcodedText" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/sesion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="20dp">
+
+                <LinearLayout
+                    android:id="@+id/sesionTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/sesionTitleTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@string/fontList3"
+                            android:text="SESIÓN DE USUARIO"
+                            android:textAlignment="@integer/alignmentStart"
+                            android:textColor="@color/colorText3"
+                            android:textSize="@dimen/dimenListSize1"
+                            tools:ignore="HardcodedText,MissingConstraints" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/sesionContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/sesionContent1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingVertical="@dimen/dimenListVertical"
+                        tools:ignore="UselessParent">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:orientation="vertical"></LinearLayout>
+                            android:background="@drawable/iconLogout"
+                            android:backgroundTint="@color/colorText5"
+                            android:orientation="vertical"
+                            tools:ignore="UnusedAttribute" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingHorizontal="@dimen/dimenListHorizontal">
+
+                            <TextView
+                                android:id="@+id/sesionContent1Txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@string/fontList1"
+                                android:text="Cerrar sesión"
+                                android:textAlignment="@integer/alignmentStart"
+                                android:textColor="@color/colorText5"
+                                android:textSize="@dimen/dimenListSize3"
+                                tools:ignore="HardcodedText" />
+                        </LinearLayout>
                     </LinearLayout>
 
                 </LinearLayout>
@@ -154,14 +359,5 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/cerrarSesion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cerrar sesion"
-        app:layout_constraintBottom_toBottomOf="@+id/main"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

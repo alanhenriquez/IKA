@@ -35,10 +35,48 @@ public class FragmentUserHome extends Fragment {
     DatabaseReference userDataBase;
 
 
+    /*Si buscas codigo de los elementos lo encontraras en el UserHome.java
+     * Aqui solo hay el llamado de la interfaz del fragment*/
+    /*-------------------------------------------------------------------------------*/
+    // TODO: Rename parameter arguments, choose names that match
+    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
+
+    // TODO: Rename and change types of parameters
+    private String mParam1;
+    private String mParam2;
+
+    public FragmentUserHome() {
+        // Required empty public constructor
+    }
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+     * @param param1 Parameter 1.
+     * @param param2 Parameter 2.
+     * @return A new instance of fragment FragmentShop.
+     */
+    // TODO: Rename and change types and number of parameters
+    public static FragmentShop newInstance(String param1, String param2) {
+        FragmentShop fragment = new FragmentShop();
+        Bundle args = new Bundle();
+        args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM2, param2);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }
         userAuth = FirebaseAuth.getInstance();
         userDataBase = FirebaseDatabase.getInstance().getReference();
     }
@@ -57,10 +95,10 @@ public class FragmentUserHome extends Fragment {
 
         getData(view);
         opConfiguracion.setOnClickListener(v -> {
-            ChangeActivity.build(view.getContext(),Configuracion.class);
+            ChangeActivity.build(view.getContext(),Configuracion.class).start();
         });/*Cambiamos a la activity de Configuracion*/
         opEditProfile.setOnClickListener(v -> {
-            ChangeActivity.build(view.getContext(),EditProfile.class);
+            ChangeActivity.build(view.getContext(),EditProfile.class).start();
         });/*Cambiamos a la activity de EditProfile*/
         menuFooterOpUser.setVisibility(View.GONE);
         menuBoton.setOnClickListener(v -> {
@@ -88,7 +126,6 @@ public class FragmentUserHome extends Fragment {
         userMail = view.findViewById(R.id.userMailUserHome);
         userImageProfile = view.findViewById(R.id.imgPhotoUser);
         body = view.findViewById(R.id.main);
-        DayNight(view);
 
         return view;
     }

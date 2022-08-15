@@ -4,8 +4,7 @@
     <string name="contentDescription">Imagen</string>
     <string name="invalid_mail">Ingrese mail valido</string>
     <string name="invalid_password">Minimo de 6 caracteres</string>
-    <color name="colorBackgroundMain">@color/gris00</color>
-    <color name="colorTextMain">@color/black</color>
+
     <color name="colorFooterMain">@color/gris0</color>
     <color name="colorHeaderMain">@color/colorFooterMain</color>
     <dimen name="sizeTextMain">15sp</dimen>
@@ -13,14 +12,11 @@
     <string name="fontMain" tools:ignore="ReferenceType">@font/roboto_regular</string>
     <bool name="booleanoTrue">true</bool>
     <bool name="booleanoFalse">false</bool>
-    <integer name="alignmentStart">1</integer>
-    <integer name="alignmentEnd">3</integer>
-    <integer name="alignmentCenter">4</integer>
+
     <!--Esto es el tema inicial del proyecto, eliminado para quitar la barra superior
     que se encuentra en la parte duperior de la app por default
         android:theme="@style/Theme.IKA"
     -->
-
 
 
     <!--Explicacion de los permisos-->
@@ -98,8 +94,9 @@
     <drawable name="iconCameraAdd">@drawable/icon_camera_add</drawable>
     <drawable name="iconCheck">@drawable/icon_check</drawable>
     <drawable name="iconArrowBack">@drawable/icon_arrow_back</drawable>
-    <drawable name="iconPerson">@drawable/person_outline</drawable>
-    <drawable name="iconLogout">@drawable/logout</drawable>
+    <drawable name="iconPerson">@drawable/icon_person_outline</drawable>
+    <drawable name="iconLogout">@drawable/icon_logout</drawable>
+    <drawable name="iconDayNight">@drawable/icon_daynight</drawable>
 
 
     <!--Footer Elements-->
@@ -283,19 +280,13 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
-
-
-
-
-
-
     <!--COLORES MODO NOCHE-->
     <color name="nightColorText1">@color/white</color>
     <color name="nightColorText2">@color/gris4</color>
     <color name="nightColorText3">@color/amarillo5</color>
     <color name="nightColorText4">@color/azul10</color>
     <color name="nightColorText5">@color/rojo10</color>
-
+    <color name="nightcolorBackgroundMain">@color/gris10</color>
     <color name="nightColorBacground1">@color/gris8</color>
     <color name="nightColorBacground2">@color/violeta14gris1</color>
     <color name="nightColorBacground3">@color/violeta14gris2</color>
@@ -303,6 +294,25 @@
     <color name="nightColorBacground5">@color/gris11</color>
     <color name="nightColorBacground6">@color/gris6</color>
 
+
+    <!--COLORES MODO DIA-->
+    <color name="colorTextMain">@color/black</color>
+    <color name="colorText1">@color/white</color>
+    <color name="colorText2">@color/gris2</color>
+    <color name="colorText3">@color/gris4</color>
+    <color name="colorText4">@color/gris6</color>
+    <color name="colorText5">@color/gris8</color>
+    <color name="colorText6">@color/amarillo5</color>
+    <color name="colorText7">@color/azul10</color>
+    <color name="colorText8">@color/rojo10</color>
+    <color name="colorBackgroundMain">@color/gris00</color>
+    <color name="colorBacground1">@color/white</color>
+    <color name="colorBacground2">@color/azul10</color>
+    <color name="colorBacground3">@color/rojo10</color>
+    <color name="colorBacground4">@color/verde12</color>
+    <color name="colorBacground5">@color/acua1</color>
+    <color name="colorBacground6">@color/gris1</color>
+    <color name="colorBacground7">@color/black</color>
 
 
     <!--MEDIDAS PARA LISTAS-->
@@ -313,7 +323,29 @@
     <dimen name="dimenListContentTxtWidth">300dp</dimen>
     <dimen name="dimenListContentTxtHeight">@dimen/dimenListContentHeight</dimen>
     <dimen name="dimenListHorizontal">20dp</dimen>
-    <dimen name="dimenListVertical">20dp</dimen>
+    <dimen name="dimenListVertical">15dp</dimen>
+    <dimen name="dimenListSize1">14sp</dimen>
+    <dimen name="dimenListSize2">15sp</dimen>
+    <dimen name="dimenListSize3">16sp</dimen>
+
+
+    <!--TIPOGRAFIAS-->
+    <string name="font1" tools:ignore="ReferenceType">@font/lobster_two_bold</string>
+    <string name="font2" tools:ignore="ReferenceType">@font/lobster_two_bold_italic</string>
+    <string name="font3" tools:ignore="ReferenceType">@font/lobster_two_italic</string>
+    <string name="font4" tools:ignore="ReferenceType">@font/lobster_two_regular</string>
+    <string name="font5" tools:ignore="ReferenceType">@font/roboto_bold</string>
+    <string name="font6" tools:ignore="ReferenceType">@font/roboto_medium</string>
+    <string name="font7" tools:ignore="ReferenceType">@font/roboto_regular</string>
+    <string name="fontList1" tools:ignore="ReferenceType">@string/font7</string>
+    <string name="fontList2" tools:ignore="ReferenceType">@string/font6</string>
+    <string name="fontList3" tools:ignore="ReferenceType">@string/font6</string>
+
+
+    <!--Alineaciones-->
+    <integer name="alignmentStart">1</integer>
+    <integer name="alignmentEnd">3</integer>
+    <integer name="alignmentCenter">4</integer>
 
 
 </resources>
