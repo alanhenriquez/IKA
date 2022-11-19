@@ -16,7 +16,7 @@ import com.ikalogic.ika.helpers.msgToast;
 public class Configuracion extends AppCompatActivity {
     /*-------------------------------------------------------------------------------*/
     /*Variables para texto, campos de texto y contenedores*/
-    View goBack,logOut,adminCount, editCount;
+    View goBack,logOut,adminCount;
 
 
 
@@ -31,7 +31,6 @@ public class Configuracion extends AppCompatActivity {
         goBack = findViewById(R.id.goBack);
         logOut = findViewById(R.id.sesionContent1);
         adminCount = findViewById(R.id.cuentaContent1);
-        editCount = findViewById(R.id.cuentaContent2);
 
 
 
@@ -44,9 +43,6 @@ public class Configuracion extends AppCompatActivity {
         });/*Registrarse si no tienes cuenta*/
         adminCount.setOnClickListener(view -> {
             ChangeActivity.build(getApplicationContext(),ConfigAdministrarCuenta.class).start();
-        });
-        editCount.setOnClickListener(view -> {
-            ChangeActivity.build(getApplicationContext(),EditProfile.class).start();
         });
 
     }

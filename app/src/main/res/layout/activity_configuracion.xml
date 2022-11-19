@@ -17,8 +17,8 @@
             android:id="@+id/header"
             android:layout_width="match_parent"
             android:layout_height="@dimen/sizeHeader"
-            android:background="@color/colorBackgroundMain"
-            android:elevation="0dp"
+            android:background="@color/colorHeaderMain"
+            android:elevation="1dp"
             android:orientation="horizontal"
             tools:ignore="MissingConstraints,UnusedAttribute,UselessParent">
 
@@ -42,8 +42,8 @@
 
                         <TextView
                             android:id="@+id/goBackIcon"
-                            android:layout_width="@dimen/dimenListContentIconWidthHeader1"
-                            android:layout_height="@dimen/dimenListContentIconHeightHeader1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:background="@drawable/iconArrowBack"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -70,10 +70,10 @@
                             android:id="@+id/configuracionTextHeader"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@string/fontListTextHeader"
                             android:text="@string/txTopicConfigHeaderShop"
-                            android:textColor="@color/colorListTextHeader"
-                            android:textSize="@dimen/sizeListTextHeader"
+                            android:textColor="@color/colorTextMain"
+                            android:textSize="@dimen/sizeTxHeaderUserName"
+                            android:fontFamily="@font/roboto_regular"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -91,12 +91,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/drawableBackground1"
-                android:orientation="vertical"/>
 
             <LinearLayout
                 android:id="@+id/cuenta"
@@ -120,11 +114,11 @@
                             android:id="@+id/cuentaTitleTxt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@string/fontListTextContentTitle"
+                            android:fontFamily="@string/fontList3"
                             android:text="CUENTA"
                             android:textAlignment="@integer/alignmentStart"
-                            android:textColor="@color/colorListTextContentTitle"
-                            android:textSize="@dimen/sizeListTextContentTitle"
+                            android:textColor="@color/colorText3"
+                            android:textSize="@dimen/dimenListSize1"
                             tools:ignore="HardcodedText,MissingConstraints" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </LinearLayout>
@@ -143,20 +137,13 @@
                         android:paddingVertical="@dimen/dimenListVertical"
                         tools:ignore="UselessParent">
 
-                        <androidx.constraintlayout.widget.ConstraintLayout
+                        <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                            <TextView
-                                android:layout_width="@dimen/dimenListContentIconWidthBody1"
-                                android:layout_height="@dimen/dimenListContentIconHeightBody1"
-                                android:background="@drawable/iconPerson"
-                                android:backgroundTint="@color/colorListTextBodyIcon"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                tools:ignore="UnusedAttribute" />
-                        </androidx.constraintlayout.widget.ConstraintLayout>
+                            android:layout_height="match_parent"
+                            android:background="@drawable/iconPerson"
+                            android:backgroundTint="@color/colorText5"
+                            android:orientation="vertical"
+                            tools:ignore="UnusedAttribute" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -168,11 +155,11 @@
                                 android:id="@+id/cuentaContent1Txt"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@string/fontList1"
                                 android:text="Administrar cuenta"
                                 android:textAlignment="@integer/alignmentStart"
-                                android:fontFamily="@string/fontListTextContentContent"
-                                android:textColor="@color/colorListTextContentContent"
-                                android:textSize="@dimen/sizeListTextContentContent"
+                                android:textColor="@color/colorText5"
+                                android:textSize="@dimen/dimenListSize3"
                                 tools:ignore="HardcodedText" />
                         </LinearLayout>
                     </LinearLayout>
@@ -185,20 +172,13 @@
                         android:paddingVertical="@dimen/dimenListVertical"
                         tools:ignore="UselessParent">
 
-                        <androidx.constraintlayout.widget.ConstraintLayout
+                        <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                            <TextView
-                                android:layout_width="@dimen/dimenListContentIconWidthBody1"
-                                android:layout_height="@dimen/dimenListContentIconHeightBody1"
-                                android:background="@drawable/iconTreePoint"
-                                android:backgroundTint="@color/colorListTextBodyIcon"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                tools:ignore="UnusedAttribute" />
-                        </androidx.constraintlayout.widget.ConstraintLayout>
+                            android:layout_height="match_parent"
+                            android:background="@drawable/iconPerson"
+                            android:backgroundTint="@color/colorText5"
+                            android:orientation="vertical"
+                            tools:ignore="UnusedAttribute" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -210,24 +190,17 @@
                                 android:id="@+id/cuentaContent2Txt"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@string/fontList1"
                                 android:text="Editar Perfil"
                                 android:textAlignment="@integer/alignmentStart"
-                                android:fontFamily="@string/fontListTextContentContent"
-                                android:textColor="@color/colorListTextContentContent"
-                                android:textSize="@dimen/sizeListTextContentContent"
+                                android:textColor="@color/colorText5"
+                                android:textSize="@dimen/dimenListSize3"
                                 tools:ignore="HardcodedText" />
                         </LinearLayout>
                     </LinearLayout>
 
                 </LinearLayout>
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:background="@drawable/drawableBackground1"
-                android:orientation="vertical"/>
 
             <LinearLayout
                 android:id="@+id/interfaz"
@@ -255,7 +228,7 @@
                             android:text="INTERFAZ"
                             android:textAlignment="@integer/alignmentStart"
                             android:textColor="@color/colorText3"
-                            android:textSize="@dimen/sizeListTextContentTitle"
+                            android:textSize="@dimen/dimenListSize1"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
                             tools:ignore="HardcodedText,MissingConstraints" />
@@ -276,20 +249,13 @@
                         android:paddingVertical="@dimen/dimenListVertical"
                         tools:ignore="UselessParent">
 
-                        <androidx.constraintlayout.widget.ConstraintLayout
+                        <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                            <TextView
-                                android:layout_width="@dimen/dimenListContentIconWidthBody1"
-                                android:layout_height="@dimen/dimenListContentIconHeightBody1"
-                                android:background="@drawable/iconDayNight"
-                                android:backgroundTint="@color/colorListTextBodyIcon"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                tools:ignore="UnusedAttribute" />
-                        </androidx.constraintlayout.widget.ConstraintLayout>
+                            android:layout_height="match_parent"
+                            android:background="@drawable/iconDayNight"
+                            android:backgroundTint="@color/colorText5"
+                            android:orientation="vertical"
+                            tools:ignore="UnusedAttribute" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -301,24 +267,17 @@
                                 android:id="@+id/interfazContent1Txt"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@string/fontList1"
                                 android:text="Tema día/noche"
                                 android:textAlignment="@integer/alignmentStart"
-                                android:fontFamily="@string/fontListTextContentContent"
-                                android:textColor="@color/colorListTextContentContent"
-                                android:textSize="@dimen/sizeListTextContentContent"
+                                android:textColor="@color/colorText5"
+                                android:textSize="@dimen/dimenListSize3"
                                 tools:ignore="HardcodedText" />
                         </LinearLayout>
                     </LinearLayout>
 
                 </LinearLayout>
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:background="@drawable/drawableBackground1"
-                android:orientation="vertical"/>
 
             <LinearLayout
                 android:id="@+id/sesion"
@@ -346,7 +305,7 @@
                             android:text="SESIÓN DE USUARIO"
                             android:textAlignment="@integer/alignmentStart"
                             android:textColor="@color/colorText3"
-                            android:textSize="@dimen/sizeListTextContentTitle"
+                            android:textSize="@dimen/dimenListSize1"
                             tools:ignore="HardcodedText,MissingConstraints" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </LinearLayout>
@@ -365,20 +324,13 @@
                         android:paddingVertical="@dimen/dimenListVertical"
                         tools:ignore="UselessParent">
 
-                        <androidx.constraintlayout.widget.ConstraintLayout
+                        <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                            <TextView
-                                android:layout_width="@dimen/dimenListContentIconWidthBody1"
-                                android:layout_height="@dimen/dimenListContentIconHeightBody1"
-                                android:background="@drawable/iconLogout"
-                                android:backgroundTint="@color/colorListTextBodyIcon"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                tools:ignore="UnusedAttribute" />
-                        </androidx.constraintlayout.widget.ConstraintLayout>
+                            android:layout_height="match_parent"
+                            android:background="@drawable/iconLogout"
+                            android:backgroundTint="@color/colorText5"
+                            android:orientation="vertical"
+                            tools:ignore="UnusedAttribute" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -390,11 +342,11 @@
                                 android:id="@+id/sesionContent1Txt"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@string/fontList1"
                                 android:text="Cerrar sesión"
                                 android:textAlignment="@integer/alignmentStart"
-                                android:fontFamily="@string/fontListTextContentContent"
-                                android:textColor="@color/colorListTextContentContent"
-                                android:textSize="@dimen/sizeListTextContentContent"
+                                android:textColor="@color/colorText5"
+                                android:textSize="@dimen/dimenListSize3"
                                 tools:ignore="HardcodedText" />
                         </LinearLayout>
                     </LinearLayout>

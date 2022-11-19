@@ -10,7 +10,6 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorBackgroundMain"
         android:orientation="vertical">
 
         <LinearLayout
@@ -28,9 +27,9 @@
                 <LinearLayout
                     android:id="@+id/goBack"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="0dp"
                     android:orientation="vertical"
-                    android:paddingHorizontal="@dimen/dimenListHorizontal"
+                    android:paddingHorizontal="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
@@ -41,10 +40,9 @@
 
                         <TextView
                             android:id="@+id/goBackIcon"
-                            android:layout_width="@dimen/dimenListContentIconWidthHeader1"
-                            android:layout_height="@dimen/dimenListContentIconHeightHeader1"
-                            android:background="@drawable/iconListHeaderGoBack"
-                            android:backgroundTint="@color/colorListTextHeaderIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/iconArrowBack"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -71,10 +69,10 @@
                             android:id="@+id/configuracionTextHeader"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@string/fontListTextHeader"
+                            android:fontFamily="@font/roboto_regular"
                             android:text="Administrar cuenta"
-                            android:textColor="@color/colorListTextHeader"
-                            android:textSize="@dimen/sizeListTextHeader"
+                            android:textColor="@color/colorTextMain"
+                            android:textSize="@dimen/sizeTxHeaderUserName"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -87,7 +85,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/drawableBackground1"
+                    android:background="@drawable/borde2"
                     android:orientation="vertical"
                     app:layout_constraintBottom_toBottomOf="@+id/title" />
 
@@ -123,11 +121,11 @@
                             android:id="@+id/datosCuentaTitleTxt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@string/fontListTextContentTitle"
+                            android:fontFamily="@string/fontList3"
                             android:text="DATOS DE LA CUENTA"
                             android:textAlignment="@integer/alignmentStart"
-                            android:textColor="@color/colorListTextContentTitle"
-                            android:textSize="@dimen/sizeListTextContentTitle"
+                            android:textColor="@color/colorText3"
+                            android:textSize="@dimen/dimenListSize1"
                             tools:ignore="HardcodedText,MissingConstraints" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </LinearLayout>
@@ -156,17 +154,17 @@
                                 android:layout_alignParentStart="true"
                                 android:layout_alignParentTop="true"
                                 android:orientation="vertical"
-                                app:layout_widthPercent="@dimen/dimenListContentWidthPercent1">
+                                app:layout_widthPercent="60%">
 
                                 <TextView
                                     android:id="@+id/datosCuentaContent1Txt"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:fontFamily="@string/fontListTextContentContent"
+                                    android:fontFamily="@string/fontList1"
                                     android:text="Número de teléfono"
                                     android:textAlignment="@integer/alignmentStart"
-                                    android:textColor="@color/colorListTextContentContent"
-                                    android:textSize="@dimen/sizeListTextContentContent"
+                                    android:textColor="@color/colorText5"
+                                    android:textSize="@dimen/dimenListSize3"
                                     tools:ignore="HardcodedText" />
                             </LinearLayout>
 
@@ -177,222 +175,23 @@
                                 android:layout_alignParentEnd="true"
                                 android:layout_alignParentTop="true"
                                 android:orientation="vertical"
-                                app:layout_widthPercent="@dimen/dimenListContentWidthPercent2">
+                                app:layout_widthPercent="40%">
 
                                 <TextView
                                     android:id="@+id/datosCuentaContent1TxtInfo"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:fontFamily="@string/fontListTextContentContentInfo"
+                                    android:fontFamily="@string/fontList1"
                                     android:text="(+503) 78578157"
                                     android:textAlignment="@integer/alignmentEnd"
-                                    android:textColor="@color/colorListTextContentContentInfo"
-                                    android:textSize="@dimen/sizeListTextContentContentInfo"
+                                    android:textColor="@color/colorText3"
+                                    android:textSize="@dimen/dimenListSize3"
                                     tools:ignore="HardcodedText" />
                             </LinearLayout>
 
                         </androidx.percentlayout.widget.PercentRelativeLayout>
 
                     </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/datosCuentaContent2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingVertical="@dimen/dimenListVertical"
-                        tools:ignore="UselessParent">
-
-                        <androidx.percentlayout.widget.PercentRelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentStart="true"
-                                android:layout_alignParentTop="true"
-                                android:orientation="vertical"
-                                app:layout_widthPercent="@dimen/dimenListContentWidthPercent1">
-
-                                <TextView
-                                    android:id="@+id/datosCuentaContent2Txt"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@string/fontListTextContentContent"
-                                    android:text="Correo electrónico"
-                                    android:textAlignment="@integer/alignmentStart"
-                                    android:textColor="@color/colorListTextContentContent"
-                                    android:textSize="@dimen/sizeListTextContentContent"
-                                    tools:ignore="HardcodedText" />
-                            </LinearLayout>
-
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_alignParentTop="true"
-                                android:orientation="vertical"
-                                app:layout_widthPercent="@dimen/dimenListContentWidthPercent2">
-
-                                <TextView
-                                    android:id="@+id/datosCuentaContent2TxtInfo"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@string/fontListTextContentContentInfo"
-                                    android:text="h***9@gmail.com"
-                                    android:textAlignment="@integer/alignmentEnd"
-                                    android:textColor="@color/colorListTextContentContentInfo"
-                                    android:textSize="@dimen/sizeListTextContentContentInfo"
-                                    tools:ignore="HardcodedText" />
-                            </LinearLayout>
-
-                        </androidx.percentlayout.widget.PercentRelativeLayout>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/datosCuentaContent3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingVertical="@dimen/dimenListVertical"
-                        tools:ignore="UselessParent">
-
-                        <androidx.percentlayout.widget.PercentRelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentStart="true"
-                                android:layout_alignParentTop="true"
-                                android:orientation="vertical"
-                                app:layout_widthPercent="@dimen/dimenListContentWidthPercent1">
-
-                                <TextView
-                                    android:id="@+id/datosCuentaContent3Txt"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@string/fontListTextContentContent"
-                                    android:text="Contraseña"
-                                    android:textAlignment="@integer/alignmentStart"
-                                    android:textColor="@color/colorListTextContentContent"
-                                    android:textSize="@dimen/sizeListTextContentContent"
-                                    tools:ignore="HardcodedText" />
-                            </LinearLayout>
-
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_alignParentTop="true"
-                                android:orientation="vertical"
-                                app:layout_widthPercent="@dimen/dimenListContentWidthPercent2">
-
-                                <TextView
-                                    android:id="@+id/datosCuentaContent3TxtInfo"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@string/fontListTextContentContentInfo"
-                                    android:text="modificar"
-                                    android:textAlignment="@integer/alignmentEnd"
-                                    android:textColor="@color/colorListTextContentContentInfoAction"
-                                    android:textSize="@dimen/sizeListTextContentContentInfoAction"
-                                    tools:ignore="HardcodedText" />
-                            </LinearLayout>
-
-                        </androidx.percentlayout.widget.PercentRelativeLayout>
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:background="@drawable/drawableBackground1"
-                android:orientation="vertical"/>
-
-            <LinearLayout
-                android:id="@+id/controlCuenta"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingHorizontal="20dp"
-                android:paddingVertical="20dp">
-
-                <LinearLayout
-                    android:id="@+id/controlCuentaTitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <TextView
-                            android:id="@+id/controlCuentaTitleTxt"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@string/fontListTextContentTitle"
-                            android:text="CONTROL AVANZADO"
-                            android:textAlignment="@integer/alignmentStart"
-                            android:textColor="@color/colorListTextContentTitle"
-                            android:textSize="@dimen/sizeListTextContentTitle"
-                            tools:ignore="HardcodedText,MissingConstraints" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/sesionCuentaContent"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:id="@+id/controlCuentaContent1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingVertical="@dimen/dimenListVertical"
-                        tools:ignore="UselessParent">
-
-                        <androidx.percentlayout.widget.PercentRelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentStart="true"
-                                android:layout_alignParentTop="true"
-                                android:orientation="vertical"
-                                app:layout_widthPercent="@dimen/dimenListContentWidthPercent1">
-
-                                <TextView
-                                    android:id="@+id/controlCuentaContent1Txt"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@string/fontListTextContentContent"
-                                    android:text="Eliminar cuenta"
-                                    android:textAlignment="@integer/alignmentStart"
-                                    android:textColor="@color/colorListTextContentContent"
-                                    android:textSize="@dimen/sizeListTextContentContent"
-                                    tools:ignore="HardcodedText" />
-                            </LinearLayout>
-
-                        </androidx.percentlayout.widget.PercentRelativeLayout>
-
-                    </LinearLayout>
-
 
                 </LinearLayout>
             </LinearLayout>
