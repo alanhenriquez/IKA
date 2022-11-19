@@ -55,6 +55,11 @@ public class URLValidator {
         return "invalido";
     }
 
+
+    public static boolean isValid(String url){
+        return urlValidator(url);
+    }
+
     private static void t(String b){
         urlString = b;
     }

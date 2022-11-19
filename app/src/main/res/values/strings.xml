@@ -19,6 +19,81 @@
     -->
 
 
+    <!--GLOBALES_____________________________________________________________-->
+
+    <!--COLORES MODO NOCHE-->
+    <color name="nightColorText1">@color/white</color>
+    <color name="nightColorText2">@color/gris4</color>
+    <color name="nightColorText3">@color/amarillo5</color>
+    <color name="nightColorText4">@color/azul10</color>
+    <color name="nightColorText5">@color/rojo10</color>
+    <color name="nightcolorBackgroundMain">@color/gris10</color>
+    <color name="nightColorBacground1">@color/gris8</color>
+    <color name="nightColorBacground2">@color/violeta14gris1</color>
+    <color name="nightColorBacground3">@color/violeta14gris2</color>
+    <color name="nightColorBacground4">@color/gris12</color>
+    <color name="nightColorBacground5">@color/gris11</color>
+    <color name="nightColorBacground6">@color/gris6</color>
+
+    <!--COLORES MODO DIA-->
+    <color name="colorTextMain">@color/black</color>
+    <color name="colorText1">@color/white</color>
+    <color name="colorText2">@color/gris2</color>
+    <color name="colorText3">@color/gris4</color>
+    <color name="colorText4">@color/gris6</color>
+    <color name="colorText5">@color/gris10</color>
+    <color name="colorText6">@color/amarillo5</color>
+    <color name="colorText7">@color/azul10</color>
+    <color name="colorText8">@color/rojo10</color>
+    <color name="colorBackgroundMain">@color/gris00</color>
+    <color name="colorBacground1">@color/white</color>
+    <color name="colorBacground2">@color/azul10</color>
+    <color name="colorBacground3">@color/rojo10</color>
+    <color name="colorBacground4">@color/verde12</color>
+    <color name="colorBacground5">@color/acua1</color>
+    <color name="colorBacground6">@color/gris1</color>
+    <color name="colorBacground7">@color/black</color>
+
+    <!--TIPOGRAFIAS-->
+    <string name="font1" tools:ignore="ReferenceType">@font/lobster_two_bold</string>
+    <string name="font2" tools:ignore="ReferenceType">@font/lobster_two_bold_italic</string>
+    <string name="font3" tools:ignore="ReferenceType">@font/lobster_two_italic</string>
+    <string name="font4" tools:ignore="ReferenceType">@font/lobster_two_regular</string>
+    <string name="font5" tools:ignore="ReferenceType">@font/roboto_bold</string>
+    <string name="font6" tools:ignore="ReferenceType">@font/roboto_medium</string>
+    <string name="font7" tools:ignore="ReferenceType">@font/roboto_regular</string>
+
+    <!--Alineaciones-->
+    <integer name="alignmentStart">1</integer>
+    <integer name="alignmentEnd">3</integer>
+    <integer name="alignmentCenter">4</integer>
+
+    <!--DRAWABLES BACKGROUND-->
+    <drawable name="drawableBackground1">@drawable/borde2</drawable>
+
+    <!--ICONOS-->
+    <drawable name="iconTreePoint">@drawable/icon_treepoint</drawable>
+    <drawable name="iconConfiguracion">@drawable/icon_cog</drawable>
+    <drawable name="iconCancel">@drawable/icon_cancelar_black</drawable>
+    <drawable name="iconEye">@drawable/icon_eye_black</drawable>
+    <drawable name="iconStore">@drawable/icon_store</drawable>
+    <drawable name="iconAdd">@drawable/icon_add</drawable>
+    <drawable name="iconHome">@drawable/icon_home</drawable>
+    <drawable name="iconMenu">@drawable/icon_menu</drawable>
+    <drawable name="iconCamera">@drawable/icon_camera</drawable>
+    <drawable name="iconCameraAdd">@drawable/icon_camera_add</drawable>
+    <drawable name="iconCheck">@drawable/icon_check</drawable>
+    <drawable name="iconArrowBack">@drawable/icon_arrow_back</drawable>
+    <drawable name="iconPerson">@drawable/icon_person_outline</drawable>
+    <drawable name="iconLogout">@drawable/icon_logout</drawable>
+    <drawable name="iconDayNight">@drawable/icon_daynight</drawable>
+    <drawable name="iconCount">@drawable/icon_count</drawable>
+
+    <!--TERMINA GLOBALES_____________________________________________________________-->
+
+
+
+
     <!--Explicacion de los permisos-->
 
     <color name="PERMISO_COLOR_TEXTO">@color/colorTextMain</color>
@@ -81,22 +156,7 @@
     <string name="txInfoForgotPassword">Se le enviara un mensaje de recuperacion de su cuenta a la direccion de correo electronico vinculada del usuario.</string>
 
 
-    <!--Iconos-->
-    <drawable name="iconTreePoint">@drawable/icon_treepoint</drawable>
-    <drawable name="iconConfiguracion">@drawable/icon_cog</drawable>
-    <drawable name="iconCancel">@drawable/icon_cancelar_black</drawable>
-    <drawable name="iconEye">@drawable/icon_eye_black</drawable>
-    <drawable name="iconStore">@drawable/icon_store</drawable>
-    <drawable name="iconAdd">@drawable/icon_add</drawable>
-    <drawable name="iconHome">@drawable/icon_home</drawable>
-    <drawable name="iconMenu">@drawable/icon_menu</drawable>
-    <drawable name="iconCamera">@drawable/icon_camera</drawable>
-    <drawable name="iconCameraAdd">@drawable/icon_camera_add</drawable>
-    <drawable name="iconCheck">@drawable/icon_check</drawable>
-    <drawable name="iconArrowBack">@drawable/icon_arrow_back</drawable>
-    <drawable name="iconPerson">@drawable/icon_person_outline</drawable>
-    <drawable name="iconLogout">@drawable/icon_logout</drawable>
-    <drawable name="iconDayNight">@drawable/icon_daynight</drawable>
+
 
 
     <!--Footer Elements-->
@@ -119,7 +179,7 @@
     <dimen name="sizeHeader">60dp</dimen><!--Tamaño del Header-->
     <dimen name="sizeTxHeaderUserName">19sp</dimen><!--Tamaño del nombre de usuario Header-->
     <string name="txTopicShopHeaderShop"><b>Tienda</b></string>
-    <string name="txTopicConfigHeaderShop"><b>Ajustes y privacidad</b></string>
+    <string name="txTopicConfigHeaderShop">Ajustes y privacidad</string>
 
 
     <!--User Elements-->
@@ -256,96 +316,74 @@
     <string name="descriptionImg">Imagen</string>
 
 
-    <!--TX VERSIONES-->
-    <string name="vTopic175">v1.7.5</string>
-    <string name="vTx175">Se corrigieron algunos problemas internos del codigo y algunos fallos mostrados por discrepancias dentro del mismo.</string>
-    <string name="vTopic176">v1.7.6</string>
-    <string name="vTx176">Ahora el proyecto lo puedes encontrar en GitHub y puedes acceder a la documentacion de las versiones de la app.</string>
-    <string name="vTopic177">v1.7.7</string>
-    <string name="vTx177">Agregada la seccion de galeria de imagenes internas IKA.</string>
-
 
     <!--TX MENU OPCIONES-->
     <string name="opcion1">Información</string>
     <string name="opcion2">Version App</string>
 
 
-    <!--TX ACTIVITY INFORMACION-->
-    <string name="infoTopic1">Informacion de las versiones IKA</string>
-    <string name="infoTxTopic1">Las versiones de la app se encuentran registradas manualmente por nuestros desarrolladores de IKA. Documentacion breve de los cambios de version en version con el fin de que viva la mejor experiencia dentro de IKA.</string>
-    <string name="infoTopic2">Galeria de imagenes</string>
-    <string name="infoTxTopic2">Aquí encontraras las imagenes internas de la app con el fin de que aprecies del arte de IKA a tu alcance.</string>
-    <string name="version">Versión</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
-    <!--COLORES MODO NOCHE-->
-    <color name="nightColorText1">@color/white</color>
-    <color name="nightColorText2">@color/gris4</color>
-    <color name="nightColorText3">@color/amarillo5</color>
-    <color name="nightColorText4">@color/azul10</color>
-    <color name="nightColorText5">@color/rojo10</color>
-    <color name="nightcolorBackgroundMain">@color/gris10</color>
-    <color name="nightColorBacground1">@color/gris8</color>
-    <color name="nightColorBacground2">@color/violeta14gris1</color>
-    <color name="nightColorBacground3">@color/violeta14gris2</color>
-    <color name="nightColorBacground4">@color/gris12</color>
-    <color name="nightColorBacground5">@color/gris11</color>
-    <color name="nightColorBacground6">@color/gris6</color>
 
 
-    <!--COLORES MODO DIA-->
-    <color name="colorTextMain">@color/black</color>
-    <color name="colorText1">@color/white</color>
-    <color name="colorText2">@color/gris2</color>
-    <color name="colorText3">@color/gris4</color>
-    <color name="colorText4">@color/gris6</color>
-    <color name="colorText5">@color/gris8</color>
-    <color name="colorText6">@color/amarillo5</color>
-    <color name="colorText7">@color/azul10</color>
-    <color name="colorText8">@color/rojo10</color>
-    <color name="colorBackgroundMain">@color/gris00</color>
-    <color name="colorBacground1">@color/white</color>
-    <color name="colorBacground2">@color/azul10</color>
-    <color name="colorBacground3">@color/rojo10</color>
-    <color name="colorBacground4">@color/verde12</color>
-    <color name="colorBacground5">@color/acua1</color>
-    <color name="colorBacground6">@color/gris1</color>
-    <color name="colorBacground7">@color/black</color>
 
 
-    <!--MEDIDAS PARA LISTAS-->
+
+    <!--REPETITIVE PARAMETERS IN CONFIGURATION_______________________________-->
+    <color name="colorListText1">@color/colorTextMain</color>
+    <color name="colorListText2">@color/colorText3</color>
+    <color name="colorListText3">@color/colorText5</color>
+    <color name="colorListText4">@color/colorText4</color>
+    <color name="colorListText5">@color/colorText7</color>
     <dimen name="dimenListContentWidth">50dp</dimen><!--Global-->
     <dimen name="dimenListContentHeight">50dp</dimen><!--Global-->
-    <dimen name="dimenListContentIconWidth">50dp</dimen>
-    <dimen name="dimenListContentIconHeight">@dimen/dimenListContentHeight</dimen>
+    <dimen name="dimenListContentWidthPercent1">50%</dimen>
+    <dimen name="dimenListContentWidthPercent2">50%</dimen>
+    <dimen name="dimenListContentIconWidthHeader1">25dp</dimen>
+    <dimen name="dimenListContentIconHeightHeader1">@dimen/dimenListContentIconWidthHeader1</dimen>
+    <dimen name="dimenListContentIconWidthBody1">22dp</dimen>
+    <dimen name="dimenListContentIconHeightBody1">@dimen/dimenListContentIconWidthBody1</dimen>
     <dimen name="dimenListContentTxtWidth">300dp</dimen>
     <dimen name="dimenListContentTxtHeight">@dimen/dimenListContentHeight</dimen>
     <dimen name="dimenListHorizontal">20dp</dimen>
+    <dimen name="dimenListHorizontalIconHeader1">20dp</dimen>
+    <dimen name="dimenListHorizontalIconBody1">20dp</dimen>
+    <dimen name="dimenListHorizontalText">20dp</dimen>
     <dimen name="dimenListVertical">15dp</dimen>
     <dimen name="dimenListSize1">14sp</dimen>
-    <dimen name="dimenListSize2">15sp</dimen>
-    <dimen name="dimenListSize3">16sp</dimen>
-
-
-    <!--TIPOGRAFIAS-->
-    <string name="font1" tools:ignore="ReferenceType">@font/lobster_two_bold</string>
-    <string name="font2" tools:ignore="ReferenceType">@font/lobster_two_bold_italic</string>
-    <string name="font3" tools:ignore="ReferenceType">@font/lobster_two_italic</string>
-    <string name="font4" tools:ignore="ReferenceType">@font/lobster_two_regular</string>
-    <string name="font5" tools:ignore="ReferenceType">@font/roboto_bold</string>
-    <string name="font6" tools:ignore="ReferenceType">@font/roboto_medium</string>
-    <string name="font7" tools:ignore="ReferenceType">@font/roboto_regular</string>
+    <dimen name="dimenListSize2">16sp</dimen>
+    <dimen name="dimenListSize3">15sp</dimen>
     <string name="fontList1" tools:ignore="ReferenceType">@string/font7</string>
-    <string name="fontList2" tools:ignore="ReferenceType">@string/font6</string>
+    <string name="fontList2" tools:ignore="ReferenceType">@string/font5</string>
     <string name="fontList3" tools:ignore="ReferenceType">@string/font6</string>
+    <drawable name="iconList1">@drawable/iconArrowBack</drawable>
+
+    <!--COLORS_____-->
+    <color name="colorListTextHeader">@color/colorListText1</color>
+    <color name="colorListTextHeaderIcon">@color/colorListText1</color>
+    <color name="colorListTextBodyIcon">@color/gris7</color>
+    <color name="colorListTextContentTitle">@color/colorListText2</color>
+    <color name="colorListTextContentContent">@color/colorListText3</color>
+    <color name="colorListTextContentContentInfo">@color/colorListText4</color>
+    <color name="colorListTextContentContentInfoAction">@color/colorListText5</color>
+    <!--SIZE_____-->
+    <dimen name="sizeListTextHeader">@dimen/dimenListSize2</dimen>
+    <dimen name="sizeListTextContentTitle">@dimen/dimenListSize1</dimen>
+    <dimen name="sizeListTextContentContent">@dimen/dimenListSize3</dimen>
+    <dimen name="sizeListTextContentContentInfo">@dimen/dimenListSize3</dimen>
+    <dimen name="sizeListTextContentContentInfoAction">@dimen/dimenListSize3</dimen>
+    <!--FONT_____-->
+    <string name="fontListTextHeader">@string/fontList2</string>
+    <string name="fontListTextContentTitle">@string/fontList3</string>
+    <string name="fontListTextContentContent">@string/fontList1</string>
+    <string name="fontListTextContentContentInfo">@string/fontList1</string>
+    <string name="fontListTextContentContentInfoAction">@string/fontList1</string>
+    <!--ICONOS-->
+    <drawable name="iconListHeaderGoBack">@drawable/iconList1</drawable>
 
 
-    <!--Alineaciones-->
-    <integer name="alignmentStart">1</integer>
-    <integer name="alignmentEnd">3</integer>
-    <integer name="alignmentCenter">4</integer>
+
+
 
 
 </resources>

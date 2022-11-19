@@ -98,8 +98,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:paddingVertical="20dp"
                         android:paddingHorizontal="15dp"
+                        android:paddingVertical="20dp"
                         tools:ignore="UselessParent">
 
                         <LinearLayout
@@ -168,8 +168,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:paddingHorizontal="20dp"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:paddingHorizontal="20dp">
 
                         <TextView
                             android:id="@+id/userBiografiaUserHome"
@@ -183,6 +183,12 @@
                             tools:ignore="HardcodedText" />
                     </LinearLayout>
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"></LinearLayout>
+
+
                 </LinearLayout>
             </ScrollView>
 
@@ -191,12 +197,13 @@
         <LinearLayout
             android:id="@+id/contFooterOpUser"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="400dp"
             android:elevation="100dp"
             android:paddingTop="20dp"
             android:paddingBottom="@dimen/sizeFooter"
             android:background="@drawable/bgFooterOpUser"
             android:orientation="vertical"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@+id/main"
             tools:targetApi="lollipop">
 
